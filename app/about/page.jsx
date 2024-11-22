@@ -30,16 +30,7 @@ export default function About() {
                 The sun is <b>asleep</b>
               </h2>
               <p>when the microphone does not recognize any voice sound.</p>
-<<<<<<< HEAD
               <SunSleep svgColor={"yellow"} rad={25} yCoordinate={10} heightSpaceSun={"15vh"} />
-=======
-              <SunSleep
-                svgColor={"yellow"}
-                rad={25}
-                yCoordinate={-10}
-                heightSpaceSun={"12vh"}
-              />
->>>>>>> 360a45912498b31ff44c6800189272b4866a4f8a
             </div>
           </div>
           <div className="card bg-gradient-card border-solid border-[2px] border-light-blue-500 shadow-xl">
@@ -48,7 +39,6 @@ export default function About() {
                 The sun is <b>awake</b>
               </h2>
               <p>when the microphone captures the sound of a voice.</p>
-<<<<<<< HEAD
               <SunAwake svgColor={"yellow"} rad={25} yCoordinate={10} heightSpaceSun={"15vh"} />
             </div>
           </div>
@@ -66,14 +56,6 @@ export default function About() {
               <h2 className="card-title">The sun <b>moves downward</b></h2>
               <p>when the pitch of the voice is low.</p>
               <SunAwake svgColor={"yellow"} rad={25} yCoordinate={55} heightSpaceSun={"25vh"} />
-=======
-              <SunAwake
-                svgColor={"yellow"}
-                rad={25}
-                yCoordinate={-10}
-                heightSpaceSun={"12vh"}
-              />
->>>>>>> 360a45912498b31ff44c6800189272b4866a4f8a
             </div>
           </div>
         </div>
@@ -84,16 +66,7 @@ export default function About() {
                 The sun is <b>gets smaller</b>
               </h2>
               <p>as the sound becomes softer</p>
-<<<<<<< HEAD
               <SunAwake svgColor={"yellow"} rad={15} yCoordinate={10} heightSpaceSun={"20vh"}/>
-=======
-              <SunAwake
-                svgColor={"yellow"}
-                rad={15}
-                yCoordinate={-10}
-                heightSpaceSun={"18vh"}
-              />
->>>>>>> 360a45912498b31ff44c6800189272b4866a4f8a
             </div>
           </div>
           <div className="card bg-gradient-card border-solid border-[2px] border-light-blue-500 shadow-xl">
@@ -102,16 +75,7 @@ export default function About() {
                 The sun is <b>gets bigger</b>
               </h2>
               <p>as the sound becomes louder</p>
-<<<<<<< HEAD
               <SunAwake svgColor={"yellow"} rad={40} yCoordinate={10} heightSpaceSun={"20vh"}/>
-=======
-              <SunAwake
-                svgColor={"yellow"}
-                rad={40}
-                yCoordinate={-10}
-                heightSpaceSun={"18vh"}
-              />
->>>>>>> 360a45912498b31ff44c6800189272b4866a4f8a
             </div>
           </div>
         </div>

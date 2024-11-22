@@ -38,7 +38,7 @@ const Header = () => {
             RUN APP
           </Link>
           <Link
-            href="https://github.com/zGiada/soundrise-application" target="_blank"
+            href="https://github.com/zGiada/soundrise-app" target="_blank"
             className="ml-4 text-lg font-semibold"
           >
             <FontAwesomeIcon icon={faGithub} className="github-icon" />
@@ -107,7 +107,7 @@ const Header = () => {
             RUN APP
           </Link>
           <Link
-            href="ithttps://github.com/zGiada/soundrise-application" target="_blank"
+            href="https://github.com/zGiada/soundrise-app" target="_blank"
             className="block text-white text-lg font-semibold py-2"
             onClick={toggleMenu}
           >
