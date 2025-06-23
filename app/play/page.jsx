@@ -177,13 +177,19 @@ export default function Play() {
     const initializeAudio = () => {
       audioContext = new (window.AudioContext || window.webkitAudioContext)({
         latencyHint: "interactive", // Riduci la latenza
-        sampleRate: 44100, // Campionamento standard
+        // Apparently specifying a sampling rate here and further down creates
+        // an issue on some systems/browsers where nodes of different rates
+        // can't be connected together -- it seems like omitting the param
+        // here isn't too much of an issue but further testing is required.
+        // TODO: Further testing -- AF
+        // sampleRate: 44100,
       });
 
       navigator.mediaDevices
         .getUserMedia({
           audio: {
-            sampleRate: 44100, // Forza un campionamento più basso
+            // TODO: See comment above about sampling rates -- AF
+            // sampleRate: 44100,
             echoCancellation: true,
             noiseSuppression: true,
             autoGainControl: true,
