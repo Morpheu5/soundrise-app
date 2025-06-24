@@ -1,3 +1,4 @@
+'use client';
 import React from "react";
 
 const sunSleep = ({ svgColor, rad, yCoordinate, heightSpaceSun }) => {

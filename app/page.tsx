@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import * as dimsFunctions from "./audio/setDimsValue";
 import SunAwake from "./components/sunAwake";
 import Image from "next/image";
+import { ClientOnly } from "@bkwld/next-client-only";
 
 export default function Home() {
   return (
@@ -14,13 +15,13 @@ export default function Home() {
 
   {/* Hero Section with Image, Text, and SunAwake Component */}
   <div className="flex flex-col items-center justify-center text-center text-white h-full">
-    <Image
+    <ClientOnly><Image
       src="/soundRise-scritta.svg"
       alt="SoundRise Logo"
       height={dimsFunctions.height/4}
       width={dimsFunctions.height/4}
       className="mx-auto mt-2"
-    />
+    /></ClientOnly>
     <h1 className="font-extrabold mb-5 big-title leading-none tracking-tight title-settings">
       A New Sunrise for Speech Therapy:{" "}
       <span className="divisore"></span>Development of{" "}
@@ -49,7 +50,7 @@ export default function Home() {
       href="https://www.gnu.org/licenses/gpl-3.0.txt"
       className="text-sm font-mono underline text-gray-300 hover:text-gray-400"
     >
-      GNU General Public License v3.0
+      AGNU Affero General Public License v3.0
     </a>
   </footer>
 

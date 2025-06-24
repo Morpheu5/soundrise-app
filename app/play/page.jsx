@@ -5,6 +5,7 @@ import SunAwake from "../components/sunAwake";
 import * as dimsFunctions from "../audio/setDimsValue";
 import * as vowelFunctions from "../audio/audioManager";
 import React, { useState, useEffect } from "react";
+import { ClientOnly } from "@bkwld/next-client-only";
 
 export default function Play() {
   const [svgColor, setSvgColor] = useState("yellow");
@@ -508,7 +509,7 @@ export default function Play() {
   };
 
   return (
-    <main className="flex h-screen flex-col text-neutral-content relative">
+    <ClientOnly><main className="flex h-screen flex-col text-neutral-content relative">
   {/* Header */}
   <Header />
  {/* Background Wave */}
@@ -579,6 +580,6 @@ export default function Play() {
           </div>
         </footer>
       </div>
-    </main>
+    </main></ClientOnly>
   );
 }

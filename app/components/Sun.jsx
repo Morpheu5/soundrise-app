@@ -1,4 +1,4 @@
-import React from "react";
+'use client';
 
 const Sun = ({ svgColor, rad, yCoordinate }) => {
   const shadowRadius = rad + (rad * 50) / 100;
