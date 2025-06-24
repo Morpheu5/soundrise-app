@@ -47,7 +47,7 @@ export default function Home() {
   {/* Footer */}
   <footer className="w-full flex justify-center text-white p-3 bg-black z-10">
     <a
-      href="https://www.gnu.org/licenses/gpl-3.0.txt"
+      href="https://www.gnu.org/licenses/agpl-3.0.txt"
       className="text-sm font-mono underline text-gray-300 hover:text-gray-400"
     >
       AGNU Affero General Public License v3.0
