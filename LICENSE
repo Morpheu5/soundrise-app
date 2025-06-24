@@ -16,3 +16,12 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 SoundRise 2.0 is a trademark of Giada Zuccolo et al. Use of the trademark
 is restricted to the owners.
+
+
+
+NOTES
+-----
+
+The implementation of the ACF2+ algorithm found in `app/play/page.jsx` is
+from https://github.com/cwilso/PitchDetect/blob/main/js/pitchdetect.js
+and is released with the MIT license.
