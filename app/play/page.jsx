@@ -54,16 +54,6 @@ export default function Play() {
       return Math.round(noteNum) + 69;
     }
 
-    function frequencyFromNoteNumber(note) {
-      return 440 * Math.pow(2, (note - 69) / 12);
-    }
-
-    function centsOffFromPitch(frequency, note) {
-      return Math.floor(
-        (1200 * Math.log(frequency / frequencyFromNoteNumber(note))) /
-          Math.log(2)
-      );
-    }
     // Implements the ACF2+ algorithm
     // Source: https://github.com/cwilso/PitchDetect/blob/main/js/pitchdetect.js (MIT License)
     // TODO Take this function out and reference the original code properly
