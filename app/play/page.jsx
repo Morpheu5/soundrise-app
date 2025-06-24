@@ -64,64 +64,83 @@ export default function Play() {
           Math.log(2)
       );
     }
-    function setFrequency(buf, sampleRate) {
-      // Implements the ACF2+ algorithm
-      var SIZE = buf.length;
-      var rms = 0;
+    // Implements the ACF2+ algorithm
+    // Source: https://github.com/cwilso/PitchDetect/blob/main/js/pitchdetect.js (MIT License)
+    // TODO Take this function out and reference the original code properly
+    function setFrequency(audioBuffer, sampleRate) {
+      // Calculate the RMS (root‑mean‑square) to check signal strength
+      var bufferSize = audioBuffer.length;
+      var rootMeanSquare = 0;
 
-      for (var i = 0; i < SIZE; i++) {
-        var val = buf[i];
-        rms += val * val;
+      for (var i = 0; i < bufferSize; i++) {
+        var sample = audioBuffer[i];
+        rootMeanSquare += sample * sample;
       }
-      rms = Math.sqrt(rms / SIZE);
+      rootMeanSquare = Math.sqrt(rootMeanSquare / bufferSize);
 
-      if (rms < 0.01) {
-        // not enough signal
-        //console.log("rms: "+rms);
+      // Abort early if the signal is too weak
+      if (rootMeanSquare < 0.01) {
         return -1;
       }
 
-      var r1 = 0,
-        r2 = SIZE - 1,
-        thres = 0.2;
-      for (var i = 0; i < SIZE / 2; i++)
-        if (Math.abs(buf[i]) < thres) {
-          r1 = i;
+      // Trim leading and trailing silence below the threshold
+      var startIndex = 0,
+          endIndex = bufferSize - 1,
+          threshold = 0.2;
+
+      for (var i = 0; i < bufferSize / 2; i++) {
+        if (Math.abs(audioBuffer[i]) < threshold) {
+          startIndex = i;
           break;
-        }
-      for (var i = 1; i < SIZE / 2; i++)
-        if (Math.abs(buf[SIZE - i]) < thres) {
-          r2 = SIZE - i;
-          break;
-        }
-
-      buf = buf.slice(r1, r2);
-      SIZE = buf.length;
-
-      var c = new Array(SIZE).fill(0);
-      for (var i = 0; i < SIZE; i++)
-        for (var j = 0; j < SIZE - i; j++) c[i] = c[i] + buf[j] * buf[j + i];
-
-      var d = 0;
-      while (c[d] > c[d + 1]) d++;
-      var maxval = -1,
-        maxpos = -1;
-      for (var i = d; i < SIZE; i++) {
-        if (c[i] > maxval) {
-          maxval = c[i];
-          maxpos = i;
         }
       }
-      var T0 = maxpos;
+      for (var i = 1; i < bufferSize / 2; i++) {
+        if (Math.abs(audioBuffer[bufferSize - i]) < threshold) {
+          endIndex = bufferSize - i;
+          break;
+        }
+      }
 
-      var x1 = c[T0 - 1],
-        x2 = c[T0],
-        x3 = c[T0 + 1];
-      var a = (x1 + x3 - 2 * x2) / 2;
-      var b = (x3 - x1) / 2;
-      if (a) T0 = T0 - b / (2 * a);
+      audioBuffer = audioBuffer.slice(startIndex, endIndex);
+      bufferSize = audioBuffer.length;
 
-      return sampleRate / T0;
+      // Build the autocorrelation array
+      var autoCorrelation = new Array(bufferSize).fill(0);
+      for (var i = 0; i < bufferSize; i++) {
+        for (var j = 0; j < bufferSize - i; j++) {
+          autoCorrelation[i] += audioBuffer[j] * audioBuffer[j + i];
+        }
+      }
+
+      // Find the first dip in the autocorrelation
+      var dipIndex = 0;
+      while (autoCorrelation[dipIndex] > autoCorrelation[dipIndex + 1]) {
+        dipIndex++;
+      }
+
+      // Find the peak following the dip
+      var peakValue = -1,
+          peakIndex = -1;
+      for (var i = dipIndex; i < bufferSize; i++) {
+        if (autoCorrelation[i] > peakValue) {
+          peakValue = autoCorrelation[i];
+          peakIndex = i;
+        }
+      }
+      var fundamentalPeriod = peakIndex;
+
+      // Perform parabolic interpolation for better period accuracy
+      var correlationLeft = autoCorrelation[fundamentalPeriod - 1],
+          correlationCenter = autoCorrelation[fundamentalPeriod],
+          correlationRight = autoCorrelation[fundamentalPeriod + 1];
+      var quadraticCoeffA = (correlationLeft + correlationRight - 2 * correlationCenter) / 2;
+      var quadraticCoeffB = (correlationRight - correlationLeft) / 2;
+      if (quadraticCoeffA) {
+        fundamentalPeriod = fundamentalPeriod - quadraticCoeffB / (2 * quadraticCoeffA);
+      }
+
+      // Convert period to frequency (Hz)
+      return sampleRate / fundamentalPeriod;
     }
     // Define a buffer to store previous audio buffer data
     const previousBuffers = [];
@@ -299,17 +318,17 @@ export default function Play() {
 
       analyser.getFloatTimeDomainData(buf);
 
-      const ac = setFrequency(buf, audioContext.sampleRate);
-      const vol = getStableVolume(buf);
-      const v = getVowel(buf, audioContext.sampleRate);
+      const frequency = setFrequency(buf, audioContext.sampleRate);
+      const volume = getStableVolume(buf);
+      const vowel = getVowel(buf, audioContext.sampleRate);
       const valueVowels = getValueVowels(buf, audioContext.sampleRate);
       
       var MAX_BUF = 600;
       if (
-        (ac == -1 ||
-          ac < dimsFunctions.minPitch ||
-          ac > dimsFunctions.maxPitch) &&
-        (vol < dimsFunctions.minVol || vol > dimsFunctions.maxVol)
+        (frequency == -1 ||
+          frequency < dimsFunctions.minPitch ||
+          frequency > dimsFunctions.maxPitch) &&
+        (volume < dimsFunctions.minVol || volume > dimsFunctions.maxVol)
       ) {
         setPitch("...");
         setVolume("...");
@@ -335,32 +354,32 @@ export default function Play() {
         }
       } else {
         if (
-          ac != -1 &&
-          ac >= 100 &&
-          ac <= 600 &&
-          vol > 0 &&
-          vol <= 50 &&
-          v != 0
+          frequency != -1 &&
+          frequency >= 100 &&
+          frequency <= 600 &&
+          volume > 0 &&
+          volume <= 50 &&
+          vowel != 0
         ) {
           if (buffer_pitch.length > MAX_BUF) {
             buffer_pitch.shift();
-            buffer_pitch.push(ac);
+            buffer_pitch.push(frequency);
           } else {
-            buffer_pitch.push(ac);
+            buffer_pitch.push(frequency);
           }
 
           if (buffer_vol.length > MAX_BUF) {
             buffer_vol.shift();
-            buffer_vol.push(vol);
+            buffer_vol.push(volume);
           } else {
-            buffer_vol.push(vol);
+            buffer_vol.push(volume);
           }
-          if (v != 0) {
+          if (vowel != 0) {
             if (buffer_vocal.length > MAX_BUF) {
               buffer_vocal.shift();
-              buffer_vocal.push(v);
+              buffer_vocal.push(vowel);
             } else {
-              buffer_vocal.push(v);
+              buffer_vocal.push(vowel);
             }
 
             if (buffer_percentage.length > MAX_BUF) {
