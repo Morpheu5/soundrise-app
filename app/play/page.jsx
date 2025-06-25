@@ -20,37 +20,24 @@ export default function Play() {
   const [pitch, setPitch] = useState("--");
   const [volume, setVolume] = useState("--");
   const [note, setNote] = useState("--");
-  const [vowel, setVowel] = useState("--");
+  const [_vowel, setVowel] = useState("--");
   const [valueVowels, setValueVowels] = useState(null)
 
   useEffect(() => {
-    var audioContext = null;
+    let audioContext = null;
     let analyser = null;
     let mediaStreamSource = null;
     let rafID = null;
     const buflen = 2048;
     const buf = new Float32Array(buflen);
-    var buffer_pitch = [];
-    var buffer_vol = [];
-    var buffer_vocal = [];
-    var buffer_percentage = [];
-    var count_sil = 0;
-    const noteStrings = [
-      "C",
-      "C#",
-      "D",
-      "D#",
-      "E",
-      "F",
-      "F#",
-      "G",
-      "G#",
-      "A",
-      "A#",
-      "B",
-    ];
+    let buffer_pitch = [];
+    let buffer_vol = [];
+    let buffer_vocal = [];
+    let buffer_percentage = [];
+    let count_sil = 0;
+    const noteStrings = [ "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B" ];
     function noteFromPitch(frequency) {
-      var noteNum = 12 * (Math.log(frequency / 440) / Math.log(2));
+      let noteNum = 12 * (Math.log(frequency / 440) / Math.log(2));
       return Math.round(noteNum) + 69;
     }
 
@@ -59,11 +46,11 @@ export default function Play() {
     // TODO Take this function out and reference the original code properly
     function setFrequency(audioBuffer, sampleRate) {
       // Calculate the RMS (root‑mean‑square) to check signal strength
-      var bufferSize = audioBuffer.length;
-      var rootMeanSquare = 0;
+      let bufferSize = audioBuffer.length;
+      let rootMeanSquare = 0;
 
-      for (var i = 0; i < bufferSize; i++) {
-        var sample = audioBuffer[i];
+      for (let i = 0; i < bufferSize; i++) {
+        let sample = audioBuffer[i];
         rootMeanSquare += sample * sample;
       }
       rootMeanSquare = Math.sqrt(rootMeanSquare / bufferSize);
@@ -74,17 +61,17 @@ export default function Play() {
       }
 
       // Trim leading and trailing silence below the threshold
-      var startIndex = 0,
+      let startIndex = 0,
           endIndex = bufferSize - 1,
           threshold = 0.2;
 
-      for (var i = 0; i < bufferSize / 2; i++) {
+      for (let i = 0; i < bufferSize / 2; i++) {
         if (Math.abs(audioBuffer[i]) < threshold) {
           startIndex = i;
           break;
         }
       }
-      for (var i = 1; i < bufferSize / 2; i++) {
+      for (let i = 1; i < bufferSize / 2; i++) {
         if (Math.abs(audioBuffer[bufferSize - i]) < threshold) {
           endIndex = bufferSize - i;
           break;
@@ -95,36 +82,36 @@ export default function Play() {
       bufferSize = audioBuffer.length;
 
       // Build the autocorrelation array
-      var autoCorrelation = new Array(bufferSize).fill(0);
-      for (var i = 0; i < bufferSize; i++) {
-        for (var j = 0; j < bufferSize - i; j++) {
+      let autoCorrelation = new Array(bufferSize).fill(0);
+      for (let i = 0; i < bufferSize; i++) {
+        for (let j = 0; j < bufferSize - i; j++) {
           autoCorrelation[i] += audioBuffer[j] * audioBuffer[j + i];
         }
       }
 
       // Find the first dip in the autocorrelation
-      var dipIndex = 0;
+      let dipIndex = 0;
       while (autoCorrelation[dipIndex] > autoCorrelation[dipIndex + 1]) {
         dipIndex++;
       }
 
       // Find the peak following the dip
-      var peakValue = -1,
+      let peakValue = -1,
           peakIndex = -1;
-      for (var i = dipIndex; i < bufferSize; i++) {
+      for (let i = dipIndex; i < bufferSize; i++) {
         if (autoCorrelation[i] > peakValue) {
           peakValue = autoCorrelation[i];
           peakIndex = i;
         }
       }
-      var fundamentalPeriod = peakIndex;
+      let fundamentalPeriod = peakIndex;
 
       // Perform parabolic interpolation for better period accuracy
-      var correlationLeft = autoCorrelation[fundamentalPeriod - 1],
+      let correlationLeft = autoCorrelation[fundamentalPeriod - 1],
           correlationCenter = autoCorrelation[fundamentalPeriod],
           correlationRight = autoCorrelation[fundamentalPeriod + 1];
-      var quadraticCoeffA = (correlationLeft + correlationRight - 2 * correlationCenter) / 2;
-      var quadraticCoeffB = (correlationRight - correlationLeft) / 2;
+      let quadraticCoeffA = (correlationLeft + correlationRight - 2 * correlationCenter) / 2;
+      let quadraticCoeffB = (correlationRight - correlationLeft) / 2;
       if (quadraticCoeffA) {
         fundamentalPeriod = fundamentalPeriod - quadraticCoeffB / (2 * quadraticCoeffA);
       }
@@ -135,12 +122,12 @@ export default function Play() {
     // Define a buffer to store previous audio buffer data
     const previousBuffers = [];
 
-    function getStableVolume(buf) {
-      const sumSquares = buf.reduce(
+    function getStableVolume(audioBuffer) {
+      const sumSquares = audioBuffer.reduce(
         (sum, amplitude) => sum + amplitude * amplitude,
         0
       );
-      const rootMeanSquare = Math.sqrt(sumSquares / buf.length);
+      const rootMeanSquare = Math.sqrt(sumSquares / audioBuffer.length);
 
       // Add the root mean square value to the previousBuffers array
       previousBuffers.push(rootMeanSquare);
@@ -160,28 +147,24 @@ export default function Play() {
       return Math.round(averageVolume * 100);
     }
 
-    function getVowel(buf, sampleRate) {
-      // donna
-      var form1 = [320, 400, 620, 920, 640, 400, 360];
-      var form2 = [2750, 2500, 2400, 1400, 1200, 920, 760];
-      var result = vowelFunctions.getVowel(buf, sampleRate);
-      // console.log(result);
-      // prende la vocale più probabile
-      var max_p = 0;
-      var max_v = "";
-      for (var i = 0; i < result.length; i++) {
-        if (parseFloat(result[i].percentage) > max_p) {
-          max_p = parseFloat(result[i].percentage);
-          max_v = result[i].vocale;
+    function getVowel(audioBuffer, sampleRate) {
+      let result = vowelFunctions.getVowel(audioBuffer, sampleRate);
+      // Picks the most likely vowel
+      let max_p = 0;
+      let max_v = "";
+      for (let i = 0; i < result.length; i++) {
+        // The parseFloat is necessary because of toFixed conversion in the upstream getVowel code (TODO: Perhaps remove it?)
+        let p = parseFloat(result[i].percentage);
+        if (p > max_p) {
+          max_p = p;
+          max_v = result[i].vowel;
         }
       }
-      
-      //console.log(max_v, max_p);
       return max_v;
     }
 
-    function getValueVowels(buf, sampleRate) {
-      return vowelFunctions.getVowel(buf, sampleRate);
+    function getValueVowels(audioBuffer, sampleRate) {
+      return vowelFunctions.getVowel(audioBuffer, sampleRate);
     }
 
     const initializeAudio = () => {
@@ -254,7 +237,7 @@ export default function Play() {
     };
 
     function ArrayAvg(myArray) {
-      var i = 0,
+      let i = 0,
         summ = 0,
         ArrayLen = myArray.length;
       while (i < ArrayLen) {
@@ -313,7 +296,7 @@ export default function Play() {
       const vowel = getVowel(buf, audioContext.sampleRate);
       const valueVowels = getValueVowels(buf, audioContext.sampleRate);
       
-      var MAX_BUF = 600;
+      let MAX_BUF = 600;
       if (
         (frequency == -1 ||
           frequency < dimsFunctions.minPitch ||
@@ -402,7 +385,7 @@ export default function Play() {
 
           const pitchValue = Math.round(ArrayAvg(buffer_pitch));
           const yCoordValue = dimsFunctions.setPosPitch(pitchValue);
-          var hz = pitchValue + "Hz";
+          let hz = pitchValue + "Hz";
           setPitch(hz);
           setYCoord(yCoordValue);
 

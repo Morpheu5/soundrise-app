@@ -196,7 +196,7 @@ function getProbabilities(valid) {
       score += Math.exp(-diffF2 / 400); // Penalizzazione esponenziale per F2
     }
 
-    probabilities.push({ vocale: vocali[i - 1], score });
+    probabilities.push({ vowel: vocali[i - 1], score });
   }
 
   // Normalizza i punteggi in percentuali
