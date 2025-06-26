@@ -42,9 +42,7 @@
     "app/page.tsx",
     "app/about/page.jsx",
     "build/types/**/*.ts",
-    "types/audioManager.d.ts",
-    "types/setDimsValue.d.ts",
-    "app/audio/audioManager.js"
+    "app/audio/audioManager.ts"
   ],
   "exclude": [
     "node_modules"

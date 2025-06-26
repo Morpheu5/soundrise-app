@@ -29,7 +29,7 @@ const maxRad = 200;
 
 /*********************** rad PART ***********************/
 
-function setRad(volume) {
+function setRad(volume: number) {
   if (volume <= minVol) {
     return minRad;
   }
@@ -50,7 +50,7 @@ const lowest_pitch = usable_height / 2;
 // punto più alto = > quando pitch è >= 600       -250
 const highest_pitch = -lowest_pitch;
 
-function setPosPitch(pitch) {
+function setPosPitch(pitch: number) {
   if (pitch <= minPitch) {
     return lowest_pitch;
   }
@@ -70,7 +70,7 @@ function setPosPitch(pitch) {
 function getVocali() {}
 
 // Export the functions to make them accessible in other files
-module.exports = {
+export {
   setRad,
   setPosPitch,
   minVol,

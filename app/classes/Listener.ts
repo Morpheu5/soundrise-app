@@ -1,13 +1,16 @@
-import { getVowelImpl } from "app/audio/audioManager.js";
-import * as dimsFunctions from "../audio/setDimsValue.js";
+import { getVowelImpl, VowelResult } from "app/audio/audioManager";
+import {
+  setRad,
+  setPosPitch,
+  minVol,
+  maxVol,
+  minPitch,
+  maxPitch,
+  minRad,
+  height,
+} from "app/audio/setDimsValue";
 
-type VowelResult = {
-  vowel: string;
-  score: number;
-  percentage: string;
-}
-
-export class Listener {
+export default class Listener {
   constructor() {}
   audioContext: Nullable<AudioContext>;
   analyser: Nullable<AnalyserNode>;
@@ -24,7 +27,7 @@ export class Listener {
 
   previousBuffers: Array<number> = [];
 
-  noteFromPitch(frequency: number) {
+  noteFromPitch = (frequency: number) => {
     let noteNum = 12 * (Math.log(frequency / 440) / Math.log(2));
     return Math.round(noteNum) + 69;
   }
@@ -32,7 +35,7 @@ export class Listener {
   // Implements the ACF2+ algorithm
   // Source: https://github.com/cwilso/PitchDetect/blob/main/js/pitchdetect.js (MIT License)
   // TODO Take this out and reference the original code properly
-  setFrequency(audioBuffer: Float32Array, sampleRate: number) {
+  setFrequency = (audioBuffer: Float32Array, sampleRate: number) => {
     // Calculate the RMS (root‑mean‑square) to check signal strength
     let bufferSize = audioBuffer.length;
     let rootMeanSquare = 0;
@@ -110,7 +113,7 @@ export class Listener {
   // Define a buffer to store previous audio buffer data
   
 
-  getStableVolume(audioBuffer: Float32Array) {
+  getStableVolume = (audioBuffer: Float32Array) => {
     const sumSquares = audioBuffer.reduce(
       (sum, amplitude) => sum + amplitude * amplitude,
       0
@@ -135,14 +138,14 @@ export class Listener {
     return Math.round(averageVolume * 100);
   }
 
-  getVowel(audioBuffer: Float32Array, sampleRate: number): string {
+  getVowel = (audioBuffer: Float32Array, sampleRate: number): string => {
     let result = getVowelImpl(audioBuffer, sampleRate);
     // Picks the most likely vowel
     let max_p = 0;
     let max_v = "";
     for (let i = 0; i < result.length; i++) {
       // The parseFloat is necessary because of toFixed conversion in the upstream getVowel code (TODO: Perhaps remove it?)
-      let p = parseFloat(result[i].percentage);
+      let p = parseFloat(result[i].percentage ?? "0.00");
       if (p > max_p) {
         max_p = p;
         max_v = result[i].vowel;
@@ -151,11 +154,11 @@ export class Listener {
     return max_v;
   }
 
-  getValueVowels(audioBuffer: Float32Array, sampleRate: number) {
+  getValueVowels = (audioBuffer: Float32Array, sampleRate: number) => {
     return getVowelImpl(audioBuffer, sampleRate);
   }
 
-  initializeAudio() { // TODO Likely constructor
+  initializeAudio = () => { // TODO Likely constructor
     this.audioContext = new (window.AudioContext)({ // || window.webkitAudioContext)({
       latencyHint: "interactive", // Riduci la latenza
       // Apparently specifying a sampling rate here and further down creates
@@ -226,7 +229,7 @@ export class Listener {
       });
   };
 
-  ArrayAvg(myArray: number[]) {
+  ArrayAvg = (myArray: number[]) => {
     let i = 0,
       summ = 0,
       ArrayLen = myArray.length;
@@ -236,7 +239,7 @@ export class Listener {
     return summ / ArrayLen;
   }
 
-  findMostRepeatedItem(array: any[]) {
+  findMostRepeatedItem = (array: any[]) => {
     let count: Record<string, any> = {};
     let mostRepeatedItem;
     let maxCount = 0;
@@ -257,7 +260,7 @@ export class Listener {
     return mostRepeatedItem;
   }
 
-  selectColor(vowel: string) {
+  selectColor = (vowel: string) => {
     if (vowel === "I") {
       dispatchEvent(new CustomEvent("setSvgColor", { detail: "blue" }));
     } else if (vowel === "É") {
@@ -275,7 +278,7 @@ export class Listener {
     }
   };
 
-  startListening() {
+  startListening = () => {
     if (!this.analyser || !this.audioContext) { return }
 
     this.analyser.getFloatTimeDomainData(this.buf);
@@ -288,9 +291,9 @@ export class Listener {
     let MAX_BUF = 600;
     if (
       (frequency == -1 ||
-        frequency < dimsFunctions.minPitch ||
-        frequency > dimsFunctions.maxPitch) &&
-      (volume < dimsFunctions.minVol || volume > dimsFunctions.maxVol)
+        frequency < minPitch ||
+        frequency > maxPitch) &&
+      (volume < minVol || volume > maxVol)
     ) {
       dispatchEvent(new CustomEvent("setPitch", { detail: "..." }));
       dispatchEvent(new CustomEvent("setVolume", { detail: "..." }));
@@ -298,11 +301,11 @@ export class Listener {
       dispatchEvent(new CustomEvent("setVowel", { detail: "..." })); 
       dispatchEvent(new CustomEvent("setValueVowels", { detail: "I: 0%\nÉ: 0%\nÈ: 0%\nA: 0%\nÒ: 0%\nÓ: 0%\nU: 0%" }));
       dispatchEvent(new CustomEvent("setSunListen", { detail: false }));
-      dispatchEvent(new CustomEvent("setRad", { detail: dimsFunctions.minRad }));
+      dispatchEvent(new CustomEvent("setRad", { detail: minRad }));
       dispatchEvent(new CustomEvent("setSvgColor", { detail: "yellow" }));
       dispatchEvent(new CustomEvent("setYCoord", { detail: (
-        (dimsFunctions.height -
-          Math.round((dimsFunctions.height * 30) / 100)) /
+        (height -
+          Math.round((height * 30) / 100)) /
           2
       ) }));
       this.count_sil++;
@@ -372,15 +375,15 @@ export class Listener {
         dispatchEvent(new CustomEvent("setSunListen", { detail: true }));
 
         const pitchValue = Math.round(this.ArrayAvg(this.buffer_pitch));
-        const yCoordValue = dimsFunctions.setPosPitch(pitchValue);
+        const yCoordValue = setPosPitch(pitchValue);
         const hz = pitchValue + "Hz";
         dispatchEvent(new CustomEvent("setPitch", { detail: hz }));
         dispatchEvent(new CustomEvent("setYCoord", { detail: yCoordValue }));
 
         const volValue = Math.round(this.ArrayAvg(this.buffer_vol));
-        dispatchEvent(new CustomEvent("setVolume", { detail: "volValue" }));
-        const radValue = dimsFunctions.setRad(volValue);
-        dispatchEvent(new CustomEvent("setRad", { detail: "radValue" }));
+        dispatchEvent(new CustomEvent("setVolume", { detail: volValue }));
+        const radValue = setRad(volValue);
+        dispatchEvent(new CustomEvent("setRad", { detail: radValue }));
 
         const n = this.noteFromPitch(pitchValue);
         dispatchEvent(new CustomEvent("setNote", { detail: this.noteStrings[n % 12] }));
@@ -422,15 +425,15 @@ export class Listener {
     this.rafID = window.requestAnimationFrame(this.startListening);
   };
 
-  stopListening() {
+  stopListening = () => {
     this.buffer_pitch = [];
     this.buffer_vol = [];
     this.buffer_vocal = [];
     this.count_sil = 0;
     dispatchEvent(new CustomEvent("setSunListen", { detail: false }));
-    dispatchEvent(new CustomEvent("setRad", { detail: dimsFunctions.minRad }));
+    dispatchEvent(new CustomEvent("setRad", { detail: minRad }));
     dispatchEvent(new CustomEvent("setSvgColor", { detail: "yellow" }));
-    dispatchEvent(new CustomEvent("setYCoord", { detail: (dimsFunctions.height - Math.round((dimsFunctions.height * 30) / 100)) / 2 }));
+    dispatchEvent(new CustomEvent("setYCoord", { detail: (height - Math.round((height * 30) / 100)) / 2 }));
     if (this.audioContext) {
       if (this.rafID) {
         window.cancelAnimationFrame(this.rafID);

@@ -2,17 +2,20 @@
 import Header from "../components/Header";
 import SunSleep from "../components/sunSleep";
 import SunAwake from "../components/sunAwake";
-import * as dimsFunctions from "../audio/setDimsValue";
+import {
+  minRad,
+  height,
+} from "app/audio/setDimsValue";
 import React, { useState, useEffect } from "react";
 import { ClientOnly } from "@bkwld/next-client-only";
 import Listener from "../classes/Listener";
 
 export default function Play() {
   const [svgColor, setSvgColor] = useState("yellow");
-  const [rad, setRad] = useState(dimsFunctions.minRad);
+  const [rad, setRad] = useState(minRad);
 
   const [yCoord, setYCoord] = useState(
-    (dimsFunctions.height - Math.round((dimsFunctions.height * 35) / 100)) / 2
+    (height - Math.round((height * 35) / 100)) / 2
   );
 
   const [sunListen, setSunListen] = useState(false);
