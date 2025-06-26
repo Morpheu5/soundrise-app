@@ -389,7 +389,7 @@ export default class Listener {
         dispatchEvent(new CustomEvent("setNote", { detail: this.noteStrings[n % 12] }));
 
         const vocalValue = this.findMostRepeatedItem(this.buffer_vocal);
-        dispatchEvent(new CustomEvent("selectColor", { detail: vocalValue }));
+        this.selectColor(vocalValue);
         dispatchEvent(new CustomEvent("setVowel", { detail: vocalValue }));
 
         dispatchEvent(new CustomEvent("setValueVowels", { detail: () => {

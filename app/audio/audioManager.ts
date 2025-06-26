@@ -225,7 +225,6 @@ function compare(valid: Formant[]) {
   }
   
   const probabilities = getProbabilities(valid);
-  // console.log(probabilities); // Opzionale: stampa per debug
   return probabilities;
 }
 

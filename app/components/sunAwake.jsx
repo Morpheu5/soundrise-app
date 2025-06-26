@@ -2,7 +2,6 @@
 import React from "react";
 
 const sunAwake = ({ svgColor, rad, yCoordinate, heightSpaceSun }) => {
-  console.log(rad)
   const shadowRadius = rad + (rad * 50) / 100;
 
   const eyesRadius = rad - Math.round(rad / 1.3);
