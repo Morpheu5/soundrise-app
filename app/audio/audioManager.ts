@@ -30,10 +30,25 @@ function getVowelImpl(s: Float32Array, sampleRate: number): VowelResult[] {
 }
 
 function preProcessSignal(s: Float32Array) {
-  // Esempio di filtro passa-basso per rimuovere il rumore ad alta frequenza
-  const filteredSignal = s.map((sample, i) => {
-    return sample * Math.exp(-0.002 * i); // Filtro semplice per attenuare
-  });
+  return exponentialMovingAverage(s, 0.2); // Low-pass filter
+}
+
+function exponentialMovingAverage(signal: Float32Array, alpha = 0.2) {
+  if (alpha <= 0 || alpha > 1) {
+    throw new Error("Alpha must be between 0 (exclusive) and 1 (inclusive).");
+  }
+
+  const filteredSignal = new Float32Array(signal.length);
+  
+  // The first filtered value is just the first input value
+  filteredSignal[0] = signal[0];
+
+  for (let i = 1; i < signal.length; i++) {
+    const currentInput = signal[i];
+    const previousOutput = filteredSignal[i - 1];
+    
+    filteredSignal[i] = alpha * currentInput + (1 - alpha) * previousOutput;
+  }
   return filteredSignal;
 }
 
