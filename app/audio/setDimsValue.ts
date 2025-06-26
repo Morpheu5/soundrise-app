@@ -41,13 +41,11 @@ function setRad(volume: number) {
 
 /*********************** yC PART ***********************/
 
-const usable_height =
-  getCurrentDimension().height -
-  Math.round((getCurrentDimension().height * 30) / 100);
+const usable_height = getCurrentDimension().height - Math.round((getCurrentDimension().height * 30) / 100);
 
-// punto più basso = > quando pitch è <= 100      250
+// lowest point = > when pitch <= 100      250
 const lowest_pitch = usable_height / 2;
-// punto più alto = > quando pitch è >= 600       -250
+// highest point = > when pitch >= 600    -250
 const highest_pitch = -lowest_pitch;
 
 function setPosPitch(pitch: number) {
@@ -66,7 +64,7 @@ function setPosPitch(pitch: number) {
   );
 }
 
-/******************** VOCALI ************************ */
+/******************** VOWELS ************************ */
 function getVocali() {}
 
 // Export the functions to make them accessible in other files
