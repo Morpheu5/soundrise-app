@@ -25,18 +25,24 @@
     "paths": {
       "@/*": [
         "./*"
-      ]
-    }
+      ],
+      "app/*": ["./app/*"]
+    },
+    "typeRoots": ["./node_modules/@types", "./types"],
+    "strictNullChecks": true
   },
   "include": [
     "next-env.d.ts",
+    "**/*.js",
     "**/*.ts",
     "**/*.tsx",
+    "**/*.d.ts",
     ".next/types/**/*.ts",
     "app/play/page.jsx",
     "app/page.tsx",
     "app/about/page.jsx",
-    "build/types/**/*.ts"
+    "build/types/**/*.ts",
+    "app/audio/audioManager.ts"
   ],
   "exclude": [
     "node_modules"

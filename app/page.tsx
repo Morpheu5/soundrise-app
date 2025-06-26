@@ -1,6 +1,16 @@
 "use client";
 import Header from "./components/Header";
-import * as dimsFunctions from "./audio/setDimsValue";
+import {
+  setRad,
+  setPosPitch,
+  minVol,
+  maxVol,
+  minPitch,
+  maxPitch,
+  minRad,
+  height,
+  width,
+} from "app/audio/setDimsValue";
 import SunAwake from "./components/sunAwake";
 import Image from "next/image";
 import { ClientOnly } from "@bkwld/next-client-only";
@@ -18,8 +28,8 @@ export default function Home() {
     <ClientOnly><Image
       src="/soundRise-scritta.svg"
       alt="SoundRise Logo"
-      height={dimsFunctions.height/4}
-      width={dimsFunctions.height/4}
+      height={height/4}
+      width={height/4}
       className="mx-auto mt-2"
     /></ClientOnly>
     <h1 className="font-extrabold mb-5 big-title leading-none tracking-tight title-settings">
@@ -35,7 +45,7 @@ export default function Home() {
     <div className="relative flex max-h-screen flex-col items-center">
     <SunAwake
       svgColor={"yellow"}
-      rad={dimsFunctions.minRad * 1.5}
+      rad={minRad * 1.5}
       yCoordinate={-10}  // Rende il sole più visibile
       heightSpaceSun={"20vh"}  // Riduce lo spazio di movimento
     />
