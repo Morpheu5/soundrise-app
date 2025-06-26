@@ -1,30 +1,30 @@
-let p = 15;
-let N = 256;
+const p = 15;
+const N = 256;
 let f0: number;
-let f1 = 22050;
+const f1 = 22050;
 
-// Formanti donna per I, é, È, A, O, ó, U
-// I valori a margine (primo e ultimo) sono inesistenti: servono solo per agevolare il calcolo dei range nell'algoritmo
-let form1 = [120, 200, 337, 522, 773, 542, 342, 308, 150];
-let form2 = [2900, 3200, 2512, 2400, 1392, 1195, 920, 762, 580];
+// Female formants I, é, È, A, O, ó, U
+// The first and last values do not exist: they are only used to simplify range calculations in the algorithm
+const form1 = [120, 200, 337, 522, 773, 542, 342, 308, 150];
+const form2 = [2900, 3200, 2512, 2400, 1392, 1195, 920, 762, 580];
 
-let vowels = ["I", "É", "È", "A", "Ò", "Ó", "U"];
+const vowels = ["I", "É", "È", "A", "Ò", "Ó", "U"];
 let signal: Float32Array;
 
 function getVowelImpl(s: Float32Array, sampleRate: number): VowelResult[] {
   signal = s;
   f0 = sampleRate;
   
-  // Applica un filtro pre-elaborazione per ridurre il rumore
+  // Noise reduction
   signal = preProcessSignal(signal);
   
-  // Step di autocorrelazione e calcolo delle radici
-  let R = autocorrelation();
-  let lpc = durbin(R);
-  let roots = durand(lpc);
-  let valid = formants(roots, f1);
+  // Autocorrelation and LPC analysis
+  const R = autocorrelation();
+  const lpc = durbin(R);
+  const roots = durand(lpc);
+  const valid = formants(roots, f1);
   
-  // Confronto formanti con i range corretti e calcolo delle probabilità
+  // Compare formants with the correct ranges and calculate probabilities
   const probabilities = compare(valid);
   return probabilities;
 }
@@ -54,7 +54,7 @@ function exponentialMovingAverage(signal: Float32Array, alpha = 0.2) {
 
 function autocorrelation() {
   usx = new Float32Array((signal.length * f1) / f0);
-  let R = new Float32Array(p + 1);
+  const R = new Float32Array(p + 1);
   
   for (let k = 0; k <= p; k++) {
     R[k] = 0;
@@ -72,9 +72,9 @@ function ham(N: number, i: number) {
 let usx: Float32Array;
 function efficientUs(i: number) {
   if (usx[i] == 0) {
-    let ratio = f0 / f1;
+    const ratio = f0 / f1;
     usx[i] = 0;
-    let index = Math.floor(i * ratio);
+    const index = Math.floor(i * ratio);
     
     for (let j = 0; j < ratio; j++) {
       usx[i] += signal[index + j] * ham(N, i);
@@ -85,9 +85,9 @@ function efficientUs(i: number) {
 }
 
 function durbin(R: Float32Array) {
-  let lpc = [];
-  let alpha: number[][] = [];
-  let k = [];
+  const lpc = [];
+  const alpha: number[][] = [];
+  const k = [];
   let E = R[0];
   
   for (let i = 1; i <= p; i++) {
@@ -122,7 +122,7 @@ function durand(cf: number[]) {
   }
   
   for (let i = 0; i < n; i++) {
-    let preroots = roots;
+    const preroots = roots;
     for (let j = 0; j < deg; j++) {
       let p = { real: cf[0], imag: 0 };
       for (let k = 1; k <= deg; k++) {
@@ -166,10 +166,10 @@ function divc(a: Complex, b: Complex): Complex {
 }
 
 function formants(roots: Complex[], fs: number): Formant[] {
-  let ff = [];
+  const ff = [];
   for (let i = 0; i < roots.length; i++) {
-    let f = (fs * Math.atan2(roots[i].imag, roots[i].real)) / (2 * Math.PI);
-    let b =
+    const f = (fs * Math.atan2(roots[i].imag, roots[i].real)) / (2 * Math.PI);
+    const b =
     (-fs * Math.log(Math.sqrt(roots[i].real ** 2 + roots[i].imag ** 2))) /
     Math.PI;
     if (f >= 0 && b >= 0 && b <= 6400) {
@@ -178,10 +178,10 @@ function formants(roots: Complex[], fs: number): Formant[] {
   }
   ff.sort((a, b) => a.freq - b.freq);
   
-  let valid: Formant[] = [];
+  const valid: Formant[] = [];
+  const minval = [200, 700];
+  const maxval = [1600, 3000];
   let j = 0;
-  let minval = [200, 700];
-  let maxval = [1600, 3000];
   for (let i = 0; i < ff.length; i++) {
     if (ff[i].freq >= minval[j] && ff[i].freq <= maxval[j]) {
       valid[j + 1] = ff[i];
@@ -198,25 +198,25 @@ function getProbabilities(valid: Formant[]): VowelResult[] {
   for (let i = 1; i <= 7; i++) {
     let score = 0;
     
-    // Calcola la distanza dalla formante F1
+    // Calculate the distance from F1
     if (valid[1] && valid[1].freq) {
       const diffF1 = Math.abs(valid[1].freq - form1[i]);
-      score += Math.exp(-diffF1 / 200); // Penalizzazione esponenziale per F1
+      score += Math.exp(-diffF1 / 200); // Exponential penalty for F1
     }
     
-    // Calcola la distanza dalla formante F2
+    // Calculate the distance from F2
     if (valid[2] && valid[2].freq) {
       const diffF2 = Math.abs(valid[2].freq - form2[i]);
-      score += Math.exp(-diffF2 / 400); // Penalizzazione esponenziale per F2
+      score += Math.exp(-diffF2 / 400); // Exponential penalty for F2
     }
     
     probabilities.push({ vowel: vowels[i - 1], score });
   }
   
-  // Normalizza i punteggi in percentuali
+  // Translate scores to percentages
   const totalScore = probabilities.reduce((sum, item) => sum + (item.score ?? 0), 0);
   probabilities.forEach((item) => {
-    item.percentage = (((item.score ?? 0) / totalScore) * 100).toFixed(1); // Percentuale con una cifra decimale
+    item.percentage = (((item.score ?? 0) / totalScore) * 100).toFixed(1); // FIXME I'm pretty sure we can do without this being a string but hey
   });
   
   return probabilities;
@@ -224,7 +224,7 @@ function getProbabilities(valid: Formant[]): VowelResult[] {
 
 function compare(valid: Formant[]) {
   if (valid.length === 0) {
-    return vowels.map((v) => ({ vowel: v, score: 0, percentage: "0.0" })); // Nessuna probabilità
+    return vowels.map((v) => ({ vowel: v, score: 0, percentage: "0.0" })); // No chance...
   }
   
   const probabilities = getProbabilities(valid);
