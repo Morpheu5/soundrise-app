@@ -37,6 +37,9 @@ export default function Play() {
 
   useEffect(() => {
     // OK, I don't like this approach but otherwise I can't see how to add the event listeners.
+    // I don't even fully understand why or how this works, but it does.
+    // FIXME There's a very good chance that this is creating memory leaks.
+    // The actual problem is that the application keeps the microphone open all the time.
     setListener(new Listener());
 
     // Add event listeners
