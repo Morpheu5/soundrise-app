@@ -8,35 +8,14 @@
   --background-start-rgb: 150, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
-/*
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-*/
 body {
   color: rgb(var(--foreground-rgb));
-  /*
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-    */
-  /*
-  background-image: url("../../public/bg.jpg");
-  background-size: cover;*/
   background: rgb(15, 109, 199);
 }
 
 .main-page {
   background-image: url("../../public/bg.jpg");
   background-size: cover;
-  /*background: rgb(15, 56, 91);*/
 }
 .start-page {
   background: linear-gradient(rgb(6, 51, 94), rgb(15, 109, 199));
@@ -51,11 +30,6 @@ body {
 }
 .navbar {
   background-color: transparent;
-
-  /*
-  background: rgb(255, 255, 255);
-  background: linear-gradient(to top, transparent, rgba(26, 54, 139, 0.9))
-    rgba(72, 160, 236, 0.05);*/
 }
 
 .logo {
@@ -83,7 +57,8 @@ body {
 
 @media (min-width: 640px) {
   .big-title span.divisore::after {
-    content: '';display: block; /* Simula un'interruzione di riga */  
+    content: '';
+    display: block;
   }  
 }
 
@@ -129,11 +104,11 @@ body {
     font-size: 1.25rem;
   }
   .bg-wave {
-    height: 300px; /* Aumenta per coprire di più su mobile */
-    bottom: 0; /* Fissa in basso */
+    height: 300px; /* Enlarge to cover better on mobile */
+    bottom: 0;
   }
   .hero-content {
-    padding-bottom: 2rem; /* Riduci il padding */
+    padding-bottom: 2rem; /* Reduce padding */
   }
 }
 
@@ -141,7 +116,7 @@ body {
 .little-menu {
   display: inline-block;
   vertical-align: middle;
-  margin: 0; /* Spazio attorno all'icona */
+  margin: 0; /* Space around the icon */
 }
 
 .btn-prova {
@@ -156,19 +131,8 @@ body {
   background-image: url("../../public/wave.svg");
   background-repeat: repeat-x;
   background-position: bottom;
-  /* animation: wave-animation 10s infinite linear;*/
 }
 
-/*
-@keyframes wave-animation {
-  0% {
-    background-position: 0 bottom;
-  }
-  100% {
-    background-position: 100% bottom;
-  }
-}
-*/
 /* Add styles to your component's CSS file */
 .github-icon {
   color: whitesmoke; /* Change the color as needed */
@@ -177,9 +141,9 @@ body {
 }
 .fixed-square {
   display: flex;
-  flex-direction: column; /* Non strettamente necessario, ma utile se hai più elementi */
+  flex-direction: column; /* Not strictly necessary here but useful with more elements */
   justify-content: center;
-  align-items: center; /* Per allineare orizzontalmente */
+  align-items: center; /* h-align */
   position: fixed;
   bottom: 40vh;
   right: 2vh;
@@ -200,13 +164,9 @@ body {
     to bottom,
     rgb(35, 35, 199),
     rgba(35, 35, 199, 0.5),
-    /* 52, 122, 217 */ rgba(52, 122, 217, 0.01)
+    rgba(52, 122, 217, 0.01)
   );
 }
-/*
-rgba(69, 174, 235, 0.01),
-    rgba(17, 17, 138, 0.397)
-*/
 
 .bg-gradient-card {
   background-image: linear-gradient(

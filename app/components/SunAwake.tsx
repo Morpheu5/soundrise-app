@@ -1,7 +1,7 @@
 'use client';
 import React from "react";
 
-const sunAwake = ({ svgColor, rad, yCoordinate, heightSpaceSun }) => {
+const SunAwake = ({ svgColor, rad, yCoordinate, heightSpaceSun }: SunProps) => {
   const shadowRadius = rad + (rad * 50) / 100;
 
   const eyesRadius = rad - Math.round(rad / 1.3);
@@ -24,11 +24,11 @@ const sunAwake = ({ svgColor, rad, yCoordinate, heightSpaceSun }) => {
 
   const cyMouth = ycoordinateEyes + longSideEyes * 2;
   {
-    /* larghezza bocca */
+    /* Mouth width */
   }
   const rxMouth = rad / 1.75;
   {
-    /* altezza bocca */
+    /* Mouth height */
   }
   const ryMouth = rad / 2.2;
 
@@ -63,7 +63,7 @@ const sunAwake = ({ svgColor, rad, yCoordinate, heightSpaceSun }) => {
           stroke="black"
           style={{ transform: "translate(50%, 50%)" }}
         />
-        {/* Bocca */}
+        {/* Mouth */}
         <ellipse
           cx={0}
           cy={cyMouth}
@@ -74,7 +74,7 @@ const sunAwake = ({ svgColor, rad, yCoordinate, heightSpaceSun }) => {
           style={{ transform: "translate(50%, 50%)" }}
         />
 
-        {/* rettangolo copri bocca */}
+        {/* Mouth-cover rectangle */}
         <rect
           x={xRect}
           y={yRectMouth}
@@ -146,4 +146,4 @@ const sunAwake = ({ svgColor, rad, yCoordinate, heightSpaceSun }) => {
   );
 };
 
-export default sunAwake;
+export default SunAwake;

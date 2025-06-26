@@ -1,4 +1,4 @@
-import { getVowelImpl, VowelResult } from "app/audio/audioManager";
+import { getVowelImpl, VowelResult } from "@/app/audio/audioManager";
 import {
   setRad,
   setPosPitch,
@@ -8,10 +8,9 @@ import {
   maxPitch,
   minRad,
   height,
-} from "app/audio/setDimsValue";
+} from "@/app/audio/setDimsValue";
 
 export default class Listener {
-  constructor() {}
   audioContext: Nullable<AudioContext>;
   analyser: Nullable<AnalyserNode>;
   mediaStreamSource: Nullable<MediaStreamAudioSourceNode>;
@@ -26,6 +25,82 @@ export default class Listener {
   noteStrings = [ "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B" ];
 
   previousBuffers: Array<number> = [];
+
+  constructor() {
+    if (typeof window === "undefined") {
+      return; //throw new Error("Listener can only be used in a browser environment.");
+    }
+    const AudioCtx = window.AudioContext || (window as any).webkitAudioContext;
+    this.audioContext = new AudioCtx({
+      latencyHint: "interactive", // Reduce latency for real-time interaction
+      
+      // Apparently specifying a sampling rate here and further down creates
+      // an issue on some systems/browsers where nodes of different rates
+      // can't be connected together -- it seems like omitting the param
+      // here isn't too much of an issue but further testing is required.
+      // TODO: Further testing -- AF
+      // sampleRate: 44100,
+    });
+
+    navigator.mediaDevices
+      .getUserMedia({
+        audio: {
+          // TODO: See comment above about sampling rates -- AF
+          // sampleRate: 44100,
+          echoCancellation: true,
+          noiseSuppression: true,
+          autoGainControl: true,
+        },
+      })
+      .then((stream) => {
+        if (!this.audioContext) { return }
+        
+        this.mediaStreamSource = this.audioContext.createMediaStreamSource(stream);
+
+        // Filtro passa-alto
+        const highpassFilter = this.audioContext.createBiquadFilter();
+        highpassFilter.type = "highpass";
+        highpassFilter.frequency.value = 200;
+
+        // Filtro passa-basso
+        const lowpassFilter = this.audioContext.createBiquadFilter();
+        lowpassFilter.type = "lowpass";
+        lowpassFilter.frequency.value = 3000;
+
+        // Filtro band-pass
+        const bandpassFilter = this.audioContext.createBiquadFilter();
+        bandpassFilter.type = "bandpass";
+        bandpassFilter.frequency.value = 1000;
+        bandpassFilter.Q.value = 0.7;
+
+        // Compressore dinamico
+        const compressor = this.audioContext.createDynamicsCompressor();
+        compressor.threshold.value = -50;
+        compressor.knee.value = 40;
+        compressor.ratio.value = 4;
+
+        // Gain
+        const gainNode = this.audioContext.createGain();
+        gainNode.gain.value = 1.5;
+
+        // Analizzatore con dimensione FFT ridotta
+        this.analyser = this.audioContext.createAnalyser();
+        this.analyser.fftSize = 1024; // FFT ridotta per maggiore velocità
+
+        // Collegamenti
+        this.mediaStreamSource.connect(highpassFilter);
+        highpassFilter.connect(lowpassFilter);
+        lowpassFilter.connect(bandpassFilter);
+        bandpassFilter.connect(compressor);
+        compressor.connect(gainNode);
+        gainNode.connect(this.analyser);
+
+        // this.startListening();
+      })
+      .catch((err) => {
+        console.error(`${err.name}: ${err.message}`);
+      });
+  }
 
   noteFromPitch = (frequency: number) => {
     let noteNum = 12 * (Math.log(frequency / 440) / Math.log(2));
@@ -112,7 +187,6 @@ export default class Listener {
   }
   // Define a buffer to store previous audio buffer data
   
-
   getStableVolume = (audioBuffer: Float32Array) => {
     const sumSquares = audioBuffer.reduce(
       (sum, amplitude) => sum + amplitude * amplitude,
@@ -157,77 +231,6 @@ export default class Listener {
   getValueVowels = (audioBuffer: Float32Array, sampleRate: number) => {
     return getVowelImpl(audioBuffer, sampleRate);
   }
-
-  initializeAudio = () => { // TODO Likely constructor
-    this.audioContext = new (window.AudioContext)({ // || window.webkitAudioContext)({
-      latencyHint: "interactive", // Riduci la latenza
-      // Apparently specifying a sampling rate here and further down creates
-      // an issue on some systems/browsers where nodes of different rates
-      // can't be connected together -- it seems like omitting the param
-      // here isn't too much of an issue but further testing is required.
-      // TODO: Further testing -- AF
-      // sampleRate: 44100,
-    });
-
-    navigator.mediaDevices
-      .getUserMedia({
-        audio: {
-          // TODO: See comment above about sampling rates -- AF
-          // sampleRate: 44100,
-          echoCancellation: true,
-          noiseSuppression: true,
-          autoGainControl: true,
-        },
-      })
-      .then((stream) => {
-        if (!this.audioContext) { return }
-        
-        this.mediaStreamSource = this.audioContext.createMediaStreamSource(stream);
-
-        // Filtro passa-alto
-        const highpassFilter = this.audioContext.createBiquadFilter();
-        highpassFilter.type = "highpass";
-        highpassFilter.frequency.value = 200;
-
-        // Filtro passa-basso
-        const lowpassFilter = this.audioContext.createBiquadFilter();
-        lowpassFilter.type = "lowpass";
-        lowpassFilter.frequency.value = 3000;
-
-        // Filtro band-pass
-        const bandpassFilter = this.audioContext.createBiquadFilter();
-        bandpassFilter.type = "bandpass";
-        bandpassFilter.frequency.value = 1000;
-        bandpassFilter.Q.value = 0.7;
-
-        // Compressore dinamico
-        const compressor = this.audioContext.createDynamicsCompressor();
-        compressor.threshold.value = -50;
-        compressor.knee.value = 40;
-        compressor.ratio.value = 4;
-
-        // Gain
-        const gainNode = this.audioContext.createGain();
-        gainNode.gain.value = 1.5;
-
-        // Analizzatore con dimensione FFT ridotta
-        this.analyser = this.audioContext.createAnalyser();
-        this.analyser.fftSize = 1024; // FFT ridotta per maggiore velocità
-
-        // Collegamenti
-        this.mediaStreamSource.connect(highpassFilter);
-        highpassFilter.connect(lowpassFilter);
-        lowpassFilter.connect(bandpassFilter);
-        bandpassFilter.connect(compressor);
-        compressor.connect(gainNode);
-        gainNode.connect(this.analyser);
-
-        this.startListening();
-      })
-      .catch((err) => {
-        console.error(`${err.name}: ${err.message}`);
-      });
-  };
 
   ArrayAvg = (myArray: number[]) => {
     let i = 0,

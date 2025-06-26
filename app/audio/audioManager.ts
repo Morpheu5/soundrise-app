@@ -2,25 +2,14 @@ let p = 15;
 let N = 256;
 let f0: number;
 let f1 = 22050;
-let form = [];
 
 // Formanti donna per I, é, È, A, O, ó, U
 // I valori a margine (primo e ultimo) sono inesistenti: servono solo per agevolare il calcolo dei range nell'algoritmo
 let form1 = [120, 200, 337, 522, 773, 542, 342, 308, 150];
 let form2 = [2900, 3200, 2512, 2400, 1392, 1195, 920, 762, 580];
 
-let vocali = ["I", "É", "È", "A", "Ò", "Ó", "U"];
+let vowels = ["I", "É", "È", "A", "Ò", "Ó", "U"];
 let signal: Float32Array;
-
-interface Complex {
-  real: number;
-  imag: number;
-}
-
-interface Formant {
-  freq: number;
-  band: number;
-}
 
 function getVowelImpl(s: Float32Array, sampleRate: number): VowelResult[] {
   signal = s;
@@ -73,7 +62,6 @@ function efficientUs(i: number) {
     let index = Math.floor(i * ratio);
     
     for (let j = 0; j < ratio; j++) {
-      // usx[i] += parseFloat(signal[index + j]) * ham(N, i);
       usx[i] += signal[index + j] * ham(N, i);
     }
     usx[i] /= ratio;
@@ -207,7 +195,7 @@ function getProbabilities(valid: Formant[]): VowelResult[] {
       score += Math.exp(-diffF2 / 400); // Penalizzazione esponenziale per F2
     }
     
-    probabilities.push({ vowel: vocali[i - 1], score });
+    probabilities.push({ vowel: vowels[i - 1], score });
   }
   
   // Normalizza i punteggi in percentuali
@@ -221,16 +209,12 @@ function getProbabilities(valid: Formant[]): VowelResult[] {
 
 function compare(valid: Formant[]) {
   if (valid.length === 0) {
-    return vocali.map((v) => ({ vowel: v, score: 0, percentage: "0.0" })); // Nessuna probabilità
+    return vowels.map((v) => ({ vowel: v, score: 0, percentage: "0.0" })); // Nessuna probabilità
   }
   
   const probabilities = getProbabilities(valid);
   return probabilities;
 }
-
-// module.exports = {
-//   getVowelImpl,
-// };
 
 interface VowelResult {
   vowel: string;
