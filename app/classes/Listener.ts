@@ -26,6 +26,15 @@ export default class Listener {
 
   previousBuffers: Array<number> = [];
 
+  private static instance: Nullable<Listener> = null;
+
+  static getInstance(): Listener {
+    if (Listener.instance === null) {
+      Listener.instance = new Listener();
+    }
+    return Listener.instance!;
+  }
+
   constructor() {
     if (typeof window === "undefined") {
       return; //throw new Error("Listener can only be used in a browser environment.");

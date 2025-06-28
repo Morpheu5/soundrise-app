@@ -23,7 +23,7 @@ export default function Play() {
   const [_vowel, setVowel] = useState("--");
   const [valueVowels, setValueVowels] = useState(null)
 
-  const [listener, setListener] = useState<Nullable<Listener>>(undefined);
+  const [listener, setListener] = useState<Listener>(Listener.getInstance());
 
   const handleSetSvgColor: EventListener = (e: Event) => setSvgColor((e as CustomEvent).detail);
   const handleSetPitch: EventListener = (e: Event) => setPitch((e as CustomEvent).detail);
@@ -36,32 +36,22 @@ export default function Play() {
   const handleSetYCoord: EventListener = (e: Event) => setYCoord((e as CustomEvent).detail);
 
   useEffect(() => {
-    // OK, I don't like this approach but otherwise I can't see how to add the event listeners.
-    // I don't even fully understand why or how this works, but it does.
-    // FIXME There's a very good chance that this is creating memory leaks.
-    // The actual problem is that the application keeps the microphone open all the time.
-    setListener(new Listener());
-
     // Add event listeners
     // See this for reference https://github.com/microsoft/TypeScript/issues/28357#issue-377642397
-    addEventListener("setSvgColor", handleSetSvgColor);
-    addEventListener("setPitch", handleSetPitch);
-    addEventListener("setVolume", handleSetVolume);
-    addEventListener("setNote", handleSetNote);
-    addEventListener("setVowel", handleSetVowel);
-    addEventListener("setValueVowels", handleSetValueVowels);
-    addEventListener("setSunListen", handleSetSunListen);
-    addEventListener("setRad", handleSetRad);
-    addEventListener("setYCoord", handleSetYCoord);
 
-    if (listener && isListening) {
+    if (isListening) {
+      addEventListener("setSvgColor", handleSetSvgColor);
+      addEventListener("setPitch", handleSetPitch);
+      addEventListener("setVolume", handleSetVolume);
+      addEventListener("setNote", handleSetNote);
+      addEventListener("setVowel", handleSetVowel);
+      addEventListener("setValueVowels", handleSetValueVowels);
+      addEventListener("setSunListen", handleSetSunListen);
+      addEventListener("setRad", handleSetRad);
+      addEventListener("setYCoord", handleSetYCoord);
       listener.startListening();
-    }
-
-    return () => {
-      if (!listener) return;
+    } else {
       listener.stopListening();
-      setListener(undefined)
       removeEventListener("setSvgColor", handleSetSvgColor)
       removeEventListener("setPitch", handleSetPitch);
       removeEventListener("setVolume", handleSetVolume);
@@ -71,7 +61,7 @@ export default function Play() {
       removeEventListener("setSunListen", handleSetSunListen);
       removeEventListener("setRad", handleSetRad);
       removeEventListener("setYCoord", handleSetYCoord);
-    };
+    }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isListening]);
 
