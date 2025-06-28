@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useCallback } from "react";
 import { ClientOnly } from "@bkwld/next-client-only";
 import Header from "@/app/components/Header";
 import SunSleep from "@/app/components/SunSleep";
@@ -25,15 +25,15 @@ export default function Play() {
 
   const [listener, setListener] = useState<Listener>(Listener.getInstance());
 
-  const handleSetSvgColor: EventListener = (e: Event) => setSvgColor((e as CustomEvent).detail);
-  const handleSetPitch: EventListener = (e: Event) => setPitch((e as CustomEvent).detail);
-  const handleSetVolume: EventListener = (e: Event) => setVolume((e as CustomEvent).detail);
-  const handleSetNote: EventListener = (e: Event) => setNote((e as CustomEvent).detail);
-  const handleSetVowel: EventListener = (e: Event) => setVowel((e as CustomEvent).detail);
-  const handleSetValueVowels: EventListener = (e: Event) => setValueVowels((e as CustomEvent).detail);
-  const handleSetSunListen: EventListener = (e: Event) => setSunListen((e as CustomEvent).detail);
-  const handleSetRad: EventListener = (e: Event) => setRad((e as CustomEvent).detail);
-  const handleSetYCoord: EventListener = (e: Event) => setYCoord((e as CustomEvent).detail);
+  const handleSetSvgColor: EventListener = useCallback((e: Event) => setSvgColor((e as CustomEvent).detail), []);
+  const handleSetPitch: EventListener = useCallback((e: Event) => setPitch((e as CustomEvent).detail), []);
+  const handleSetVolume: EventListener = useCallback((e: Event) => setVolume((e as CustomEvent).detail), []);
+  const handleSetNote: EventListener = useCallback((e: Event) => setNote((e as CustomEvent).detail), []);
+  const handleSetVowel: EventListener = useCallback((e: Event) => setVowel((e as CustomEvent).detail), []);
+  const handleSetValueVowels: EventListener = useCallback((e: Event) => setValueVowels((e as CustomEvent).detail), []);
+  const handleSetSunListen: EventListener = useCallback((e: Event) => setSunListen((e as CustomEvent).detail), []);
+  const handleSetRad: EventListener = useCallback((e: Event) => setRad((e as CustomEvent).detail), []);
+  const handleSetYCoord: EventListener = useCallback((e: Event) => setYCoord((e as CustomEvent).detail), []);
 
   const [startButtonDisabled, setStartButtonDisabled] = useState(false);
   const [stopButtonDisabled, setStopButtonDisabled] = useState(true);
@@ -58,10 +58,7 @@ export default function Play() {
   };
 
   const handleStopListening = () => {
-    setIsListening(false);
-    setStartButtonDisabled(false);
-    setStopButtonDisabled(true);
-
+    listener.stopListening();
     removeEventListener("setSvgColor", handleSetSvgColor)
     removeEventListener("setPitch", handleSetPitch);
     removeEventListener("setVolume", handleSetVolume);
@@ -71,8 +68,10 @@ export default function Play() {
     removeEventListener("setSunListen", handleSetSunListen);
     removeEventListener("setRad", handleSetRad);
     removeEventListener("setYCoord", handleSetYCoord);
-    listener.stopListening();
 
+    setIsListening(false);
+    setStartButtonDisabled(false);
+    setStopButtonDisabled(true);
   };
 
   return (
