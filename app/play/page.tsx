@@ -35,36 +35,6 @@ export default function Play() {
   const handleSetRad: EventListener = (e: Event) => setRad((e as CustomEvent).detail);
   const handleSetYCoord: EventListener = (e: Event) => setYCoord((e as CustomEvent).detail);
 
-  useEffect(() => {
-    // Add event listeners
-    // See this for reference https://github.com/microsoft/TypeScript/issues/28357#issue-377642397
-
-    if (isListening) {
-      addEventListener("setSvgColor", handleSetSvgColor);
-      addEventListener("setPitch", handleSetPitch);
-      addEventListener("setVolume", handleSetVolume);
-      addEventListener("setNote", handleSetNote);
-      addEventListener("setVowel", handleSetVowel);
-      addEventListener("setValueVowels", handleSetValueVowels);
-      addEventListener("setSunListen", handleSetSunListen);
-      addEventListener("setRad", handleSetRad);
-      addEventListener("setYCoord", handleSetYCoord);
-      listener.startListening();
-    } else {
-      listener.stopListening();
-      removeEventListener("setSvgColor", handleSetSvgColor)
-      removeEventListener("setPitch", handleSetPitch);
-      removeEventListener("setVolume", handleSetVolume);
-      removeEventListener("setNote", handleSetNote);
-      removeEventListener("setVowel", handleSetVowel);
-      removeEventListener("setValueVowels", handleSetValueVowels);
-      removeEventListener("setSunListen", handleSetSunListen);
-      removeEventListener("setRad", handleSetRad);
-      removeEventListener("setYCoord", handleSetYCoord);
-    }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isListening]);
-
   const [startButtonDisabled, setStartButtonDisabled] = useState(false);
   const [stopButtonDisabled, setStopButtonDisabled] = useState(true);
 
@@ -72,12 +42,37 @@ export default function Play() {
     setIsListening(true);
     setStartButtonDisabled(true);
     setStopButtonDisabled(false);
+    
+    // Add event listeners
+    // See this for reference https://github.com/microsoft/TypeScript/issues/28357#issue-377642397
+    addEventListener("setSvgColor", handleSetSvgColor);
+    addEventListener("setPitch", handleSetPitch);
+    addEventListener("setVolume", handleSetVolume);
+    addEventListener("setNote", handleSetNote);
+    addEventListener("setVowel", handleSetVowel);
+    addEventListener("setValueVowels", handleSetValueVowels);
+    addEventListener("setSunListen", handleSetSunListen);
+    addEventListener("setRad", handleSetRad);
+    addEventListener("setYCoord", handleSetYCoord);
+    listener.startListening();
   };
 
   const handleStopListening = () => {
     setIsListening(false);
     setStartButtonDisabled(false);
     setStopButtonDisabled(true);
+
+    removeEventListener("setSvgColor", handleSetSvgColor)
+    removeEventListener("setPitch", handleSetPitch);
+    removeEventListener("setVolume", handleSetVolume);
+    removeEventListener("setNote", handleSetNote);
+    removeEventListener("setVowel", handleSetVowel);
+    removeEventListener("setValueVowels", handleSetValueVowels);
+    removeEventListener("setSunListen", handleSetSunListen);
+    removeEventListener("setRad", handleSetRad);
+    removeEventListener("setYCoord", handleSetYCoord);
+    listener.stopListening();
+
   };
 
   return (
