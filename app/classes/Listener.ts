@@ -292,6 +292,8 @@ export default class Listener {
 
   startListening = () => {
     if (!this.analyser || !this.audioContext) { return }
+    
+    this.audioContext.resume();
 
     this.analyser.getFloatTimeDomainData(this.buf);
 
@@ -438,6 +440,7 @@ export default class Listener {
   };
 
   stopListening = () => {
+    debugger;
     this.buffer_pitch = [];
     this.buffer_vol = [];
     this.buffer_vocal = [];
@@ -450,18 +453,9 @@ export default class Listener {
       if (this.rafID) {
         window.cancelAnimationFrame(this.rafID);
       }
-      this.mediaStreamSource?.disconnect(); // Disconnect the mediaStreamSource
       this.audioContext
-        .close()
+        .suspend() // Use suspend() here because we don't want to recreate the audio context every time
         .then(() => {
-          this.audioContext = null;
-          this.analyser = null;
-          this.mediaStreamSource = null;
-          /* console.log(
-            "Microphone stopped.\nlen: " +
-              buffer_pitch.filter((x, i) => buffer_pitch.indexOf(x) === i)
-                .length
-          );*/
           dispatchEvent(new CustomEvent("setPitch", { detail: "--" }));
           dispatchEvent(new CustomEvent("setVolume", { detail: "--" }));
           dispatchEvent(new CustomEvent("setNote", { detail: "--" }));
