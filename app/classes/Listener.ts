@@ -12,7 +12,7 @@ import {
 
 export default class Listener {
   audioContext: Nullable<AudioContext>;
-  analyser: Nullable<AnalyserNode>;
+  analyzer: Nullable<AnalyserNode>;
   mediaStreamSource: Nullable<MediaStreamAudioSourceNode>;
   rafID: Nullable<number>;
   buflen = 2048;
@@ -69,23 +69,25 @@ export default class Listener {
         
         this.mediaStreamSource = this.audioContext.createMediaStreamSource(stream);
 
-        // Filtro passa-alto
+        // High-pass filter
         const highpassFilter = this.audioContext.createBiquadFilter();
         highpassFilter.type = "highpass";
         highpassFilter.frequency.value = 200;
+        highpassFilter.Q.value = -3; // Q values are a bit of a mystery
 
-        // Filtro passa-basso
+        // Low-pass filter
         const lowpassFilter = this.audioContext.createBiquadFilter();
         lowpassFilter.type = "lowpass";
         lowpassFilter.frequency.value = 3000;
+        lowpassFilter.Q.value = -3;
 
-        // Filtro band-pass
+        // Band-pass filter
         const bandpassFilter = this.audioContext.createBiquadFilter();
         bandpassFilter.type = "bandpass";
         bandpassFilter.frequency.value = 1000;
         bandpassFilter.Q.value = 0.7;
 
-        // Compressore dinamico
+        // Dynamic compressor
         const compressor = this.audioContext.createDynamicsCompressor();
         compressor.threshold.value = -50;
         compressor.knee.value = 40;
@@ -95,17 +97,17 @@ export default class Listener {
         const gainNode = this.audioContext.createGain();
         gainNode.gain.value = 1.5;
 
-        // Analizzatore con dimensione FFT ridotta
-        this.analyser = this.audioContext.createAnalyser();
-        this.analyser.fftSize = 1024; // FFT ridotta per maggiore velocità
-
-        // Collegamenti
+        // FFT analyzer
+        this.analyzer = this.audioContext.createAnalyser();
+        this.analyzer.fftSize = 1024; // Make the FFT small for performance
+debugger;
+        // Plug everything up
         this.mediaStreamSource.connect(highpassFilter);
         highpassFilter.connect(lowpassFilter);
         lowpassFilter.connect(bandpassFilter);
         bandpassFilter.connect(compressor);
         compressor.connect(gainNode);
-        gainNode.connect(this.analyser);
+        gainNode.connect(this.analyzer);
 
         this._listen();
       })
@@ -118,8 +120,8 @@ export default class Listener {
     if (this.rafID) {
       window.cancelAnimationFrame(this.rafID);
     }
-    this.analyser?.disconnect();
-    this.analyser = null;
+    this.analyzer?.disconnect();
+    this.analyzer = null;
     const tracks = this.mediaStreamSource?.mediaStream.getAudioTracks()
     if (tracks) {
       for (const track of tracks) {
@@ -311,9 +313,9 @@ export default class Listener {
   };
 
   private _listen = () => {
-    if (!this.analyser || !this.audioContext) { return }
+    if (!this.analyzer || !this.audioContext) { return }
     
-    this.analyser.getFloatTimeDomainData(this.buf);
+    this.analyzer.getFloatTimeDomainData(this.buf);
 
     const frequency = this.setFrequency(this.buf, this.audioContext.sampleRate);
     const volume = this.getStableVolume(this.buf);
