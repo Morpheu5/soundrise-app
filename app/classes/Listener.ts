@@ -37,12 +37,15 @@ export default class Listener {
 
   constructor() {
     if (typeof window === "undefined") {
-      return; //throw new Error("Listener can only be used in a browser environment.");
+      return; // don't throw new Error("Listener can only be used in a browser environment.") or things go wrong
     }
+  }
+
+  startListening = () => {
     const AudioCtx = window.AudioContext || (window as any).webkitAudioContext;
+    this.audioContext = null;
     this.audioContext = new AudioCtx({
       latencyHint: "interactive", // Reduce latency for real-time interaction
-      
       // Apparently specifying a sampling rate here and further down creates
       // an issue on some systems/browsers where nodes of different rates
       // can't be connected together -- it seems like omitting the param
@@ -104,11 +107,28 @@ export default class Listener {
         compressor.connect(gainNode);
         gainNode.connect(this.analyser);
 
-        // this.startListening();
+        this._listen();
       })
       .catch((err) => {
         console.error(`${err.name}: ${err.message}`);
       });
+  }
+
+  destroyAudioPipeline = () => {
+    if (this.rafID) {
+      window.cancelAnimationFrame(this.rafID);
+    }
+    this.analyser?.disconnect();
+    this.analyser = null;
+    const tracks = this.mediaStreamSource?.mediaStream.getAudioTracks()
+    if (tracks) {
+      for (const track of tracks) {
+        track.stop();
+      }
+    }
+    this.mediaStreamSource?.disconnect();
+    this.mediaStreamSource = null;
+    return this.audioContext?.close();
   }
 
   noteFromPitch = (frequency: number) => {
@@ -290,11 +310,9 @@ export default class Listener {
     }
   };
 
-  startListening = () => {
+  private _listen = () => {
     if (!this.analyser || !this.audioContext) { return }
     
-    this.audioContext.resume();
-
     this.analyser.getFloatTimeDomainData(this.buf);
 
     const frequency = this.setFrequency(this.buf, this.audioContext.sampleRate);
@@ -436,11 +454,10 @@ export default class Listener {
 
     // if (!window.requestAnimationFrame)
     //   window.requestAnimationFrame = window.webkitRequestAnimationFrame;
-    this.rafID = window.requestAnimationFrame(this.startListening);
+    this.rafID = window.requestAnimationFrame(this._listen);
   };
 
   stopListening = () => {
-    debugger;
     this.buffer_pitch = [];
     this.buffer_vol = [];
     this.buffer_vocal = [];
@@ -449,22 +466,18 @@ export default class Listener {
     dispatchEvent(new CustomEvent("setRad", { detail: minRad }));
     dispatchEvent(new CustomEvent("setSvgColor", { detail: "yellow" }));
     dispatchEvent(new CustomEvent("setYCoord", { detail: (height - Math.round((height * 30) / 100)) / 2 }));
-    if (this.audioContext) {
-      if (this.rafID) {
-        window.cancelAnimationFrame(this.rafID);
+    
+    this.destroyAudioPipeline()?.then(() => {
+      this.audioContext = null;
+        dispatchEvent(new CustomEvent("setPitch", { detail: "--" }));
+        dispatchEvent(new CustomEvent("setVolume", { detail: "--" }));
+        dispatchEvent(new CustomEvent("setNote", { detail: "--" }));
+        dispatchEvent(new CustomEvent("setVowel", { detail: "--" }));
+        dispatchEvent(new CustomEvent("setValueVowels", { detail: "I: 0%\nÉ: 0%\nÈ: 0%\nA: 0%\nÒ: 0%\nÓ: 0%\nU: 0%" }));
+      })
+      .catch((err) => {
+        console.error("Error closing the microphone: ", err);
       }
-      this.audioContext
-        .suspend() // Use suspend() here because we don't want to recreate the audio context every time
-        .then(() => {
-          dispatchEvent(new CustomEvent("setPitch", { detail: "--" }));
-          dispatchEvent(new CustomEvent("setVolume", { detail: "--" }));
-          dispatchEvent(new CustomEvent("setNote", { detail: "--" }));
-          dispatchEvent(new CustomEvent("setVowel", { detail: "--" }));
-          dispatchEvent(new CustomEvent("setValueVowels", { detail: "I: 0%\nÉ: 0%\nÈ: 0%\nA: 0%\nÒ: 0%\nÓ: 0%\nU: 0%" }));
-        })
-        .catch((err) => {
-          console.error("Error stopping microphone:", err);
-        });
-    }
+    );
   };
 }
