@@ -6,6 +6,8 @@ import SunSleep from "@/app/components/SunSleep";
 import SunAwake from "@/app/components/SunAwake";
 import { minRad, height } from "@/app/audio/setDimsValue";
 import Listener from "@/app/classes/Listener";
+import { Nullable, PlayParams } from "@/types/types";
+import { VowelResult } from "../audio/audioManager";
 
 export default function Play() {
   const [svgColor, setSvgColor] = useState("yellow");
@@ -21,7 +23,7 @@ export default function Play() {
   const [volume, setVolume] = useState("--");
   const [note, setNote] = useState("--");
   const [_vowel, setVowel] = useState("--");
-  const [valueVowels, setValueVowels] = useState(null)
+  const [valueVowels, setValueVowels] = useState<Nullable<VowelResult[]>>(null)
 
   const [listener, setListener] = useState<Listener>(Listener.getInstance());
 
@@ -34,6 +36,19 @@ export default function Play() {
   const handleSetSunListen: EventListener = useCallback((e: Event) => setSunListen((e as CustomEvent).detail), []);
   const handleSetRad: EventListener = useCallback((e: Event) => setRad((e as CustomEvent).detail), []);
   const handleSetYCoord: EventListener = useCallback((e: Event) => setYCoord((e as CustomEvent).detail), []);
+
+  const handleSetPlayParams: EventListener = useCallback((e: Event) => {
+    const data: PlayParams = (e as CustomEvent).detail;
+    setSvgColor(data.svgColor);
+    setPitch(data.pitch);
+    setVolume(data.volume);
+    setNote(data.note);
+    setVowel(data.vowel);
+    setValueVowels(data.valueVowels); // TODO Rename this
+    setSunListen(data.sunListen);
+    setRad(data.rad);
+    setYCoord(data.yCoord);
+  }, [])
 
   const [startButtonDisabled, setStartButtonDisabled] = useState(false);
   const [stopButtonDisabled, setStopButtonDisabled] = useState(true);
@@ -54,6 +69,8 @@ export default function Play() {
     addEventListener("setSunListen", handleSetSunListen);
     addEventListener("setRad", handleSetRad);
     addEventListener("setYCoord", handleSetYCoord);
+
+    addEventListener("setPlayParams", handleSetPlayParams);
     listener.startListening();
   };
 
@@ -68,6 +85,8 @@ export default function Play() {
     removeEventListener("setSunListen", handleSetSunListen);
     removeEventListener("setRad", handleSetRad);
     removeEventListener("setYCoord", handleSetYCoord);
+    
+    removeEventListener("setPlayParams", handleSetPlayParams);
 
     setIsListening(false);
     setStartButtonDisabled(false);

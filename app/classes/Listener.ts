@@ -9,6 +9,8 @@ import {
   minRad,
   height,
 } from "@/app/audio/setDimsValue";
+import { Nullable, PlayParams } from "@/types/types";
+import { validateHeaderName } from "http";
 
 export default class Listener {
   audioContext: Nullable<AudioContext>;
@@ -26,6 +28,8 @@ export default class Listener {
 
   previousBuffers: Array<number> = [];
 
+  playParams: PlayParams;
+
   private static instance: Nullable<Listener> = null;
 
   static getInstance(): Listener {
@@ -39,6 +43,18 @@ export default class Listener {
     if (typeof window === "undefined") {
       return; // don't throw new Error("Listener can only be used in a browser environment.") or things go wrong
     }
+
+    this.playParams = {
+      pitch: "...",
+      volume: "...",
+      note: "...",
+      vowel: "...",
+      valueVowels: "I: 0%\nÉ: 0%\nÈ: 0%\nA: 0%\nÒ: 0%\nÓ: 0%\nU: 0%",
+      sunListen: false,
+      rad: minRad,
+      yCoord: (height - Math.round((height * 30) / 100)) / 2,
+      svgColor: "yellow",
+    };
   }
 
   startListening = () => {
@@ -342,6 +358,8 @@ export default class Listener {
           Math.round((height * 30) / 100)) /
           2
       ) }));
+      dispatchEvent(new CustomEvent("setPlayParams", { detail: this.playParams }));
+
       this.count_sil++;
       if (this.count_sil >= 50) {
         console.log("silence");
