@@ -100,7 +100,7 @@ export default class Listener {
         // FFT analyzer
         this.analyzer = this.audioContext.createAnalyser();
         this.analyzer.fftSize = 1024; // Make the FFT small for performance
-debugger;
+
         // Plug everything up
         this.mediaStreamSource.connect(highpassFilter);
         highpassFilter.connect(lowpassFilter);
