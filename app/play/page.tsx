@@ -25,7 +25,7 @@ export default function Play() {
   const [_vowel, setVowel] = useState("--");
   const [valueVowels, setValueVowels] = useState<Nullable<string>>(null)
 
-  const [listener, setListener] = useState<Listener>(Listener.getInstance());
+  const [listener, _setListener] = useState<Listener>(Listener.getInstance());
 
   const handleSetSvgColor: EventListener = useCallback((e: Event) => setSvgColor((e as CustomEvent).detail), []);
   const handleSetPitch: EventListener = useCallback((e: Event) => setPitch((e as CustomEvent).detail), []);
@@ -134,7 +134,7 @@ export default function Play() {
           </p>
           <p style={{ whiteSpace: "pre-line" }}>
           {valueVowels 
-            ? valueVowels // Mostra i valori calcolati
+            ? valueVowels
             : "I: 0%\nÉ: 0%\nÈ: 0%\nA: 0%\nÒ: 0%\nÓ: 0%\nU: 0%"
           }
           </p>
@@ -142,26 +142,16 @@ export default function Play() {
 
         <div className="fixed inset-x-0 bg-base-100 bottom-0">
         <footer className="w-full flex justify-center text-white p-3 bg-black z-10">
-            <div className="grid  grid-cols-2 btn-group">
+            <div className="grid  grid-cols-1 btn-group">
               <button
-                className={`btn w-32 ${
-                  startButtonDisabled ? "btn-disabled" : "btn-active"
-                }`}
-                onClick={handleStartListening}
-                disabled={startButtonDisabled}
+                className={`btn w-32`}
+                onClick={isListening ? handleStopListening : handleStartListening}
               >
-                <span className="triangle-icon text-current"></span>
-                Start
-              </button>
-              <button
-                className={`btn w-32 ${
-                  stopButtonDisabled ? "btn-disabled" : "btn-active"
-                }`}
-                onClick={handleStopListening}
-                disabled={stopButtonDisabled}
-              >
-                <span className="square-icon text-current"></span>
-                Stop
+                { isListening ?
+                  <span className="square-icon text-current">Stop</span>
+                  :
+                  <span className="triangle-icon text-current">Start</span>
+                }
               </button>
             </div>
           </footer>
