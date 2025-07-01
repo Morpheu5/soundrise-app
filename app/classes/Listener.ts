@@ -313,7 +313,7 @@ export default class Listener {
 
   // TODO Possibly unnecessary after this refactoring
   selectColor = (vowel: string) => {
-    this.playParams.svgColor = this.vowelColorMap[vowel] || "purple";
+    this.playParams.svgColor = this.vowelColorMap[vowel] || this.playParams.svgColor;
   };
 
   private _listen = () => {
