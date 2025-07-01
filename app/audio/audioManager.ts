@@ -1,3 +1,5 @@
+import { Complex, Formant } from "@/types/types";
+
 const p = 15;
 const N = 256;
 let f0: number;

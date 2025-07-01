@@ -23,7 +23,7 @@ export default function Play() {
   const [volume, setVolume] = useState("--");
   const [note, setNote] = useState("--");
   const [_vowel, setVowel] = useState("--");
-  const [valueVowels, setValueVowels] = useState<Nullable<VowelResult[]>>(null)
+  const [valueVowels, setValueVowels] = useState<Nullable<string>>(null)
 
   const [listener, setListener] = useState<Listener>(Listener.getInstance());
 

@@ -25,10 +25,19 @@ export default class Listener {
   buffer_percentage: Array<VowelResult> = [];
   count_sil = 0;
   noteStrings = [ "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B" ];
+  vowelColorMap: Record<string, string> = {
+    "I": "blue",
+    "É": "#4CC94C",
+    "È": "#4CC94C",
+    "A": "red",
+    "Ó": "orange",
+    "Ò": "orange",
+    "U": "#C0C0C0",
+  }
 
   previousBuffers: Array<number> = [];
 
-  playParams: PlayParams;
+  playParams!: PlayParams;
 
   private static instance: Nullable<Listener> = null;
 
@@ -279,23 +288,15 @@ export default class Listener {
     return getVowelImpl(audioBuffer, sampleRate);
   }
 
-  ArrayAvg = (myArray: number[]) => {
-    let i = 0,
-      summ = 0,
-      ArrayLen = myArray.length;
-    while (i < ArrayLen) {
-      summ = summ + myArray[i++];
-    }
-    return summ / ArrayLen;
-  }
+  arrayAvg = (array: number[]) => array.reduce((a, b) => a + b) / array.length;
 
-  findMostRepeatedItem = (array: any[]) => {
+  findMostRepeatedItem = (array: string[]) => {
     let count: Record<string, any> = {};
-    let mostRepeatedItem;
+    let mostRepeatedItem = "";
     let maxCount = 0;
 
     for (const item of array) {
-      if (count[item] === undefined) {
+      if (count.hasOwnProperty(item)) { // This is better than checking count[item] === undefined -- don't ask me, ask Javascript...
         count[item] = 1;
       } else {
         count[item]++;
@@ -310,22 +311,9 @@ export default class Listener {
     return mostRepeatedItem;
   }
 
+  // TODO Possibly unnecessary after this refactoring
   selectColor = (vowel: string) => {
-    if (vowel === "I") {
-      dispatchEvent(new CustomEvent("setSvgColor", { detail: "blue" }));
-    } else if (vowel === "É") {
-      dispatchEvent(new CustomEvent("setSvgColor", { detail: "#4CC94C" }));
-    } else if (vowel === "È") {
-      dispatchEvent(new CustomEvent("setSvgColor", { detail: "#4CC94C" }));
-    } else if (vowel === "A") {
-      dispatchEvent(new CustomEvent("setSvgColor", { detail: "red" }));
-    } else if (vowel === "Ò") {
-      dispatchEvent(new CustomEvent("setSvgColor", { detail: "orange" }));
-    } else if (vowel === "Ó") {
-      dispatchEvent(new CustomEvent("setSvgColor", { detail: "orange" }));
-    } else if (vowel === "U") {
-      dispatchEvent(new CustomEvent("setSvgColor", { detail: "#C0C0C0" }));
-    }
+    this.playParams.svgColor = this.vowelColorMap[vowel] || "purple";
   };
 
   private _listen = () => {
@@ -345,19 +333,18 @@ export default class Listener {
         frequency > maxPitch) &&
       (volume < minVol || volume > maxVol)
     ) {
-      dispatchEvent(new CustomEvent("setPitch", { detail: "..." }));
-      dispatchEvent(new CustomEvent("setVolume", { detail: "..." }));
-      dispatchEvent(new CustomEvent("setNote", { detail: "..." }));
-      dispatchEvent(new CustomEvent("setVowel", { detail: "..." })); 
-      dispatchEvent(new CustomEvent("setValueVowels", { detail: "I: 0%\nÉ: 0%\nÈ: 0%\nA: 0%\nÒ: 0%\nÓ: 0%\nU: 0%" }));
-      dispatchEvent(new CustomEvent("setSunListen", { detail: false }));
-      dispatchEvent(new CustomEvent("setRad", { detail: minRad }));
-      dispatchEvent(new CustomEvent("setSvgColor", { detail: "yellow" }));
-      dispatchEvent(new CustomEvent("setYCoord", { detail: (
-        (height -
-          Math.round((height * 30) / 100)) /
-          2
-      ) }));
+      this.playParams = {
+        pitch: "...",
+        volume: "...",
+        note: "...",
+        vowel: "...",
+        valueVowels: "I: 0%\nÉ: 0%\nÈ: 0%\nA: 0%\nÒ: 0%\nÓ: 0%\nU: 0%",
+        sunListen: false,
+        rad: minRad,
+        yCoord: (height - Math.round((height * 30) / 100)) / 2,
+        svgColor: "yellow",
+      };
+
       dispatchEvent(new CustomEvent("setPlayParams", { detail: this.playParams }));
 
       this.count_sil++;
@@ -404,7 +391,7 @@ export default class Listener {
             this.buffer_percentage.shift();
           }
           else{
-            // Aggiungi il valore medio dei percentage al buffer_percentage
+            // Add the average value of the percentages to buffer_percentage
             this.buffer_percentage.push(valueVowels as any);
           }
         } else {
@@ -419,81 +406,87 @@ export default class Listener {
           if (this.buffer_percentage.length > MAX_BUF) {
             this.buffer_percentage.shift();
           } else{
-            // Aggiungi il valore medio dei percentage al buffer_percentage
+            // Add the average value of the percentages to buffer_percentage
             this.buffer_percentage.push(valueVowels as any);
           }
         }
 
-        dispatchEvent(new CustomEvent("setSunListen", { detail: true }));
 
-        const pitchValue = Math.round(this.ArrayAvg(this.buffer_pitch));
+        this.playParams.sunListen = true;
+
+        const pitchValue = Math.round(this.arrayAvg(this.buffer_pitch));
         const yCoordValue = setPosPitch(pitchValue);
         const hz = pitchValue + "Hz";
-        dispatchEvent(new CustomEvent("setPitch", { detail: hz }));
-        dispatchEvent(new CustomEvent("setYCoord", { detail: yCoordValue }));
 
-        const volValue = Math.round(this.ArrayAvg(this.buffer_vol));
-        dispatchEvent(new CustomEvent("setVolume", { detail: volValue }));
+
+        this.playParams.pitch = hz;
+        this.playParams.yCoord = yCoordValue;
+
+        const volValue = Math.round(this.arrayAvg(this.buffer_vol));
+        this.playParams.volume = `${volValue}`;
         const radValue = setRad(volValue);
-        dispatchEvent(new CustomEvent("setRad", { detail: radValue }));
+        this.playParams.rad = radValue;
 
         const n = this.noteFromPitch(pitchValue);
-        dispatchEvent(new CustomEvent("setNote", { detail: this.noteStrings[n % 12] }));
+        this.playParams.note = this.noteStrings[n % 12];
 
         const vocalValue = this.findMostRepeatedItem(this.buffer_vocal);
         this.selectColor(vocalValue);
-        dispatchEvent(new CustomEvent("setVowel", { detail: vocalValue }));
 
-        dispatchEvent(new CustomEvent("setValueVowels", { detail: () => {
-          const vowelSums: Record<string, number> = {}; // Per sommare le percentuali di ciascuna vocale
-          const vowelCounts: Record<string, number> = {}; // Per contare le occorrenze di ciascuna vocale
-        
-          // Itera su ogni elemento nel buffer
-          this.buffer_percentage.forEach((valueVowels: any) => {
-            valueVowels.forEach((item: any) => {
-              const { vowel, percentage } = item;
-              if (!vowelSums[vowel]) {
-                vowelSums[vowel] = 0;
-                vowelCounts[vowel] = 0;
-              }
-              vowelSums[vowel] += parseFloat(percentage);
-              vowelCounts[vowel] += 1;
-            });
-          });
-        
-          // Calcola le medie
-          const averagedVowels = Object.keys(vowelSums).map((vowel) => {
-            const avgPercentage = vowelSums[vowel] / vowelCounts[vowel];
-            return `${vowel}: ${avgPercentage.toFixed(0)}%`; // Mostra con due decimali
-          });
-        
-          return averagedVowels.join("\n"); // Concatena ogni vocale con la sua media
-        } }));
+        this.playParams.vowel = vocalValue;
+        this.playParams.valueVowels = this.makeVowelValuesString()
       }
     }
 
-    // if (!window.requestAnimationFrame)
-    //   window.requestAnimationFrame = window.webkitRequestAnimationFrame;
     this.rafID = window.requestAnimationFrame(this._listen);
+
+    dispatchEvent(new CustomEvent("setPlayParams", { detail: this.playParams }));
   };
+
+  makeVowelValuesString = () => {
+    const vowelSums: Record<string, number> = {}; // To sum up the percentages of each vowel
+    const vowelCounts: Record<string, number> = {}; // To count the occurrences of each vowel
+  
+    this.buffer_percentage.forEach((valueVowels: any) => {
+      valueVowels.forEach((item: any) => {
+        const { vowel, percentage } = item;
+        if (!vowelSums[vowel]) {
+          vowelSums[vowel] = 0;
+          vowelCounts[vowel] = 0;
+        }
+        vowelSums[vowel] += parseFloat(percentage);
+        vowelCounts[vowel] += 1;
+      });
+    });
+  
+    const averagedVowels = Object.keys(vowelSums).map((vowel) => {
+      const avgPercentage = vowelSums[vowel] / vowelCounts[vowel];
+      return `${vowel}: ${avgPercentage.toFixed(0)}%`;
+    });
+  
+    return averagedVowels.join("\n");
+  }
 
   stopListening = () => {
     this.buffer_pitch = [];
     this.buffer_vol = [];
     this.buffer_vocal = [];
     this.count_sil = 0;
-    dispatchEvent(new CustomEvent("setSunListen", { detail: false }));
-    dispatchEvent(new CustomEvent("setRad", { detail: minRad }));
-    dispatchEvent(new CustomEvent("setSvgColor", { detail: "yellow" }));
-    dispatchEvent(new CustomEvent("setYCoord", { detail: (height - Math.round((height * 30) / 100)) / 2 }));
+
+    this.playParams.sunListen = false;
+    this.playParams.rad = minRad;
+    this.playParams.svgColor = "yellow";
+    this.playParams.yCoord = (height - Math.round((height * 30) / 100)) / 2
+    this.playParams.pitch = "--";
+    this.playParams.volume = "--";
+    this.playParams.note = "--";
+    this.playParams.vowel = "--"
+    this.playParams.valueVowels = "I: 0%\nÉ: 0%\nÈ: 0%\nA: 0%\nÒ: 0%\nÓ: 0%\nU: 0%";
+
+    dispatchEvent(new CustomEvent("setPlayParams", { detail: this.playParams }));
     
     this.destroyAudioPipeline()?.then(() => {
       this.audioContext = null;
-        dispatchEvent(new CustomEvent("setPitch", { detail: "--" }));
-        dispatchEvent(new CustomEvent("setVolume", { detail: "--" }));
-        dispatchEvent(new CustomEvent("setNote", { detail: "--" }));
-        dispatchEvent(new CustomEvent("setVowel", { detail: "--" }));
-        dispatchEvent(new CustomEvent("setValueVowels", { detail: "I: 0%\nÉ: 0%\nÈ: 0%\nA: 0%\nÒ: 0%\nÓ: 0%\nU: 0%" }));
       })
       .catch((err) => {
         console.error("Error closing the microphone: ", err);
