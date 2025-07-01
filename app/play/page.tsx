@@ -50,47 +50,20 @@ export default function Play() {
     setYCoord(data.yCoord);
   }, [])
 
-  const [startButtonDisabled, setStartButtonDisabled] = useState(false);
-  const [stopButtonDisabled, setStopButtonDisabled] = useState(true);
-
   const handleStartListening = () => {
     setIsListening(true);
-    setStartButtonDisabled(true);
-    setStopButtonDisabled(false);
     
     // Add event listeners
     // See this for reference https://github.com/microsoft/TypeScript/issues/28357#issue-377642397
-    addEventListener("setSvgColor", handleSetSvgColor);
-    addEventListener("setPitch", handleSetPitch);
-    addEventListener("setVolume", handleSetVolume);
-    addEventListener("setNote", handleSetNote);
-    addEventListener("setVowel", handleSetVowel);
-    addEventListener("setValueVowels", handleSetValueVowels);
-    addEventListener("setSunListen", handleSetSunListen);
-    addEventListener("setRad", handleSetRad);
-    addEventListener("setYCoord", handleSetYCoord);
-
     addEventListener("setPlayParams", handleSetPlayParams);
     listener.startListening();
   };
 
   const handleStopListening = () => {
     listener.stopListening();
-    removeEventListener("setSvgColor", handleSetSvgColor)
-    removeEventListener("setPitch", handleSetPitch);
-    removeEventListener("setVolume", handleSetVolume);
-    removeEventListener("setNote", handleSetNote);
-    removeEventListener("setVowel", handleSetVowel);
-    removeEventListener("setValueVowels", handleSetValueVowels);
-    removeEventListener("setSunListen", handleSetSunListen);
-    removeEventListener("setRad", handleSetRad);
-    removeEventListener("setYCoord", handleSetYCoord);
-    
     removeEventListener("setPlayParams", handleSetPlayParams);
 
     setIsListening(false);
-    setStartButtonDisabled(false);
-    setStopButtonDisabled(true);
   };
 
   return (
