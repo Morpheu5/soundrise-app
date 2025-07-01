@@ -7,7 +7,6 @@ import SunAwake from "@/app/components/SunAwake";
 import { minRad, height } from "@/app/audio/setDimsValue";
 import Listener from "@/app/classes/Listener";
 import { Nullable, PlayParams } from "@/types/types";
-import { VowelResult } from "../audio/audioManager";
 
 export default function Play() {
   const [svgColor, setSvgColor] = useState("yellow");
@@ -26,16 +25,6 @@ export default function Play() {
   const [valueVowels, setValueVowels] = useState<Nullable<string>>(null)
 
   const [listener, _setListener] = useState<Listener>(Listener.getInstance());
-
-  const handleSetSvgColor: EventListener = useCallback((e: Event) => setSvgColor((e as CustomEvent).detail), []);
-  const handleSetPitch: EventListener = useCallback((e: Event) => setPitch((e as CustomEvent).detail), []);
-  const handleSetVolume: EventListener = useCallback((e: Event) => setVolume((e as CustomEvent).detail), []);
-  const handleSetNote: EventListener = useCallback((e: Event) => setNote((e as CustomEvent).detail), []);
-  const handleSetVowel: EventListener = useCallback((e: Event) => setVowel((e as CustomEvent).detail), []);
-  const handleSetValueVowels: EventListener = useCallback((e: Event) => setValueVowels((e as CustomEvent).detail), []);
-  const handleSetSunListen: EventListener = useCallback((e: Event) => setSunListen((e as CustomEvent).detail), []);
-  const handleSetRad: EventListener = useCallback((e: Event) => setRad((e as CustomEvent).detail), []);
-  const handleSetYCoord: EventListener = useCallback((e: Event) => setYCoord((e as CustomEvent).detail), []);
 
   const handleSetPlayParams: EventListener = useCallback((e: Event) => {
     const data: PlayParams = (e as CustomEvent).detail;
