@@ -18,13 +18,13 @@ export default function Tests() {
 
     useEffect(() => {
         if (!isDefined(listener) || !isDefined(audioContext)) return
+
         listener.audioContext = audioContext
         fetch('/test_assets/87778__marcgascon7__vocals.wav')
         .then(response => {
             return response.arrayBuffer()
         })
         .then(buffer => {
-            // if (!isDefined(audioContext)) return false
             audioContext.decodeAudioData(buffer, decoded => {
                 audioFiles.push(decoded)
             })
@@ -35,7 +35,7 @@ export default function Tests() {
 
     function doTheThing() {
         if (!isDefined(listener) || !isDefined(audioContext)) return
-        debugger
+
         const audioBufferSourceNode = audioContext.createBufferSource()
         audioBufferSourceNode.buffer = audioFiles[0]
         audioBufferSourceNode.loop = false
