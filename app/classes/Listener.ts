@@ -1,4 +1,4 @@
-import { getVowelImpl, VowelResult } from "app/audio/audioManager";
+import { getVowelImpl, VowelResult } from "@/app/audio/audioManager";
 import {
   setRad,
   setPosPitch,
@@ -8,12 +8,13 @@ import {
   maxPitch,
   minRad,
   height,
-} from "app/audio/setDimsValue";
+} from "@/app/audio/setDimsValue";
+import { Nullable, PlayParams } from "@/types/types";
+import { validateHeaderName } from "http";
 
 export default class Listener {
-  constructor() {}
   audioContext: Nullable<AudioContext>;
-  analyser: Nullable<AnalyserNode>;
+  analyzer: Nullable<AnalyserNode>;
   mediaStreamSource: Nullable<MediaStreamAudioSourceNode>;
   rafID: Nullable<number>;
   buflen = 2048;
@@ -24,8 +25,138 @@ export default class Listener {
   buffer_percentage: Array<VowelResult> = [];
   count_sil = 0;
   noteStrings = [ "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B" ];
+  vowelColorMap: Record<string, string> = {
+    "I": "blue",
+    "É": "#4CC94C",
+    "È": "#4CC94C",
+    "A": "red",
+    "Ó": "orange",
+    "Ò": "orange",
+    "U": "#C0C0C0",
+  }
 
   previousBuffers: Array<number> = [];
+
+  playParams!: PlayParams;
+
+  private static instance: Nullable<Listener> = null;
+
+  static getInstance(): Listener {
+    if (Listener.instance === null) {
+      Listener.instance = new Listener();
+    }
+    return Listener.instance!;
+  }
+
+  constructor() {
+    if (typeof window === "undefined") {
+      return; // don't throw new Error("Listener can only be used in a browser environment.") or things go wrong
+    }
+
+    this.playParams = {
+      pitch: "...",
+      volume: "...",
+      note: "...",
+      vowel: "...",
+      valueVowels: "I: 0%\nÉ: 0%\nÈ: 0%\nA: 0%\nÒ: 0%\nÓ: 0%\nU: 0%",
+      sunListen: false,
+      rad: minRad,
+      yCoord: (height - Math.round((height * 30) / 100)) / 2,
+      svgColor: "yellow",
+    };
+  }
+
+  startListening = () => {
+    const AudioCtx = window.AudioContext || (window as any).webkitAudioContext;
+    this.audioContext = null;
+    this.audioContext = new AudioCtx({
+      latencyHint: "interactive", // Reduce latency for real-time interaction
+      // Apparently specifying a sampling rate here and further down creates
+      // an issue on some systems/browsers where nodes of different rates
+      // can't be connected together -- it seems like omitting the param
+      // here isn't too much of an issue but further testing is required.
+      // TODO: Further testing -- AF
+      // sampleRate: 44100,
+    });
+
+    navigator.mediaDevices
+      .getUserMedia({
+        audio: {
+          // TODO: See comment above about sampling rates -- AF
+          // sampleRate: 44100,
+          echoCancellation: true,
+          noiseSuppression: true,
+          autoGainControl: true,
+        },
+      })
+      .then((stream) => {
+        if (!this.audioContext) { return }
+        
+        this.mediaStreamSource = this.audioContext.createMediaStreamSource(stream);
+
+        // High-pass filter
+        const highpassFilter = this.audioContext.createBiquadFilter();
+        highpassFilter.type = "highpass";
+        highpassFilter.frequency.value = 200;
+        highpassFilter.Q.value = -3; // Q values are a bit of a mystery
+
+        // Low-pass filter
+        const lowpassFilter = this.audioContext.createBiquadFilter();
+        lowpassFilter.type = "lowpass";
+        lowpassFilter.frequency.value = 3000;
+        lowpassFilter.Q.value = -3;
+
+        // Band-pass filter
+        const bandpassFilter = this.audioContext.createBiquadFilter();
+        bandpassFilter.type = "bandpass";
+        bandpassFilter.frequency.value = 1000;
+        bandpassFilter.Q.value = 0.7;
+
+        // Dynamic compressor
+        const compressor = this.audioContext.createDynamicsCompressor();
+        compressor.threshold.value = -50;
+        compressor.knee.value = 40;
+        compressor.ratio.value = 4;
+
+        // Gain
+        const gainNode = this.audioContext.createGain();
+        gainNode.gain.value = 1.5;
+
+        // FFT analyzer
+        this.analyzer = this.audioContext.createAnalyser();
+        this.analyzer.fftSize = 1024; // Make the FFT small for performance
+
+        // Plug everything up
+        this.mediaStreamSource.connect(highpassFilter);
+        highpassFilter.connect(lowpassFilter);
+        lowpassFilter.connect(bandpassFilter);
+        bandpassFilter.connect(compressor);
+        compressor.connect(gainNode);
+        gainNode.connect(this.analyzer);
+
+        this._listen();
+      })
+      .catch((err) => {
+        console.error(`${err.name}: ${err.message}`);
+      });
+  }
+
+  destroyAudioPipeline = () => {
+    if (this.rafID) {
+      window.cancelAnimationFrame(this.rafID);
+    }
+    this.analyzer?.disconnect();
+    this.analyzer = null;
+    const tracks = this.mediaStreamSource?.mediaStream.getAudioTracks()
+    if (tracks) {
+      for (const track of tracks) {
+        track.stop();
+      }
+    }
+    this.mediaStreamSource?.disconnect();
+    this.mediaStreamSource = null;
+    return this.audioContext?.close();
+  }
 
   noteFromPitch = (frequency: number) => {
     let noteNum = 12 * (Math.log(frequency / 440) / Math.log(2));
@@ -112,7 +243,6 @@ export default class Listener {
   }
   // Define a buffer to store previous audio buffer data
   
-
   getStableVolume = (audioBuffer: Float32Array) => {
     const sumSquares = audioBuffer.reduce(
       (sum, amplitude) => sum + amplitude * amplitude,
@@ -158,94 +288,15 @@ export default class Listener {
     return getVowelImpl(audioBuffer, sampleRate);
   }
 
-  initializeAudio = () => { // TODO Likely constructor
-    this.audioContext = new (window.AudioContext)({ // || window.webkitAudioContext)({
-      latencyHint: "interactive", // Riduci la latenza
-      // Apparently specifying a sampling rate here and further down creates
-      // an issue on some systems/browsers where nodes of different rates
-      // can't be connected together -- it seems like omitting the param
-      // here isn't too much of an issue but further testing is required.
-      // TODO: Further testing -- AF
-      // sampleRate: 44100,
-    });
+  arrayAvg = (array: number[]) => array.reduce((a, b) => a + b) / array.length;
 
-    navigator.mediaDevices
-      .getUserMedia({
-        audio: {
-          // TODO: See comment above about sampling rates -- AF
-          // sampleRate: 44100,
-          echoCancellation: true,
-          noiseSuppression: true,
-          autoGainControl: true,
-        },
-      })
-      .then((stream) => {
-        if (!this.audioContext) { return }
-        
-        this.mediaStreamSource = this.audioContext.createMediaStreamSource(stream);
-
-        // Filtro passa-alto
-        const highpassFilter = this.audioContext.createBiquadFilter();
-        highpassFilter.type = "highpass";
-        highpassFilter.frequency.value = 200;
-
-        // Filtro passa-basso
-        const lowpassFilter = this.audioContext.createBiquadFilter();
-        lowpassFilter.type = "lowpass";
-        lowpassFilter.frequency.value = 3000;
-
-        // Filtro band-pass
-        const bandpassFilter = this.audioContext.createBiquadFilter();
-        bandpassFilter.type = "bandpass";
-        bandpassFilter.frequency.value = 1000;
-        bandpassFilter.Q.value = 0.7;
-
-        // Compressore dinamico
-        const compressor = this.audioContext.createDynamicsCompressor();
-        compressor.threshold.value = -50;
-        compressor.knee.value = 40;
-        compressor.ratio.value = 4;
-
-        // Gain
-        const gainNode = this.audioContext.createGain();
-        gainNode.gain.value = 1.5;
-
-        // Analizzatore con dimensione FFT ridotta
-        this.analyser = this.audioContext.createAnalyser();
-        this.analyser.fftSize = 1024; // FFT ridotta per maggiore velocità
-
-        // Collegamenti
-        this.mediaStreamSource.connect(highpassFilter);
-        highpassFilter.connect(lowpassFilter);
-        lowpassFilter.connect(bandpassFilter);
-        bandpassFilter.connect(compressor);
-        compressor.connect(gainNode);
-        gainNode.connect(this.analyser);
-
-        this.startListening();
-      })
-      .catch((err) => {
-        console.error(`${err.name}: ${err.message}`);
-      });
-  };
-
-  ArrayAvg = (myArray: number[]) => {
-    let i = 0,
-      summ = 0,
-      ArrayLen = myArray.length;
-    while (i < ArrayLen) {
-      summ = summ + myArray[i++];
-    }
-    return summ / ArrayLen;
-  }
-
-  findMostRepeatedItem = (array: any[]) => {
+  findMostRepeatedItem = (array: string[]) => {
     let count: Record<string, any> = {};
-    let mostRepeatedItem;
+    let mostRepeatedItem = "";
     let maxCount = 0;
 
     for (const item of array) {
-      if (count[item] === undefined) {
+      if (count.hasOwnProperty(item)) { // This is better than checking count[item] === undefined -- don't ask me, ask Javascript...
         count[item] = 1;
       } else {
         count[item]++;
@@ -260,28 +311,15 @@ export default class Listener {
     return mostRepeatedItem;
   }
 
+  // TODO Possibly unnecessary after this refactoring
   selectColor = (vowel: string) => {
-    if (vowel === "I") {
-      dispatchEvent(new CustomEvent("setSvgColor", { detail: "blue" }));
-    } else if (vowel === "É") {
-      dispatchEvent(new CustomEvent("setSvgColor", { detail: "#4CC94C" }));
-    } else if (vowel === "È") {
-      dispatchEvent(new CustomEvent("setSvgColor", { detail: "#4CC94C" }));
-    } else if (vowel === "A") {
-      dispatchEvent(new CustomEvent("setSvgColor", { detail: "red" }));
-    } else if (vowel === "Ò") {
-      dispatchEvent(new CustomEvent("setSvgColor", { detail: "orange" }));
-    } else if (vowel === "Ó") {
-      dispatchEvent(new CustomEvent("setSvgColor", { detail: "orange" }));
-    } else if (vowel === "U") {
-      dispatchEvent(new CustomEvent("setSvgColor", { detail: "#C0C0C0" }));
-    }
+    this.playParams.svgColor = this.vowelColorMap[vowel] || this.playParams.svgColor;
   };
 
-  startListening = () => {
-    if (!this.analyser || !this.audioContext) { return }
-
-    this.analyser.getFloatTimeDomainData(this.buf);
+  private _listen = () => {
+    if (!this.analyzer || !this.audioContext) { return }
+    
+    this.analyzer.getFloatTimeDomainData(this.buf);
 
     const frequency = this.setFrequency(this.buf, this.audioContext.sampleRate);
     const volume = this.getStableVolume(this.buf);
@@ -295,19 +333,20 @@ export default class Listener {
         frequency > maxPitch) &&
       (volume < minVol || volume > maxVol)
     ) {
-      dispatchEvent(new CustomEvent("setPitch", { detail: "..." }));
-      dispatchEvent(new CustomEvent("setVolume", { detail: "..." }));
-      dispatchEvent(new CustomEvent("setNote", { detail: "..." }));
-      dispatchEvent(new CustomEvent("setVowel", { detail: "..." })); 
-      dispatchEvent(new CustomEvent("setValueVowels", { detail: "I: 0%\nÉ: 0%\nÈ: 0%\nA: 0%\nÒ: 0%\nÓ: 0%\nU: 0%" }));
-      dispatchEvent(new CustomEvent("setSunListen", { detail: false }));
-      dispatchEvent(new CustomEvent("setRad", { detail: minRad }));
-      dispatchEvent(new CustomEvent("setSvgColor", { detail: "yellow" }));
-      dispatchEvent(new CustomEvent("setYCoord", { detail: (
-        (height -
-          Math.round((height * 30) / 100)) /
-          2
-      ) }));
+      this.playParams = {
+        pitch: "...",
+        volume: "...",
+        note: "...",
+        vowel: "...",
+        valueVowels: "I: 0%\nÉ: 0%\nÈ: 0%\nA: 0%\nÒ: 0%\nÓ: 0%\nU: 0%",
+        sunListen: false,
+        rad: minRad,
+        yCoord: (height - Math.round((height * 30) / 100)) / 2,
+        svgColor: "yellow",
+      };
+
+      dispatchEvent(new CustomEvent("setPlayParams", { detail: this.playParams }));
+
       this.count_sil++;
       if (this.count_sil >= 50) {
         console.log("silence");
@@ -352,7 +391,7 @@ export default class Listener {
             this.buffer_percentage.shift();
           }
           else{
-            // Aggiungi il valore medio dei percentage al buffer_percentage
+            // Add the average value of the percentages to buffer_percentage
             this.buffer_percentage.push(valueVowels as any);
           }
         } else {
@@ -367,98 +406,91 @@ export default class Listener {
           if (this.buffer_percentage.length > MAX_BUF) {
             this.buffer_percentage.shift();
           } else{
-            // Aggiungi il valore medio dei percentage al buffer_percentage
+            // Add the average value of the percentages to buffer_percentage
             this.buffer_percentage.push(valueVowels as any);
           }
         }
 
-        dispatchEvent(new CustomEvent("setSunListen", { detail: true }));
 
-        const pitchValue = Math.round(this.ArrayAvg(this.buffer_pitch));
+        this.playParams.sunListen = true;
+
+        const pitchValue = Math.round(this.arrayAvg(this.buffer_pitch));
         const yCoordValue = setPosPitch(pitchValue);
         const hz = pitchValue + "Hz";
-        dispatchEvent(new CustomEvent("setPitch", { detail: hz }));
-        dispatchEvent(new CustomEvent("setYCoord", { detail: yCoordValue }));
 
-        const volValue = Math.round(this.ArrayAvg(this.buffer_vol));
-        dispatchEvent(new CustomEvent("setVolume", { detail: volValue }));
+
+        this.playParams.pitch = hz;
+        this.playParams.yCoord = yCoordValue;
+
+        const volValue = Math.round(this.arrayAvg(this.buffer_vol));
+        this.playParams.volume = `${volValue}`;
         const radValue = setRad(volValue);
-        dispatchEvent(new CustomEvent("setRad", { detail: radValue }));
+        this.playParams.rad = radValue;
 
         const n = this.noteFromPitch(pitchValue);
-        dispatchEvent(new CustomEvent("setNote", { detail: this.noteStrings[n % 12] }));
+        this.playParams.note = this.noteStrings[n % 12];
 
         const vocalValue = this.findMostRepeatedItem(this.buffer_vocal);
         this.selectColor(vocalValue);
-        dispatchEvent(new CustomEvent("setVowel", { detail: vocalValue }));
 
-        dispatchEvent(new CustomEvent("setValueVowels", { detail: () => {
-          const vowelSums: Record<string, number> = {}; // Per sommare le percentuali di ciascuna vocale
-          const vowelCounts: Record<string, number> = {}; // Per contare le occorrenze di ciascuna vocale
-        
-          // Itera su ogni elemento nel buffer
-          this.buffer_percentage.forEach((valueVowels: any) => {
-            valueVowels.forEach((item: any) => {
-              const { vowel, percentage } = item;
-              if (!vowelSums[vowel]) {
-                vowelSums[vowel] = 0;
-                vowelCounts[vowel] = 0;
-              }
-              vowelSums[vowel] += parseFloat(percentage);
-              vowelCounts[vowel] += 1;
-            });
-          });
-        
-          // Calcola le medie
-          const averagedVowels = Object.keys(vowelSums).map((vowel) => {
-            const avgPercentage = vowelSums[vowel] / vowelCounts[vowel];
-            return `${vowel}: ${avgPercentage.toFixed(0)}%`; // Mostra con due decimali
-          });
-        
-          return averagedVowels.join("\n"); // Concatena ogni vocale con la sua media
-        } }));
+        this.playParams.vowel = vocalValue;
+        this.playParams.valueVowels = this.makeVowelValuesString()
       }
     }
 
-    // if (!window.requestAnimationFrame)
-    //   window.requestAnimationFrame = window.webkitRequestAnimationFrame;
-    this.rafID = window.requestAnimationFrame(this.startListening);
+    this.rafID = window.requestAnimationFrame(this._listen);
+
+    dispatchEvent(new CustomEvent("setPlayParams", { detail: this.playParams }));
   };
+
+  makeVowelValuesString = () => {
+    const vowelSums: Record<string, number> = {}; // To sum up the percentages of each vowel
+    const vowelCounts: Record<string, number> = {}; // To count the occurrences of each vowel
+  
+    this.buffer_percentage.forEach((valueVowels: any) => {
+      valueVowels.forEach((item: any) => {
+        const { vowel, percentage } = item;
+        if (!vowelSums[vowel]) {
+          vowelSums[vowel] = 0;
+          vowelCounts[vowel] = 0;
+        }
+        vowelSums[vowel] += parseFloat(percentage);
+        vowelCounts[vowel] += 1;
+      });
+    });
+  
+    const averagedVowels = Object.keys(vowelSums).map((vowel) => {
+      const avgPercentage = vowelSums[vowel] / vowelCounts[vowel];
+      return `${vowel}: ${avgPercentage.toFixed(0)}%`;
+    });
+  
+    return averagedVowels.join("\n");
+  }
 
   stopListening = () => {
     this.buffer_pitch = [];
     this.buffer_vol = [];
     this.buffer_vocal = [];
     this.count_sil = 0;
-    dispatchEvent(new CustomEvent("setSunListen", { detail: false }));
-    dispatchEvent(new CustomEvent("setRad", { detail: minRad }));
-    dispatchEvent(new CustomEvent("setSvgColor", { detail: "yellow" }));
-    dispatchEvent(new CustomEvent("setYCoord", { detail: (height - Math.round((height * 30) / 100)) / 2 }));
-    if (this.audioContext) {
-      if (this.rafID) {
-        window.cancelAnimationFrame(this.rafID);
+
+    this.playParams.sunListen = false;
+    this.playParams.rad = minRad;
+    this.playParams.svgColor = "yellow";
+    this.playParams.yCoord = (height - Math.round((height * 30) / 100)) / 2
+    this.playParams.pitch = "--";
+    this.playParams.volume = "--";
+    this.playParams.note = "--";
+    this.playParams.vowel = "--"
+    this.playParams.valueVowels = "I: 0%\nÉ: 0%\nÈ: 0%\nA: 0%\nÒ: 0%\nÓ: 0%\nU: 0%";
+
+    dispatchEvent(new CustomEvent("setPlayParams", { detail: this.playParams }));
+    
+    this.destroyAudioPipeline()?.then(() => {
+      this.audioContext = null;
+      })
+      .catch((err) => {
+        console.error("Error closing the microphone: ", err);
       }
-      this.mediaStreamSource?.disconnect(); // Disconnect the mediaStreamSource
-      this.audioContext
-        .close()
-        .then(() => {
-          this.audioContext = null;
-          this.analyser = null;
-          this.mediaStreamSource = null;
-          /* console.log(
-            "Microphone stopped.\nlen: " +
-              buffer_pitch.filter((x, i) => buffer_pitch.indexOf(x) === i)
-                .length
-          );*/
-          dispatchEvent(new CustomEvent("setPitch", { detail: "--" }));
-          dispatchEvent(new CustomEvent("setVolume", { detail: "--" }));
-          dispatchEvent(new CustomEvent("setNote", { detail: "--" }));
-          dispatchEvent(new CustomEvent("setVowel", { detail: "--" }));
-          dispatchEvent(new CustomEvent("setValueVowels", { detail: "I: 0%\nÉ: 0%\nÈ: 0%\nA: 0%\nÒ: 0%\nÓ: 0%\nU: 0%" }));
-        })
-        .catch((err) => {
-          console.error("Error stopping microphone:", err);
-        });
-    }
+    );
   };
 }

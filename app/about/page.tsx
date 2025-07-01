@@ -1,7 +1,7 @@
 "use client";
-import Header from "../components/Header";
-import SunSleep from "../components/sunSleep";
-import SunAwake from "../components/sunAwake";
+import Header from "@/app/components/Header";
+import SunSleep from "@/app/components/SunSleep";
+import SunAwake from "@/app/components/SunAwake";
 
 export default function About() {
   return (
