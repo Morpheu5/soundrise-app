@@ -7,13 +7,16 @@ import { ClientOnly } from "@bkwld/next-client-only";
 import { useEffect, useState } from "react";
 
 export default function Tests() {
-    let [audioContext, setAudioContext] = useState<Nullable<AudioContext>>()
-    const [listener, setListener] = useState<Nullable<Listener>>()
+    let [audioContext, setAudioContext] = useState<AudioContext>()
+    const [listener, setListener] = useState<Listener>()
     const [audioFiles, setAudioFiles] = useState<AudioBuffer[]>([])
     
     useEffect(() => {
         setAudioContext(new AudioContext())
         setListener(new Listener())
+    }, [])
+
+    useEffect(() => {
         if (!isDefined(listener) || !isDefined(audioContext)) return
         listener.audioContext = audioContext
         fetch('/test_assets/87778__marcgascon7__vocals.wav')
@@ -27,16 +30,16 @@ export default function Tests() {
             })
             doTheThing()
         })
-    }, [])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [listener, audioContext])
 
     function doTheThing() {
-        const audioBufferSourceNode = audioContext!.createBufferSource()
-        if (!isDefined(audioBufferSourceNode)) return;
-        if (!isDefined(listener)) return;
-
+        if (!isDefined(listener) || !isDefined(audioContext)) return
+        debugger
+        const audioBufferSourceNode = audioContext.createBufferSource()
         audioBufferSourceNode.buffer = audioFiles[0]
         audioBufferSourceNode.loop = false
-        audioBufferSourceNode.connect(audioContext!.destination)
+        audioBufferSourceNode.connect(audioContext.destination)
         listener.mediaStreamSource = audioBufferSourceNode
         console.log(listener)
         listener.startListening()
