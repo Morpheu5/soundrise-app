@@ -2,7 +2,6 @@
 
 import Listener from "@/app/classes/Listener";
 import { isDefined } from "@/app/miscTools";
-import { Nullable } from "@/types/types";
 import { ClientOnly } from "@bkwld/next-client-only";
 import { useEffect, useState } from "react";
 
@@ -17,7 +16,7 @@ export default function Tests() {
     }, [])
 
     useEffect(() => {
-        if (!isDefined(listener) || !isDefined(audioContext)) return
+        if (!isDefined(listener) || !isDefined<AudioContext>(audioContext)) return
 
         listener.audioContext = audioContext
         fetch('/test_assets/87778__marcgascon7__vocals.wav')
@@ -25,7 +24,7 @@ export default function Tests() {
             return response.arrayBuffer()
         })
         .then(buffer => {
-            audioContext.decodeAudioData(buffer, decoded => {
+            audioContext?.decodeAudioData(buffer, decoded => {
                 audioFiles.push(decoded)
             })
             doTheThing()

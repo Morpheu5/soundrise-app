@@ -9,7 +9,7 @@ import {
   minRad,
   height,
 } from "@/app/audio/setDimsValue";
-import { Nullable, PlayParams } from "@/types/types";
+import { Nullable, PlayParams } from "@/app/soundrise-types";
 import { isDefined } from "../miscTools";
 
 export default class Listener {
