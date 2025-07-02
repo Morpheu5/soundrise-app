@@ -12,13 +12,14 @@ export default function Tests() {
     type TestItem = {
         filename: string,
         vowel: string,
+        gender: "male" | "female" | "other",
+        ageGroup: "child" | "adult" | "unknown",
         isPlaying?: Nullable<boolean>,
         audioBufferSourceNode?: Nullable<AudioBufferSourceNode>,
     }
 
     let [audioContext, setAudioContext] = useState<AudioContext>()
     const [listener, setListener] = useState<Listener>()
-    const [audioFiles, setAudioFiles] = useState<AudioBuffer[]>([])
     const [testItems, setTestItems] = useState<TestItem[]>()
     
     useEffect(() => {
@@ -28,18 +29,6 @@ export default function Tests() {
         const ti = test_files.map(f => f as TestItem)
         setTestItems(ti)
     }, [])
-
-    function doTheThing() {
-        if (!isDefined(listener) || !isDefined(audioContext)) return
-
-        const audioBufferSourceNode = audioContext.createBufferSource()
-        audioBufferSourceNode.buffer = audioFiles[0]
-        audioBufferSourceNode.loop = false
-        audioBufferSourceNode.connect(audioContext.destination)
-        listener.mediaStreamSource = audioBufferSourceNode
-        listener.startListening()
-        audioBufferSourceNode.start()
-    }
 
     function playTestItem(i: number) {
         if (!isDefined(listener) || !isDefined(audioContext) || !isDefined(testItems)) return
@@ -64,7 +53,6 @@ export default function Tests() {
 
                 ti[i].isPlaying = true
                 setTestItems(ti)
-
             })
         })
 

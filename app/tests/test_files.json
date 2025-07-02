@@ -1,14 +1,10052 @@
 [
-    {
-        "filename": "87778__marcgascon7__vocals.wav",
-        "vowel": "many"
-    },
-    {
-        "filename": "523055__cbelloso__vocales-vowels-man-woman-kid-girl.wav",
-        "vowel": "many"
-    },
-    {
-        "filename": "523079__team_saul_nosthas__vowels-of-various-people.wav",
-        "vowel": "many"
-    }    
+	{
+		"filename": "f_a (1).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (10).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (11).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (12).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (13).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (14).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (15).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (16).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (17).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (18).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (19).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (2).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (20).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (21).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (22).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (23).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (24).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (25).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (26).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (27).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (28).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (29).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (3).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (30).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (31).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (32).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (33).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (34).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (35).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (36).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (37).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (38).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (39).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (4).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (40).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (41).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (42).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (43).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (44).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (45).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (46).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (47).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (48).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (49).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (5).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (50).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (51).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (52).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (53).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (54).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (55).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (56).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (57).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (58).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (59).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (6).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (60).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (61).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (62).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (63).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (64).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (65).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (66).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (67).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (68).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (69).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (7).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (70).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (71).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (72).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (73).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (74).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (75).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (76).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (77).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (78).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (79).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (8).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (80).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (81).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (82).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (83).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (84).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (85).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (86).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (87).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (88).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (89).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (9).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (90).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (91).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (92).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (93).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (94).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (95).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (96).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (97).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_a (98).wav",
+		"vowel": "a",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (1).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (10).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (11).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (12).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (13).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (14).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (15).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (16).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (17).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (18).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (19).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (2).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (20).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (21).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (22).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (23).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (24).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (25).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (26).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (27).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (28).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (29).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (3).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (30).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (31).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (32).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (33).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (34).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (35).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (36).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (37).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (38).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (39).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (4).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (40).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (41).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (42).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (43).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (44).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (45).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (46).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (47).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (48).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (49).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (5).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (50).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (51).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (52).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (53).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (54).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (55).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (56).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (57).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (58).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (59).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (6).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (60).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (61).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (62).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (63).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (64).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (65).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (66).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (67).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (68).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (69).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (7).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (70).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (71).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (72).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (73).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (74).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (75).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (76).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (77).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (78).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (79).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (8).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (80).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (81).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (82).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (83).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (84).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (85).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (86).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (87).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (88).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (89).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (9).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (90).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_e (91).wav",
+		"vowel": "e",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (1).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (10).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (11).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (12).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (13).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (14).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (15).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (16).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (17).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (18).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (19).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (2).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (20).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (21).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (22).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (23).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (24).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (25).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (26).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (27).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (28).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (29).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (3).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (30).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (31).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (32).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (33).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (34).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (35).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (36).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (37).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (38).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (39).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (4).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (40).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (41).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (42).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (43).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (44).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (45).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (46).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (47).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (48).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (49).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (5).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (50).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (51).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (52).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (53).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (54).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (55).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (56).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (57).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (58).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (59).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (6).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (60).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (61).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (62).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (63).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (64).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (65).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (66).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (67).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (68).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (69).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (7).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (70).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (71).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (72).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (73).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (74).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (75).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (76).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (77).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (78).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (79).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (8).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (80).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (81).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (82).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (83).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (84).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (85).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (86).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (87).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (88).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (89).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (9).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (90).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (91).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (92).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (93).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (94).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (95).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (96).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_i (97).wav",
+		"vowel": "i",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (1).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (10).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (11).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (12).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (13).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (14).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (15).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (16).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (17).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (18).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (19).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (2).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (20).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (21).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (22).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (23).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (24).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (25).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (26).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (27).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (28).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (29).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (3).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (30).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (31).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (32).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (33).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (34).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (35).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (36).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (37).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (38).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (39).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (4).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (40).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (41).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (42).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (43).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (44).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (45).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (46).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (47).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (48).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (49).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (5).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (50).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (51).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (52).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (53).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (54).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (55).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (56).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (57).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (58).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (59).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (6).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (60).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (61).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (62).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (63).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (64).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (65).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (66).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (67).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (68).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (69).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (7).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (70).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (71).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (72).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (73).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (74).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (75).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (76).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (77).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (78).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (79).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (8).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (80).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (81).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (82).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (83).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (84).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (85).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (86).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (87).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (88).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (89).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (9).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (90).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (91).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (92).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (93).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (94).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (95).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (96).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (97).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_o (98).wav",
+		"vowel": "o",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (1).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (10).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (11).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (12).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (13).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (14).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (15).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (16).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (17).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (18).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (19).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (2).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (20).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (21).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (22).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (23).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (24).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (25).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (26).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (27).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (28).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (29).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (3).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (30).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (31).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (32).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (33).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (34).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (35).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (36).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (37).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (38).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (39).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (4).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (40).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (41).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (42).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (43).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (44).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (45).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (46).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (47).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (48).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (49).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (5).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (50).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (51).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (52).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (53).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (54).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (55).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (56).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (57).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (58).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (59).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (6).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (60).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (61).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (62).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (63).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (64).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (65).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (66).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (67).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (68).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (69).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (7).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (70).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (71).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (72).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (73).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (74).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (75).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (76).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (77).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (78).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (79).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (8).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (80).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (81).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (82).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (83).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (84).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (85).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (86).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (87).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (88).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (89).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (9).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (90).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (91).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (92).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "f_u (93).wav",
+		"vowel": "u",
+		"gender": "female",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (1).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (10).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (100).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (101).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (102).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (103).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (104).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (105).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (106).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (107).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (108).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (109).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (11).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (110).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (111).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (112).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (113).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (114).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (115).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (116).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (117).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (118).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (119).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (12).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (120).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (121).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (122).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (123).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (124).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (125).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (126).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (127).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (128).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (129).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (13).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (130).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (131).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (132).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (133).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (134).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (135).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (136).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (137).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (138).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (139).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (14).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (140).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (141).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (142).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (143).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (144).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (145).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (146).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (147).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (148).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (149).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (15).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (150).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (151).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (152).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (153).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (154).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (155).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (156).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (157).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (158).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (159).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (16).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (160).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (161).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (162).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (163).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (164).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (165).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (166).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (167).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (168).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (169).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (17).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (170).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (171).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (172).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (173).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (174).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (175).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (176).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (177).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (178).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (179).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (18).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (180).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (181).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (182).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (183).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (184).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (185).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (186).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (187).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (188).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (189).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (19).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (190).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (191).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (192).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (193).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (194).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (195).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (196).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (197).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (198).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (199).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (2).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (20).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (200).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (201).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (202).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (203).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (204).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (205).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (206).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (207).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (208).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (209).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (21).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (210).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (211).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (212).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (213).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (214).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (215).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (216).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (217).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (218).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (219).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (22).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (220).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (221).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (222).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (223).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (224).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (225).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (226).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (227).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (228).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (229).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (23).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (230).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (231).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (232).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (233).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (234).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (235).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (236).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (237).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (238).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (239).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (24).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (240).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (241).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (25).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (26).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (27).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (28).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (29).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (3).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (30).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (31).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (32).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (33).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (34).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (35).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (36).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (37).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (38).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (39).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (4).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (40).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (41).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (42).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (43).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (44).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (45).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (46).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (47).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (48).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (49).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (5).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (50).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (51).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (52).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (53).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (54).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (55).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (56).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (57).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (58).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (59).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (6).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (60).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (61).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (62).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (63).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (64).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (65).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (66).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (67).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (68).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (69).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (7).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (70).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (71).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (72).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (73).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (74).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (75).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (76).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (77).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (78).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (79).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (8).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (80).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (81).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (82).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (83).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (84).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (85).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (86).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (87).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (88).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (89).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (9).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (90).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (91).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (92).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (93).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (94).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (95).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (96).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (97).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (98).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_a (99).wav",
+		"vowel": "a",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (1).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (10).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (100).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (101).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (102).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (103).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (104).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (105).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (106).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (107).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (108).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (109).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (11).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (110).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (111).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (112).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (113).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (114).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (115).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (116).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (117).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (118).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (119).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (12).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (120).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (121).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (122).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (123).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (124).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (125).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (126).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (127).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (128).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (129).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (13).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (130).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (131).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (132).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (133).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (134).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (135).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (136).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (137).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (138).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (139).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (14).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (140).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (141).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (142).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (143).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (144).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (145).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (146).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (147).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (148).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (149).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (15).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (150).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (151).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (152).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (153).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (154).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (155).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (156).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (157).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (158).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (159).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (16).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (160).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (161).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (162).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (163).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (164).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (165).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (166).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (167).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (168).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (169).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (17).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (170).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (171).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (172).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (173).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (174).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (175).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (176).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (177).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (178).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (179).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (18).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (180).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (181).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (182).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (183).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (184).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (185).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (186).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (187).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (188).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (189).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (19).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (190).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (191).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (192).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (193).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (194).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (195).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (196).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (197).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (198).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (199).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (2).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (20).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (200).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (201).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (202).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (203).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (204).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (205).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (206).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (207).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (208).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (209).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (21).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (210).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (211).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (212).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (213).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (214).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (215).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (216).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (217).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (218).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (219).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (22).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (220).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (221).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (222).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (223).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (224).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (225).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (226).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (227).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (228).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (229).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (23).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (230).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (231).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (232).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (233).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (234).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (235).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (236).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (237).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (238).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (239).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (24).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (240).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (241).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (242).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (243).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (244).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (245).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (246).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (247).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (248).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (25).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (26).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (27).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (28).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (29).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (3).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (30).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (31).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (32).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (33).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (34).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (35).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (36).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (37).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (38).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (39).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (4).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (40).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (41).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (42).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (43).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (44).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (45).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (46).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (47).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (48).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (49).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (5).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (50).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (51).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (52).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (53).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (54).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (55).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (56).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (57).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (58).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (59).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (6).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (60).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (61).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (62).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (63).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (64).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (65).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (66).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (67).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (68).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (69).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (7).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (70).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (71).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (72).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (73).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (74).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (75).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (76).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (77).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (78).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (79).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (8).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (80).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (81).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (82).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (83).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (84).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (85).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (86).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (87).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (88).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (89).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (9).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (90).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (91).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (92).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (93).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (94).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (95).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (96).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (97).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (98).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_e (99).wav",
+		"vowel": "e",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (1).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (10).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (100).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (101).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (102).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (103).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (104).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (105).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (106).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (107).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (108).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (109).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (11).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (110).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (111).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (112).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (113).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (114).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (115).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (116).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (117).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (118).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (119).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (12).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (120).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (121).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (122).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (123).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (124).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (125).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (126).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (127).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (128).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (129).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (13).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (130).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (131).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (132).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (133).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (134).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (135).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (136).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (137).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (138).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (139).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (14).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (140).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (141).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (142).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (143).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (144).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (145).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (146).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (147).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (148).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (149).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (15).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (150).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (151).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (152).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (153).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (154).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (155).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (156).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (157).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (158).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (159).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (16).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (160).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (161).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (162).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (163).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (164).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (165).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (166).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (167).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (168).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (169).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (17).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (170).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (171).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (172).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (173).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (174).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (175).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (176).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (177).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (178).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (179).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (18).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (180).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (181).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (182).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (183).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (184).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (185).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (186).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (187).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (188).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (189).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (19).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (190).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (191).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (192).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (193).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (194).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (195).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (196).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (197).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (198).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (199).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (2).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (20).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (200).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (201).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (202).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (203).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (204).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (205).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (206).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (207).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (208).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (209).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (21).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (210).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (211).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (212).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (213).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (214).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (215).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (216).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (217).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (218).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (219).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (22).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (220).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (221).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (222).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (223).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (224).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (225).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (226).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (227).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (228).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (229).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (23).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (230).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (231).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (232).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (233).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (234).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (235).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (236).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (237).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (24).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (25).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (26).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (27).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (28).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (29).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (3).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (30).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (31).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (32).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (33).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (34).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (35).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (36).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (37).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (38).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (39).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (4).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (40).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (41).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (42).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (43).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (44).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (45).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (46).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (47).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (48).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (49).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (5).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (50).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (51).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (52).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (53).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (54).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (55).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (56).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (57).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (58).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (59).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (6).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (60).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (61).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (62).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (63).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (64).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (65).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (66).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (67).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (68).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (69).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (7).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (70).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (71).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (72).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (73).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (74).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (75).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (76).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (77).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (78).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (79).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (8).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (80).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (81).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (82).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (83).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (84).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (85).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (86).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (87).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (88).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (89).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (9).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (90).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (91).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (92).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (93).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (94).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (95).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (96).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (97).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (98).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_i (99).wav",
+		"vowel": "i",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (1).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (10).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (100).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (101).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (102).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (103).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (104).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (105).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (106).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (107).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (108).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (109).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (11).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (110).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (111).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (112).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (113).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (114).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (115).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (116).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (117).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (118).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (119).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (12).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (120).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (121).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (122).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (123).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (124).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (125).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (126).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (127).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (128).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (129).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (13).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (130).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (131).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (132).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (133).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (134).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (135).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (136).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (137).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (138).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (139).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (14).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (140).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (141).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (142).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (143).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (144).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (145).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (146).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (147).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (148).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (149).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (15).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (150).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (151).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (152).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (153).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (154).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (155).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (156).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (157).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (158).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (159).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (16).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (160).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (161).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (162).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (163).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (164).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (165).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (166).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (167).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (168).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (169).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (17).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (170).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (171).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (172).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (173).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (174).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (175).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (176).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (177).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (178).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (179).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (18).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (180).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (181).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (182).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (183).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (184).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (185).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (186).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (187).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (188).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (189).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (19).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (190).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (191).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (192).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (193).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (194).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (195).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (196).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (197).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (198).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (199).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (2).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (20).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (200).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (201).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (202).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (203).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (204).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (205).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (206).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (207).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (208).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (209).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (21).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (210).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (211).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (212).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (213).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (214).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (215).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (216).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (217).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (218).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (219).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (22).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (220).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (221).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (222).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (223).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (224).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (225).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (226).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (227).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (228).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (229).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (23).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (230).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (231).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (232).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (233).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (234).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (235).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (236).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (237).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (238).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (239).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (24).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (240).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (25).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (26).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (27).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (28).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (29).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (3).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (30).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (31).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (32).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (33).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (34).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (35).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (36).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (37).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (38).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (39).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (4).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (40).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (41).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (42).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (43).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (44).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (45).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (46).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (47).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (48).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (49).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (5).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (50).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (51).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (52).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (53).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (54).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (55).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (56).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (57).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (58).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (59).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (6).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (60).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (61).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (62).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (63).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (64).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (65).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (66).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (67).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (68).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (69).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (7).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (70).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (71).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (72).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (73).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (74).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (75).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (76).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (77).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (78).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (79).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (8).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (80).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (81).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (82).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (83).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (84).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (85).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (86).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (87).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (88).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (89).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (9).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (90).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (91).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (92).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (93).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (94).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (95).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (96).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (97).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (98).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_o (99).wav",
+		"vowel": "o",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (1).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (10).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (100).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (101).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (102).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (103).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (104).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (105).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (106).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (107).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (108).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (109).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (11).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (110).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (111).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (112).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (113).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (114).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (115).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (116).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (117).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (118).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (119).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (12).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (120).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (121).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (122).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (123).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (124).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (125).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (126).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (127).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (128).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (129).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (13).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (130).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (131).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (132).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (133).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (134).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (135).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (136).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (137).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (138).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (139).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (14).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (140).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (141).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (142).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (143).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (144).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (145).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (146).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (147).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (148).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (149).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (15).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (150).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (151).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (152).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (153).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (154).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (155).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (156).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (157).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (158).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (159).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (16).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (160).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (161).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (162).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (163).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (164).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (165).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (166).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (167).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (168).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (169).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (17).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (170).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (171).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (172).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (173).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (174).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (175).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (176).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (177).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (178).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (179).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (18).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (180).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (181).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (182).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (183).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (184).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (185).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (186).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (187).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (188).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (189).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (19).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (190).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (191).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (192).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (193).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (194).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (195).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (196).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (197).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (198).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (199).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (2).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (20).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (200).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (201).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (202).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (203).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (204).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (205).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (206).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (207).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (208).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (209).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (21).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (210).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (211).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (212).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (213).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (214).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (215).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (216).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (217).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (218).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (219).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (22).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (220).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (221).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (222).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (223).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (224).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (225).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (226).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (227).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (228).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (229).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (23).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (230).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (231).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (232).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (24).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (25).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (26).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (27).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (28).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (29).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (3).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (30).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (31).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (32).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (33).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (34).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (35).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (36).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (37).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (38).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (39).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (4).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (40).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (41).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (42).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (43).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (44).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (45).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (46).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (47).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (48).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (49).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (5).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (50).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (51).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (52).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (53).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (54).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (55).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (56).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (57).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (58).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (59).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (6).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (60).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (61).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (62).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (63).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (64).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (65).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (66).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (67).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (68).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (69).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (7).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (70).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (71).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (72).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (73).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (74).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (75).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (76).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (77).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (78).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (79).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (8).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (80).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (81).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (82).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (83).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (84).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (85).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (86).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (87).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (88).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (89).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (9).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (90).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (91).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (92).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (93).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (94).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (95).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (96).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (97).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (98).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	},
+	{
+		"filename": "m_u (99).wav",
+		"vowel": "u",
+		"gender": "male",
+		"ageGroup": "unknown"
+	}
 ]
