@@ -1,5 +1,6 @@
 'use client';
 import React from "react";
+import { SunProps } from "@/app/soundrise-types";
 
 const SunAwake = ({ svgColor, rad, yCoordinate, heightSpaceSun }: SunProps) => {
   const shadowRadius = rad + (rad * 50) / 100;

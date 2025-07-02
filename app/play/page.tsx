@@ -1,12 +1,12 @@
 "use client";
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { ClientOnly } from "@bkwld/next-client-only";
 import Header from "@/app/components/Header";
 import SunSleep from "@/app/components/SunSleep";
 import SunAwake from "@/app/components/SunAwake";
 import { minRad, height } from "@/app/audio/setDimsValue";
 import Listener from "@/app/classes/Listener";
-import { Nullable, PlayParams } from "@/types/types";
+import { Nullable, PlayParams } from "@/app/soundrise-types";
 
 export default function Play() {
   const [svgColor, setSvgColor] = useState("yellow");
@@ -24,7 +24,11 @@ export default function Play() {
   const [_vowel, setVowel] = useState("--");
   const [valueVowels, setValueVowels] = useState<Nullable<string>>(null)
 
-  const [listener, _setListener] = useState<Listener>(Listener.getInstance());
+  const [listener, setListener] = useState<Listener>();
+
+  useEffect(() => {
+    setListener(Listener.getInstance())
+  }, [])
 
   const handleSetPlayParams: EventListener = useCallback((e: Event) => {
     const data: PlayParams = (e as CustomEvent).detail;
@@ -45,11 +49,11 @@ export default function Play() {
     // Add event listeners
     // See this for reference https://github.com/microsoft/TypeScript/issues/28357#issue-377642397
     addEventListener("setPlayParams", handleSetPlayParams);
-    listener.startListening();
+    listener?.startListening();
   };
 
   const handleStopListening = () => {
-    listener.stopListening();
+    listener?.stopListening();
     removeEventListener("setPlayParams", handleSetPlayParams);
 
     setIsListening(false);

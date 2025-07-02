@@ -9,13 +9,13 @@ import {
   minRad,
   height,
 } from "@/app/audio/setDimsValue";
-import { Nullable, PlayParams } from "@/types/types";
-import { validateHeaderName } from "http";
+import { Nullable, PlayParams } from "@/app/soundrise-types";
+import { isDefined } from "../miscTools";
 
 export default class Listener {
   audioContext: Nullable<AudioContext>;
   analyzer: Nullable<AnalyserNode>;
-  mediaStreamSource: Nullable<MediaStreamAudioSourceNode>;
+  mediaStreamSource: Nullable<MediaStreamAudioSourceNode | AudioBufferSourceNode>;
   rafID: Nullable<number>;
   buflen = 2048;
   buf = new Float32Array(this.buflen);
@@ -42,14 +42,14 @@ export default class Listener {
   private static instance: Nullable<Listener> = null;
 
   static getInstance(): Listener {
-    if (Listener.instance === null) {
+    if (!isDefined(Listener.instance)) {
       Listener.instance = new Listener();
     }
     return Listener.instance!;
   }
 
   constructor() {
-    if (typeof window === "undefined") {
+    if (!isDefined(window)) {
       return; // don't throw new Error("Listener can only be used in a browser environment.") or things go wrong
     }
 
@@ -68,16 +68,17 @@ export default class Listener {
 
   startListening = () => {
     const AudioCtx = window.AudioContext || (window as any).webkitAudioContext;
-    this.audioContext = null;
-    this.audioContext = new AudioCtx({
-      latencyHint: "interactive", // Reduce latency for real-time interaction
-      // Apparently specifying a sampling rate here and further down creates
-      // an issue on some systems/browsers where nodes of different rates
-      // can't be connected together -- it seems like omitting the param
-      // here isn't too much of an issue but further testing is required.
-      // TODO: Further testing -- AF
-      // sampleRate: 44100,
-    });
+    if (!isDefined(this.audioContext)) {
+      this.audioContext = new AudioCtx({
+        latencyHint: "interactive", // Reduce latency for real-time interaction
+        // Apparently specifying a sampling rate here and further down creates
+        // an issue on some systems/browsers where nodes of different rates
+        // can't be connected together -- it seems like omitting the param
+        // here isn't too much of an issue but further testing is required.
+        // TODO: Further testing -- AF
+        // sampleRate: 44100,
+      });
+    }
 
     navigator.mediaDevices
       .getUserMedia({
@@ -91,8 +92,10 @@ export default class Listener {
       })
       .then((stream) => {
         if (!this.audioContext) { return }
-        
-        this.mediaStreamSource = this.audioContext.createMediaStreamSource(stream);
+
+        if (!isDefined(this.mediaStreamSource)) {
+          this.mediaStreamSource = this.audioContext.createMediaStreamSource(stream);
+        }
 
         // High-pass filter
         const highpassFilter = this.audioContext.createBiquadFilter();
@@ -147,10 +150,12 @@ export default class Listener {
     }
     this.analyzer?.disconnect();
     this.analyzer = null;
-    const tracks = this.mediaStreamSource?.mediaStream.getAudioTracks()
-    if (tracks) {
-      for (const track of tracks) {
-        track.stop();
+    if (this.mediaStreamSource instanceof MediaStreamAudioSourceNode) {
+      const tracks = this.mediaStreamSource?.mediaStream.getAudioTracks()
+      if (tracks) {
+        for (const track of tracks) {
+          track.stop();
+        }
       }
     }
     this.mediaStreamSource?.disconnect();
@@ -325,7 +330,6 @@ export default class Listener {
     const volume = this.getStableVolume(this.buf);
     const vowel = this.getVowel(this.buf, this.audioContext.sampleRate);
     const valueVowels = this.getValueVowels(this.buf, this.audioContext.sampleRate);
-    
     let MAX_BUF = 600;
     if (
       (frequency == -1 ||
@@ -435,6 +439,7 @@ export default class Listener {
 
         this.playParams.vowel = vocalValue;
         this.playParams.valueVowels = this.makeVowelValuesString()
+        console.log(this.playParams.valueVowels)
       }
     }
 

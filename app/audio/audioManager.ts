@@ -1,4 +1,4 @@
-import { Complex, Formant } from "@/types/types";
+import { Complex, Formant } from "@/app/soundrise-types";
 
 const p = 15;
 const N = 256;
