@@ -33,6 +33,7 @@ function getVowelImpl(s: Float32Array, sampleRate: number): VowelResult[] {
 
 function preProcessSignal(s: Float32Array) {
   return exponentialMovingAverage(s, 0.2); // Low-pass filter
+  // Although probably not necessary because of how the signal is preprocessed via the WebAudio API
 }
 
 function exponentialMovingAverage(signal: Float32Array, alpha = 0.2) {

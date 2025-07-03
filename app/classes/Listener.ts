@@ -400,8 +400,9 @@ export default class Listener {
         this.playParams.svgColor = this.vowelColorMap[resultingVowel] || this.playParams.svgColor;
 
         this.playParams.vowel = resultingVowel;
-        this.playParams.vowelScoresString = this.makeVowelValuesString()
-        console.log(this.playParams.vowelScoresString)
+        const vowelScores = this.computeVowelScores()
+        this.playParams.vowelScoresString = this.makeVowelScoresString(vowelScores)
+        console.log(vowelScores)
       }
     }
 
@@ -410,7 +411,7 @@ export default class Listener {
     dispatchEvent(new CustomEvent("setPlayParams", { detail: this.playParams }));
   };
 
-  makeVowelValuesString = () => {
+  computeVowelScores = () => {
     const vowelSums: Record<string, number> = {}; // To sum up the percentages of each vowel
     const vowelCounts: Record<string, number> = {}; // To count the occurrences of each vowel
   
@@ -425,13 +426,20 @@ export default class Listener {
         vowelCounts[vowel] += 1;
       });
     });
-  
-    const averagedVowels = Object.keys(vowelSums).map((vowel) => {
-      const avgPercentage = vowelSums[vowel] / vowelCounts[vowel];
-      return `${vowel}: ${avgPercentage.toFixed(0)}%`;
+
+    const a: { [index:string]: number } = {}
+    Object.keys(vowelSums).forEach(vowel => {
+      const p = vowelSums[vowel] / vowelCounts[vowel]
+      a[vowel] = p
+    })
+    return a
+  }
+
+  makeVowelScoresString = (scores: {[index: string]: number}) => {
+    const averagedVowels = Object.keys(scores).map((vowel) => {
+      return `${vowel}: ${scores[vowel].toFixed(0)}%`;
     });
-  
-    return averagedVowels.join("\n");
+      return averagedVowels.join("\n");
   }
 
   stopListening = () => {
