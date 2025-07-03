@@ -1,14 +1,5 @@
 import { getVowelImpl, VowelResult } from "@/app/audio/audioManager";
-import {
-  setRad,
-  setPosPitch,
-  minVol,
-  maxVol,
-  minPitch,
-  maxPitch,
-  minRad,
-  height,
-} from "@/app/audio/setDimsValue";
+import { setRad, setPosPitch, minVol, maxVol, minPitch, maxPitch, minRad, height } from "@/app/audio/setDimsValue";
 import { Nullable, PlayParams } from "@/app/soundrise-types";
 import { isDefined } from "../miscTools";
 
@@ -20,6 +11,7 @@ export default class Listener {
   buflen = 2048;
   buf = new Float32Array(this.buflen);
   buffer_pitch: Array<number> = [];
+  acStore: Float32Array | null = null;          // recycled buffer for the autocorrelation function
   buffer_vol: Array<number> = [];
   buffer_vocal: Array<string> = [];
   buffer_percentage: Array<VowelResult> = [];
@@ -34,9 +26,7 @@ export default class Listener {
     "Ò": "orange",
     "U": "#C0C0C0",
   }
-
   previousBuffers: Array<number> = [];
-
   playParams!: PlayParams;
 
   private static instance: Nullable<Listener> = null;
@@ -164,89 +154,85 @@ export default class Listener {
   }
 
   noteFromPitch = (frequency: number) => {
-    let noteNum = 12 * (Math.log(frequency / 440) / Math.log(2));
+    const noteNum = 12 * (Math.log(frequency / 440) / Math.log(2));
     return Math.round(noteNum) + 69;
   }
 
-  // Implements the ACF2+ algorithm
-  // Source: https://github.com/cwilso/PitchDetect/blob/main/js/pitchdetect.js (MIT License)
-  // TODO Take this out and reference the original code properly
-  setFrequency = (audioBuffer: Float32Array, sampleRate: number) => {
-    // Calculate the RMS (root‑mean‑square) to check signal strength
-    let bufferSize = audioBuffer.length;
-    let rootMeanSquare = 0;
+  // Optimized version of the ACF2+ algorithm from
+  // https://github.com/cwilso/PitchDetect/blob/main/js/pitchdetect.js
+  detectPitchACF2Fast = (buffer: Float32Array, sampleRate: number): number => {
+    const n = buffer.length;
 
-    for (let i = 0; i < bufferSize; i++) {
-      let sample = audioBuffer[i];
-      rootMeanSquare += sample * sample;
+    // Cheap RMS gate
+    let rms = 0;
+    for (let i = 0; i < n; ++i) {
+      const s = buffer[i];
+      rms += s * s;
     }
-    rootMeanSquare = Math.sqrt(rootMeanSquare / bufferSize);
+    rms = Math.sqrt(rms / n);
+    if (rms < 0.01) return -1;
 
-    // Abort early if the signal is too weak
-    if (rootMeanSquare < 0.01) {
-      return -1;
+    // Trim leading/trailing silence
+    const SILENCE = 0.2;
+    let start = 0;
+    while (start < n && Math.abs(buffer[start]) < SILENCE) ++start;
+
+    let end = n - 1;
+    while (end > start && Math.abs(buffer[end]) < SILENCE) --end;
+
+    const size = end - start + 1;
+    if (size < 32) return -1;
+
+    // Autocorrelation using pooled buffer
+    if (!this.acStore || this.acStore.length < size) this.acStore = new Float32Array(size);
+    const ac = this.acStore;
+
+    for (let lag = 0; lag < size; ++lag) {
+      let sum = 0;
+      const limit = size - lag;
+      let i = 0;
+
+      const limit4 = limit & ~3;
+      while (i < limit4) {
+        sum += buffer[start + i]     * buffer[start + i + lag];
+        sum += buffer[start + i + 1] * buffer[start + i + 1 + lag];
+        sum += buffer[start + i + 2] * buffer[start + i + 2 + lag];
+        sum += buffer[start + i + 3] * buffer[start + i + 3 + lag];
+        i += 4;
+      }
+      for (; i < limit; ++i) {
+        sum += buffer[start + i] * buffer[start + i + lag];
+      }
+      ac[lag] = sum;
     }
 
-    // Trim leading and trailing silence below the threshold
-    let startIndex = 0,
-        endIndex = bufferSize - 1,
-        threshold = 0.2;
+    // First dip -> following peak
+    let dip = 0;
+    while (dip + 1 < size && ac[dip] > ac[dip + 1]) ++dip;
 
-    for (let i = 0; i < bufferSize / 2; i++) {
-      if (Math.abs(audioBuffer[i]) < threshold) {
-        startIndex = i;
-        break;
+    let bestLag = -1;
+    let best = -Infinity;
+    for (let lag = dip + 1; lag < size; ++lag) {
+      const v = ac[lag];
+      if (v > best) {
+        best = v;
+        bestLag = lag;
       }
     }
-    for (let i = 1; i < bufferSize / 2; i++) {
-      if (Math.abs(audioBuffer[bufferSize - i]) < threshold) {
-        endIndex = bufferSize - i;
-        break;
-      }
-    }
+    if (bestLag <= 0) return -1;
 
-    audioBuffer = audioBuffer.slice(startIndex, endIndex);
-    bufferSize = audioBuffer.length;
+    // Parabolic interpolation
+    const x0 = ac[bestLag - 1] ?? 0;
+    const x1 = ac[bestLag];
+    const x2 = ac[bestLag + 1] ?? 0;
 
-    // Build the autocorrelation array
-    let autoCorrelation = new Array(bufferSize).fill(0);
-    for (let i = 0; i < bufferSize; i++) {
-      for (let j = 0; j < bufferSize - i; j++) {
-        autoCorrelation[i] += audioBuffer[j] * audioBuffer[j + i];
-      }
-    }
+    const a = (x0 + x2 - 2 * x1) * 0.5;
+    const b = (x2 - x0) * 0.5;
+    const period = a ? bestLag - b / (2 * a) : bestLag;
 
-    // Find the first dip in the autocorrelation
-    let dipIndex = 0;
-    while (autoCorrelation[dipIndex] > autoCorrelation[dipIndex + 1]) {
-      dipIndex++;
-    }
-
-    // Find the peak following the dip
-    let peakValue = -1,
-        peakIndex = -1;
-    for (let i = dipIndex; i < bufferSize; i++) {
-      if (autoCorrelation[i] > peakValue) {
-        peakValue = autoCorrelation[i];
-        peakIndex = i;
-      }
-    }
-    let fundamentalPeriod = peakIndex;
-
-    // Perform parabolic interpolation for better period accuracy
-    let correlationLeft = autoCorrelation[fundamentalPeriod - 1],
-        correlationCenter = autoCorrelation[fundamentalPeriod],
-        correlationRight = autoCorrelation[fundamentalPeriod + 1];
-    let quadraticCoeffA = (correlationLeft + correlationRight - 2 * correlationCenter) / 2;
-    let quadraticCoeffB = (correlationRight - correlationLeft) / 2;
-    if (quadraticCoeffA) {
-      fundamentalPeriod = fundamentalPeriod - quadraticCoeffB / (2 * quadraticCoeffA);
-    }
-
-    // Convert period to frequency (Hz)
-    return sampleRate / fundamentalPeriod;
+    // Lag -> frequency
+    return sampleRate / period;
   }
-  // Define a buffer to store previous audio buffer data
   
   getStableVolume = (audioBuffer: Float32Array) => {
     const sumSquares = audioBuffer.reduce(
@@ -326,7 +312,7 @@ export default class Listener {
     
     this.analyzer.getFloatTimeDomainData(this.buf);
 
-    const frequency = this.setFrequency(this.buf, this.audioContext.sampleRate);
+    const frequency = this.detectPitchACF2Fast(this.buf, this.audioContext.sampleRate);
     const volume = this.getStableVolume(this.buf);
     const vowel = this.getVowel(this.buf, this.audioContext.sampleRate);
     const valueVowels = this.getValueVowels(this.buf, this.audioContext.sampleRate);
