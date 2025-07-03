@@ -48,7 +48,7 @@ export default class Listener {
       volume: "...",
       note: "...",
       vowel: "...",
-      valueVowels: "I: 0%\nÉ: 0%\nÈ: 0%\nA: 0%\nÒ: 0%\nÓ: 0%\nU: 0%",
+      vowelScoresString: "I: 0%\nÉ: 0%\nÈ: 0%\nA: 0%\nÒ: 0%\nÓ: 0%\nU: 0%",
       sunListen: false,
       rad: minRad,
       yCoord: (height - Math.round((height * 30) / 100)) / 2,
@@ -302,11 +302,6 @@ export default class Listener {
     return mostRepeatedItem;
   }
 
-  // TODO Possibly unnecessary after this refactoring
-  selectColor = (vowel: string) => {
-    this.playParams.svgColor = this.vowelColorMap[vowel] || this.playParams.svgColor;
-  };
-
   private _listen = () => {
     if (!this.analyzer || !this.audioContext) { return }
     
@@ -328,7 +323,7 @@ export default class Listener {
         volume: "...",
         note: "...",
         vowel: "...",
-        valueVowels: "I: 0%\nÉ: 0%\nÈ: 0%\nA: 0%\nÒ: 0%\nÓ: 0%\nU: 0%",
+        vowelScoresString: "I: 0%\nÉ: 0%\nÈ: 0%\nA: 0%\nÒ: 0%\nÓ: 0%\nU: 0%",
         sunListen: false,
         rad: minRad,
         yCoord: (height - Math.round((height * 30) / 100)) / 2,
@@ -390,7 +385,6 @@ export default class Listener {
         const yCoordValue = setPosPitch(pitchValue);
         const hz = pitchValue + "Hz";
 
-
         this.playParams.pitch = hz;
         this.playParams.yCoord = yCoordValue;
 
@@ -402,12 +396,12 @@ export default class Listener {
         const n = this.noteFromPitch(pitchValue);
         this.playParams.note = this.noteStrings[n % 12];
 
-        const vocalValue = this.findMostRepeatedItem(this.buffer_vocal);
-        this.selectColor(vocalValue);
+        const resultingVowel = this.findMostRepeatedItem(this.buffer_vocal);
+        this.playParams.svgColor = this.vowelColorMap[resultingVowel] || this.playParams.svgColor;
 
-        this.playParams.vowel = vocalValue;
-        this.playParams.valueVowels = this.makeVowelValuesString()
-        console.log(this.playParams.valueVowels)
+        this.playParams.vowel = resultingVowel;
+        this.playParams.vowelScoresString = this.makeVowelValuesString()
+        console.log(this.playParams.vowelScoresString)
       }
     }
 
@@ -454,7 +448,7 @@ export default class Listener {
     this.playParams.volume = "--";
     this.playParams.note = "--";
     this.playParams.vowel = "--"
-    this.playParams.valueVowels = "I: 0%\nÉ: 0%\nÈ: 0%\nA: 0%\nÒ: 0%\nÓ: 0%\nU: 0%";
+    this.playParams.vowelScoresString = "I: 0%\nÉ: 0%\nÈ: 0%\nA: 0%\nÒ: 0%\nÓ: 0%\nU: 0%";
 
     dispatchEvent(new CustomEvent("setPlayParams", { detail: this.playParams }));
     

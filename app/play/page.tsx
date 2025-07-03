@@ -22,7 +22,7 @@ export default function Play() {
   const [volume, setVolume] = useState("--");
   const [note, setNote] = useState("--");
   const [_vowel, setVowel] = useState("--");
-  const [valueVowels, setValueVowels] = useState<Nullable<string>>(null)
+  const [vowelScoresString, setVowelScoresString] = useState<Nullable<string>>(null)
 
   const [listener, setListener] = useState<Listener>();
 
@@ -37,7 +37,7 @@ export default function Play() {
     setVolume(data.volume);
     setNote(data.note);
     setVowel(data.vowel);
-    setValueVowels(data.valueVowels); // TODO Rename this
+    setVowelScoresString(data.vowelScoresString);
     setSunListen(data.sunListen);
     setRad(data.rad);
     setYCoord(data.yCoord);
@@ -99,8 +99,8 @@ export default function Play() {
             <b>vowel:</b> <br />
           </p>
           <p style={{ whiteSpace: "pre-line" }}>
-          {valueVowels 
-            ? valueVowels
+          {vowelScoresString 
+            ? vowelScoresString
             : "I: 0%\nÉ: 0%\nÈ: 0%\nA: 0%\nÒ: 0%\nÓ: 0%\nU: 0%"
           }
           </p>

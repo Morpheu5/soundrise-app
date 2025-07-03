@@ -25,7 +25,7 @@ export type PlayParams = {
   volume: string;
   note: string;
   vowel: string;
-  valueVowels: string;
+  vowelScoresString: string;
   sunListen: boolean;
   rad: number;
   yCoord: number;
