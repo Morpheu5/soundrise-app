@@ -369,38 +369,20 @@ export default class Listener {
           this.buffer_vol.push(volume);
         }
 
-        if (vowel != "") { // TODO Unnecessary test?
-          if (this.buffer_vocal.length > MAX_BUF) {
-            this.buffer_vocal.shift();
-            this.buffer_vocal.push(vowel);
-          } else {
-            this.buffer_vocal.push(vowel);
-          }
-
-          if (this.buffer_percentage.length > MAX_BUF) {
-            this.buffer_percentage.shift();
-          }
-          else{
-            // Add the average value of the percentages to buffer_percentage
-            this.buffer_percentage.push(valueVowels as any);
-          }
+        if (this.buffer_vocal.length > MAX_BUF) {
+          this.buffer_vocal.shift();
+          this.buffer_vocal.push(vowel);
         } else {
-          // v == 0
-          if (this.buffer_vocal.length > MAX_BUF) {
-            this.buffer_vocal.shift();
-            this.buffer_vocal.push(this.findMostRepeatedItem(this.buffer_vocal));
-          } else {
-            this.buffer_vocal.push(this.findMostRepeatedItem(this.buffer_vocal));
-          }
-
-          if (this.buffer_percentage.length > MAX_BUF) {
-            this.buffer_percentage.shift();
-          } else{
-            // Add the average value of the percentages to buffer_percentage
-            this.buffer_percentage.push(valueVowels as any);
-          }
+          this.buffer_vocal.push(vowel);
         }
 
+        if (this.buffer_percentage.length > MAX_BUF) {
+          this.buffer_percentage.shift();
+        }
+        else{
+          // Add the average value of the percentages to buffer_percentage
+          this.buffer_percentage.push(valueVowels as any);
+        }
 
         this.playParams.sunListen = true;
 
