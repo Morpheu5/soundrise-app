@@ -23,5 +23,5 @@ NOTES
 -----
 
 The implementation of the ACF2+ algorithm found in `app/classes/Listener.ts` is
-from https://github.com/cwilso/PitchDetect/blob/main/js/pitchdetect.js
+inspired by https://github.com/cwilso/PitchDetect/blob/main/js/pitchdetect.js
 and is released under the MIT license.

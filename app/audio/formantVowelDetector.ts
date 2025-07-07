@@ -120,19 +120,19 @@ function durand(cf: number[]) {
   let roots: Complex[] = [];
   for (let i = 0; i < deg; i++) {
     const theta = (2 * Math.PI * i) / deg;
-    const root: Complex = { real: Math.cos(theta), imag: Math.sin(theta) };
+    const root: Complex = { real: Math.cos(theta), imaginary: Math.sin(theta) };
     roots[i] = root;
   }
   
   for (let i = 0; i < n; i++) {
     const preroots = roots;
     for (let j = 0; j < deg; j++) {
-      let p = { real: cf[0], imag: 0 };
+      let p = { real: cf[0], imaginary: 0 };
       for (let k = 1; k <= deg; k++) {
-        p = sumc(mulc(p, preroots[j]), { real: cf[k], imag: 0 });
+        p = sumc(mulc(p, preroots[j]), { real: cf[k], imaginary: 0 });
       }
       
-      let div = { real: 1, imag: 0 };
+      let div = { real: 1, imaginary: 0 };
       for (let k = 0; k < deg; k++) {
         if (j != k) {
           div = mulc(div, subc(preroots[j], preroots[k]));
@@ -146,17 +146,17 @@ function durand(cf: number[]) {
 }
 
 function sumc(a: Complex, b: Complex): Complex {
-  return { real: a.real + b.real, imag: a.imag + b.imag };
+  return { real: a.real + b.real, imaginary: a.imag + b.imag };
 }
 
 function subc(a: Complex, b: Complex): Complex {
-  return { real: a.real - b.real, imag: a.imag - b.imag };
+  return { real: a.real - b.real, imaginary: a.imag - b.imag };
 }
 
 function mulc(a: Complex, b: Complex): Complex {
   return {
     real: a.real * b.real - a.imag * b.imag,
-    imag: a.real * b.imag + a.imag * b.real,
+    imaginary: a.real * b.imag + a.imag * b.real,
   };
 }
 
@@ -164,7 +164,7 @@ function divc(a: Complex, b: Complex): Complex {
   const denominator = b.real * b.real + b.imag * b.imag;
   return {
     real: (a.real * b.real + a.imag * b.imag) / denominator,
-    imag: (a.imag * b.real - a.real * b.imag) / denominator,
+    imaginary: (a.imag * b.real - a.real * b.imag) / denominator,
   };
 }
 

@@ -196,9 +196,9 @@ pnpm  dev
 
   
 
-This project is distributed under the **GNU General Public License v3.0**. For more information, see the full text of the license available at the following link:
+This project is distributed under the **GNU Affero General Public License v3.0**. For more information, see the full text of the license available at the following link:
 
-[GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.txt)
+[GNU Affero General Public License v3.0](https://www.gnu.org/licenses/agpl-3.0.txt)
 
   
 

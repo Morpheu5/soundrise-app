@@ -11,7 +11,7 @@ export type SunProps = {
 
 export type Complex = {
   real: number;
-  imag: number;
+  imaginary: number;
 }
 
 export type Formant = {
