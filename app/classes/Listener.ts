@@ -2,6 +2,7 @@ import * as formantVowelDetector from "@/app/audio/formantVowelDetector";
 import { setRad, setPosPitch, minVol, maxVol, minPitch, maxPitch, minRad, height } from "@/app/audio/setDimsValue";
 import { Nullable, PlayParams, VowelResult } from "@/app/soundrise-types";
 import { isDefined } from "../miscTools";
+// import { getVowelImpl } from "../audio/frigatoMLVowelDetector";
 
 export default class Listener {
   audioContext: Nullable<AudioContext>;
@@ -266,6 +267,7 @@ export default class Listener {
 
   getVowel = (audioBuffer: Float32Array, sampleRate: number): string => {
     let result = this.detectors.formant(audioBuffer, sampleRate);
+    // let result = getVowelImpl(audioBuffer, sampleRate)
     // Picks the most likely vowel
     let max_p = 0;
     let max_v = "";
@@ -282,6 +284,7 @@ export default class Listener {
 
   getValueVowels = (audioBuffer: Float32Array, sampleRate: number) => {
     return this.detectors.formant(audioBuffer, sampleRate);
+    // return getVowelImpl(audioBuffer, sampleRate)
   }
 
   arrayAvg = (array: number[]) => array.reduce((a, b) => a + b) / array.length;

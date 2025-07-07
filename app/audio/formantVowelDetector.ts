@@ -146,34 +146,34 @@ function durand(cf: number[]) {
 }
 
 function sumc(a: Complex, b: Complex): Complex {
-  return { real: a.real + b.real, imaginary: a.imag + b.imag };
+  return { real: a.real + b.real, imaginary: a.imaginary + b.imaginary };
 }
 
 function subc(a: Complex, b: Complex): Complex {
-  return { real: a.real - b.real, imaginary: a.imag - b.imag };
+  return { real: a.real - b.real, imaginary: a.imaginary - b.imaginary };
 }
 
 function mulc(a: Complex, b: Complex): Complex {
   return {
-    real: a.real * b.real - a.imag * b.imag,
-    imaginary: a.real * b.imag + a.imag * b.real,
+    real: a.real * b.real - a.imaginary * b.imaginary,
+    imaginary: a.real * b.imaginary + a.imaginary * b.real,
   };
 }
 
 function divc(a: Complex, b: Complex): Complex {
-  const denominator = b.real * b.real + b.imag * b.imag;
+  const denominator = b.real * b.real + b.imaginary * b.imaginary;
   return {
-    real: (a.real * b.real + a.imag * b.imag) / denominator,
-    imaginary: (a.imag * b.real - a.real * b.imag) / denominator,
+    real: (a.real * b.real + a.imaginary * b.imaginary) / denominator,
+    imaginary: (a.imaginary * b.real - a.real * b.imaginary) / denominator,
   };
 }
 
 function formants(roots: Complex[], fs: number): Formant[] {
   const ff = [];
   for (let i = 0; i < roots.length; i++) {
-    const f = (fs * Math.atan2(roots[i].imag, roots[i].real)) / (2 * Math.PI);
+    const f = (fs * Math.atan2(roots[i].imaginary, roots[i].real)) / (2 * Math.PI);
     const b =
-    (-fs * Math.log(Math.sqrt(roots[i].real ** 2 + roots[i].imag ** 2))) /
+    (-fs * Math.log(Math.sqrt(roots[i].real ** 2 + roots[i].imaginary ** 2))) /
     Math.PI;
     if (f >= 0 && b >= 0 && b <= 6400) {
       ff.push({ freq: f, band: b });
