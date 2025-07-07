@@ -1,8 +1,9 @@
 import * as formantVowelDetector from "@/app/audio/formantVowelDetector";
+// import * as frigatoMLVowelDetector from "../audio/frigatoMLVowelDetector";
 import { setRad, setPosPitch, minVol, maxVol, minPitch, maxPitch, minRad, height } from "@/app/audio/setDimsValue";
 import { Nullable, PlayParams, VowelResult } from "@/app/soundrise-types";
 import { isDefined } from "../miscTools";
-// import { getVowelImpl } from "../audio/frigatoMLVowelDetector";
+
 
 export default class Listener {
   audioContext: Nullable<AudioContext>;
@@ -34,7 +35,7 @@ export default class Listener {
 
   private detectors = {
     formant: formantVowelDetector.getVowelImpl,
-    // ml: undefined
+    // ml: frigatoMLVowelDetector.getVowelImpl,
   }
 
   static getInstance(): Listener {
@@ -265,9 +266,8 @@ export default class Listener {
     return Math.round(averageVolume * 100);
   }
 
-  getVowel = (audioBuffer: Float32Array, sampleRate: number): string => {
-    let result = this.detectors.formant(audioBuffer, sampleRate);
-    // let result = getVowelImpl(audioBuffer, sampleRate)
+  getVowel = (results: VowelResult[]): string => {
+    let result = results;
     // Picks the most likely vowel
     let max_p = 0;
     let max_v = "";
@@ -284,7 +284,6 @@ export default class Listener {
 
   getValueVowels = (audioBuffer: Float32Array, sampleRate: number) => {
     return this.detectors.formant(audioBuffer, sampleRate);
-    // return getVowelImpl(audioBuffer, sampleRate)
   }
 
   arrayAvg = (array: number[]) => array.reduce((a, b) => a + b) / array.length;
@@ -317,8 +316,9 @@ export default class Listener {
 
     const frequency = this.detectPitchACF2Fast(this.buf, this.audioContext.sampleRate);
     const volume = this.getStableVolume(this.buf);
-    const vowel = this.getVowel(this.buf, this.audioContext.sampleRate);
     const valueVowels = this.getValueVowels(this.buf, this.audioContext.sampleRate);
+    const vowel = this.getVowel(valueVowels);
+    
     let MAX_BUF = 600;
     if (
       (frequency == -1 ||
