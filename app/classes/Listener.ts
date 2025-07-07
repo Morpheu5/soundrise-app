@@ -1,6 +1,6 @@
-import { getVowelImpl, VowelResult } from "@/app/audio/audioManager";
+import * as formantVowelDetector from "@/app/audio/formantVowelDetector";
 import { setRad, setPosPitch, minVol, maxVol, minPitch, maxPitch, minRad, height } from "@/app/audio/setDimsValue";
-import { Nullable, PlayParams } from "@/app/soundrise-types";
+import { Nullable, PlayParams, VowelResult } from "@/app/soundrise-types";
 import { isDefined } from "../miscTools";
 
 export default class Listener {
@@ -30,6 +30,11 @@ export default class Listener {
   playParams!: PlayParams;
 
   private static instance: Nullable<Listener> = null;
+
+  private detectors = {
+    formant: formantVowelDetector.getVowelImpl,
+    // ml: undefined
+  }
 
   static getInstance(): Listener {
     if (!isDefined(Listener.instance)) {
@@ -260,7 +265,7 @@ export default class Listener {
   }
 
   getVowel = (audioBuffer: Float32Array, sampleRate: number): string => {
-    let result = getVowelImpl(audioBuffer, sampleRate);
+    let result = this.detectors.formant(audioBuffer, sampleRate);
     // Picks the most likely vowel
     let max_p = 0;
     let max_v = "";
@@ -276,7 +281,7 @@ export default class Listener {
   }
 
   getValueVowels = (audioBuffer: Float32Array, sampleRate: number) => {
-    return getVowelImpl(audioBuffer, sampleRate);
+    return this.detectors.formant(audioBuffer, sampleRate);
   }
 
   arrayAvg = (array: number[]) => array.reduce((a, b) => a + b) / array.length;

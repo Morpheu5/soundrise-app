@@ -30,3 +30,9 @@ export type PlayParams = {
   rad: number;
   yCoord: number;
 }
+
+export interface VowelResult {
+  vowel: string;
+  score?: number;
+  percentage?: string;
+}

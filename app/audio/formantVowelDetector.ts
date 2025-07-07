@@ -1,4 +1,4 @@
-import { Complex, Formant } from "@/app/soundrise-types";
+import { Complex, Formant, VowelResult } from "@/app/soundrise-types";
 
 const p = 15;
 const N = 256;
@@ -234,11 +234,4 @@ function compare(valid: Formant[]) {
   return probabilities;
 }
 
-interface VowelResult {
-  vowel: string;
-  score?: number;
-  percentage?: string;
-}
-
 export { getVowelImpl }
-export type { VowelResult }
