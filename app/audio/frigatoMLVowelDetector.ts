@@ -1,3 +1,5 @@
+"use client";
+
 // The code in this file is based on the Master's thesis of Francesco Frigato
 // https://thesis.unipd.it/handle/20.500.12608/83031
 // This implementation is limited to the model using MFCC and LPCC with
@@ -6,6 +8,27 @@
 
 import { Complex, Formant, Nullable, VowelResult } from "@/app/soundrise-types";
 import Meyda from "meyda";
+import { isDefined } from "../miscTools";
+import { NeuralNetwork } from "brain.js";
+import m from "@/assets/netDataHpssLpccMfcc.json";
+
+let ctx: Nullable<AudioContext>
+let analyser: Nullable<AnalyserNode>
+let network: any
+
+function setAudioComponents(c: AudioContext, a: AnalyserNode) {
+	ctx = c
+	analyser = a
+}
+
+async function initialize() {
+	network = new NeuralNetwork()
+	// const modelJSON = await fetch('/mlmodel/netDataHpssLpccMfcc.json')
+	// .then(response => response)
+	// .catch(error => console.log(error))
+	// console.log(modelJSON)
+	// network.fromJSON(m)
+}
 
 function applyMask(x: Complex[][], mask: Float32Array[]): Complex[][] {
 	let m_x: Complex[][] = [];
@@ -205,6 +228,8 @@ function hann(N: number): Float32Array {
 }
 
 function harmonicComponentExtraction(audioFrame: Float32Array): Float32Array {
+	if (!isDefined(ctx)) return Float32Array.from([]);
+
 	let w = hann(256);
 	//console.log("window function:", w);
 
@@ -214,9 +239,9 @@ function harmonicComponentExtraction(audioFrame: Float32Array): Float32Array {
 	let pow_s = computePowerSpec(shortTimeFT);
 	//console.log("power spectrum:", pow_s);
 
-	let L_h = make_integer_odd(convert_l_sec_to_frames((10 / 1000), ctx.sampleRate, 256, 64));
+	let L_h = make_integer_odd(convert_l_sec_to_frames((10 / 1000), ctx.sampleRate || 44100, 256, 64));
 	//console.log(L_h);
-	let L_p = make_integer_odd(convert_l_hertz_to_bins(50000, ctx.sampleRate, 256, 64));
+	let L_p = make_integer_odd(convert_l_hertz_to_bins(50000, ctx.sampleRate || 44100, 256, 64));
 	//console.log(L_p);
 
 	let h_med_filt = median_filter(pow_s, L_h, 'H');
@@ -330,16 +355,23 @@ function extractLPCC(audioFrame: Float32Array, order: number, Q: number): number
 	return Array.from(lpcc);
 }
 
-function extractMFCC(x: Float32Array) {
-	Meyda.audioContext = ctx;
-	Meyda.fftSize = analyser.fftSize;
-	Meyda.bufferSize = analyser.fftSize;
-	Meyda.sampleRate = ctx.sampleRate;
-	Meyda.windowingFunction = "hamming";
-	Meyda.numberOfMFCCCoefficients = 20;
+function extractMFCC(x: Float32Array): number[] {
+	if (ctx && analyser) {
+		Meyda.audioContext = ctx;
+		// Meyda.fftSize = analyser.fftSize;
+		Meyda.bufferSize = analyser.fftSize;
+		Meyda.sampleRate = ctx.sampleRate;
+		Meyda.windowingFunction = "hamming";
+		Meyda.numberOfMFCCCoefficients = 20;
 
-	const features = Meyda.extract(['mfcc'], x);
-	return features["mfcc"];
+		const features = Meyda.extract(['mfcc'], x);
+		if (isDefined(features) && isDefined(features["mfcc"])) {
+			return features["mfcc"]
+		} else {
+			return []
+		}
+	}
+	return []
 	//console.log(features);
 }
 
@@ -365,7 +397,6 @@ function extractFeatures(audioFrame: Float32Array) {
     //console.log(mfcc);
 
     return [...lpcc, ...mfcc];
-	}
 }
 
 function getVowelImpl(audioFrame: Float32Array, samplerate: Nullable<number> = null) {
@@ -375,4 +406,4 @@ function getVowelImpl(audioFrame: Float32Array, samplerate: Nullable<number> = n
 	return results;
 }
 
-export { getVowelImpl }
+export { getVowelImpl, setAudioComponents, initialize }

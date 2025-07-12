@@ -234,4 +234,8 @@ function compare(valid: Formant[]) {
   return probabilities;
 }
 
-export { getVowelImpl }
+function setAudioComponents(c: AudioContext, a: AnalyserNode) {}
+
+function initialize() {}
+
+export { getVowelImpl, setAudioComponents, initialize }

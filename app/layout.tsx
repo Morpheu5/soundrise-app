@@ -9,6 +9,8 @@ export const metadata: Metadata = {
   description: "Zuccolo Giada's master thesis project",
 };
 
+
+
 export default function RootLayout({
   children,
 }: {

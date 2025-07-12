@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import Listener from "@/app/classes/Listener";
 import { isDefined } from "@/app/miscTools";

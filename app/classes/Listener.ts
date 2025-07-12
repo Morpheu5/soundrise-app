@@ -1,5 +1,7 @@
+"use client";
+
 import * as formantVowelDetector from "@/app/audio/formantVowelDetector";
-// import * as frigatoMLVowelDetector from "../audio/frigatoMLVowelDetector";
+import * as frigatoMLVowelDetector from "../audio/frigatoMLVowelDetector";
 import { setRad, setPosPitch, minVol, maxVol, minPitch, maxPitch, minRad, height } from "@/app/audio/setDimsValue";
 import { Nullable, PlayParams, VowelResult } from "@/app/soundrise-types";
 import { isDefined } from "../miscTools";
@@ -34,8 +36,8 @@ export default class Listener {
   private static instance: Nullable<Listener> = null;
 
   private detectors = {
-    formant: formantVowelDetector.getVowelImpl,
-    // ml: frigatoMLVowelDetector.getVowelImpl,
+    formant: formantVowelDetector,
+    ml: frigatoMLVowelDetector,
   }
 
   static getInstance(): Listener {
@@ -61,6 +63,12 @@ export default class Listener {
       yCoord: (height - Math.round((height * 30) / 100)) / 2,
       svgColor: "yellow",
     };
+
+    (Object.keys(this.detectors) as Array<keyof typeof this.detectors>).forEach(k => {
+      // UGH...
+      this.detectors[k].initialize()
+    })
+
   }
 
   startListening = () => {
@@ -88,7 +96,7 @@ export default class Listener {
         },
       })
       .then((stream) => {
-        if (!this.audioContext) { return }
+        if (!isDefined(this.audioContext)) { return }
 
         if (!isDefined(this.mediaStreamSource)) {
           this.mediaStreamSource = this.audioContext.createMediaStreamSource(stream);
@@ -126,6 +134,13 @@ export default class Listener {
         this.analyzer = this.audioContext.createAnalyser();
         this.analyzer.fftSize = 1024; // Make the FFT small for performance
 
+        console.log(this.detectors);
+
+        (Object.keys(this.detectors) as Array<keyof typeof this.detectors>).forEach(k => {
+          // UGH...
+          this.detectors[k].setAudioComponents(this.audioContext!, this.analyzer!)
+        })
+  
         // Plug everything up
         this.mediaStreamSource.connect(highpassFilter);
         highpassFilter.connect(lowpassFilter);
@@ -283,7 +298,7 @@ export default class Listener {
   }
 
   getValueVowels = (audioBuffer: Float32Array, sampleRate: number) => {
-    return this.detectors.formant(audioBuffer, sampleRate);
+    return this.detectors.ml.getVowelImpl(audioBuffer, sampleRate);
   }
 
   arrayAvg = (array: number[]) => array.reduce((a, b) => a + b) / array.length;
