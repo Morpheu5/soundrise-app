@@ -65,7 +65,7 @@ function setPosPitch(pitch: number) {
 }
 
 /******************** VOWELS ************************ */
-function getVocali() {}
+// function getVocali() {}
 
 // Export the functions to make them accessible in other files
 export {
