@@ -7,6 +7,7 @@ import DefaultLayout from './layouts/Default.tsx'
 import App from './App.tsx'
 import Play from './pages/play/page.tsx';
 import About from './pages/about/page.tsx';
+import Tests from './pages/tests/page.tsx';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -16,6 +17,7 @@ createRoot(document.getElementById('root')!).render(
           <Route index element={<App />} />
           <Route path="/about" element={<About />} />
           <Route path="/play" element={<Play />} />
+          <Route path="/tests" element={<Tests />} />
         </Route>
       </Routes>
     </BrowserRouter>
