@@ -9,7 +9,7 @@
 import type { Complex, Nullable } from "../soundrise-types";
 import Meyda from "meyda";
 import { NeuralNetwork } from "brain.js";
-import model from "../assets/netDataHpssLpccMfcc.json";
+// import model from "../assets/netDataHpssLpccMfcc.json";
 import { isDefined } from "../miscTools";
 
 let ctx: Nullable<AudioContext>
@@ -24,11 +24,11 @@ function setAudioComponents(c: AudioContext, a: AnalyserNode) {
 
 async function initialize() {
 	network = new NeuralNetwork()
-	// const modelJSON = await fetch('/mlmodel/netDataHpssLpccMfcc.json')
-	// .then(response => response)
-	// .catch(error => console.log(error))
-	// console.log(modelJSON)
-	network.fromJSON(model)
+	const modelJSON = await fetch('/mlmodel/netDataHpssLpccMfcc.json')
+	.then(response => response.json())
+	.catch(error => console.log(error))
+	console.log(modelJSON)
+	network.fromJSON(modelJSON)
 }
 
 function applyMask(x: Complex[][], mask: Float32Array[]): Complex[][] {

@@ -133,7 +133,7 @@ export default class Listener {
         this.analyzer = this.audioContext.createAnalyser();
         this.analyzer.fftSize = 1024; // Make the FFT small for performance
 
-        console.log(this.detectors);
+        // console.log(this.detectors);
 
         (Object.keys(this.detectors) as Array<keyof typeof this.detectors>).forEach(k => {
           // UGH...
