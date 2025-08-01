@@ -332,6 +332,7 @@ export default class Listener {
     const volume = this.getStableVolume(this.buf);
     const valueVowels = this.getValueVowels(this.buf, this.audioContext.sampleRate);
     const vowel = this.getVowel(valueVowels);
+    console.log(valueVowels)
     
     const MAX_BUF = 600;
     if (

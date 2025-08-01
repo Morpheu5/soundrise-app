@@ -9,7 +9,7 @@
 import type { Complex, Nullable } from "../soundrise-types";
 import Meyda from "meyda";
 import { NeuralNetwork } from "brain.js";
-// import model from "../assets/netDataHpssLpccMfcc.json";
+import model from "../assets/netDataHpssLpccMfcc.json";
 import { isDefined } from "../miscTools";
 
 let ctx: Nullable<AudioContext>
@@ -22,13 +22,9 @@ function setAudioComponents(c: AudioContext, a: AnalyserNode) {
 	analyser = a
 }
 
-async function initialize() {
+function initialize() {
 	network = new NeuralNetwork()
-	const modelJSON = await fetch('/mlmodel/netDataHpssLpccMfcc.json')
-	.then(response => response.json())
-	.catch(error => console.log(error))
-	console.log(modelJSON)
-	network.fromJSON(modelJSON)
+	network.fromJSON(model)
 }
 
 function applyMask(x: Complex[][], mask: Float32Array[]): Complex[][] {
@@ -386,15 +382,15 @@ function extractFeatures(audioFrame: Float32Array) {
 	const Q = order + 1;
 
 	const x_h = harmonicComponentExtraction(audioFrame);
-    //console.log("HARMONIC COMPONENT EXTRACTION");
+    // console.log("HARMONIC COMPONENT EXTRACTION");
     //console.log(x_h);
 
     const lpcc = extractLPCC(x_h, order, Q);
-    //console.log("LPCC COEFFICIENTS EXTRACTED");
+    // console.log("LPCC COEFFICIENTS EXTRACTED");
     //console.log(lpcc);
 
     const mfcc = extractMFCC(x_h);
-    //console.log("MFCC COEFFICIENTS EXTRACTED");
+    // console.log("MFCC COEFFICIENTS EXTRACTED");
     //console.log(mfcc);
 
     return [...lpcc, ...mfcc];
@@ -403,8 +399,8 @@ function extractFeatures(audioFrame: Float32Array) {
 function getVowelImpl(audioFrame: Float32Array, _samplerate: Nullable<number> = null) {
 	const sampleFeatures = extractFeatures(audioFrame);
 	const results = network.run(sampleFeatures);
-	
-	return results;
+	if (!isNaN(results.A)) return results
+	else return {}
 }
 
 export { getVowelImpl, setAudioComponents, initialize }
