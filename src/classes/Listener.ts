@@ -297,7 +297,7 @@ export default class Listener {
   }
 
   getValueVowels = (audioBuffer: Float32Array, sampleRate: number) => {
-    return this.detectors.ml.getVowelImpl(audioBuffer, sampleRate);
+    return this.detectors.formant.getVowelImpl(audioBuffer, sampleRate);
   }
 
   arrayAvg = (array: number[]) => array.reduce((a, b) => a + b) / array.length;

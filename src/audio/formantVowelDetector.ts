@@ -5,12 +5,22 @@ const N = 256;
 let f0: number;
 const f1 = 22050;
 
-// Female formants I, é, È, A, O, ó, U
-// The first and last values do not exist: they are only used to simplify range calculations in the algorithm
-const form1 = [120, 200, 337, 522, 773, 542, 342, 308, 150];
-const form2 = [2900, 3200, 2512, 2400, 1392, 1195, 920, 762, 580];
+// *** VERY IMPORTANT NOTE ***
+// The ML code does not differentiate between grave/acute variants of E and O
+// so to make a fair comparison we have to combine these in the formant code
+// as well. To do that, we'll just average the two F1 and F2.
 
-const vowels = ["I", "É", "È", "A", "Ò", "Ó", "U"];
+// The following are the original values based on an adult female mezzo/alto voice
+// const F1s =    [ 120,  200,  337,  522,  773,  542,  342,  308,  150];
+// const F2s =    [2900, 3200, 2512, 2400, 1392, 1195,  920,  762,  580];
+// const vowels = [       "I",  "É",  "È",  "A",  "Ò",  "Ó",  "U"      ];
+
+// Formants based on an adult female mezzo/alto voice
+// NOTE: The first and last values do not exist: they are only used to simplify range calculations in the algorithm
+const F1s =    [ 120,  268,  522,  773,  442,  308,  150];
+const F2s =    [2900, 2856, 2400, 1392, 1057,  762,  580];
+const vowels = [       "I",  "E",  "A",  "O",  "U"      ];
+
 let signal: Float32Array;
 
 function getVowelImpl(s: Float32Array, sampleRate: number): VowelResult[] {
@@ -180,6 +190,7 @@ function formants(roots: Complex[], fs: number): Formant[] {
     }
   }
   ff.sort((a, b) => a.freq - b.freq);
+  console.log(ff)
   
   const valid: Formant[] = [];
   const minval = [200, 700];
@@ -198,18 +209,18 @@ function formants(roots: Complex[], fs: number): Formant[] {
 function getProbabilities(valid: Formant[]): VowelResult[] {
   const probabilities: VowelResult[] = [];
   
-  for (let i = 1; i <= 7; i++) {
+  for (let i = 1; i <= 5; i++) {
     let score = 0;
     
     // Calculate the distance from F1
     if (valid[1] && valid[1].freq) {
-      const diffF1 = Math.abs(valid[1].freq - form1[i]);
+      const diffF1 = Math.abs(valid[1].freq - F1s[i]);
       score += Math.exp(-diffF1 / 200); // Exponential penalty for F1
     }
     
     // Calculate the distance from F2
     if (valid[2] && valid[2].freq) {
-      const diffF2 = Math.abs(valid[2].freq - form2[i]);
+      const diffF2 = Math.abs(valid[2].freq - F2s[i]);
       score += Math.exp(-diffF2 / 400); // Exponential penalty for F2
     }
     
@@ -227,7 +238,7 @@ function getProbabilities(valid: Formant[]): VowelResult[] {
 
 function compare(valid: Formant[]) {
   if (valid.length === 0) {
-    return vowels.map((v) => ({ vowel: v, score: 0, percentage: "0.0" })); // No chance...
+    return vowels.map((v) => ({ vowel: v, score: 0, percentage: "0.0" })); // silence
   }
   
   const probabilities = getProbabilities(valid);
