@@ -6,7 +6,7 @@
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import type { Complex, Nullable } from "../soundrise-types";
+import type { Complex, Nullable, VowelResult } from "../soundrise-types";
 import Meyda from "meyda";
 import { NeuralNetwork } from "brain.js";
 import model from "../assets/netDataHpssLpccMfcc.json";
@@ -396,11 +396,32 @@ function extractFeatures(audioFrame: Float32Array) {
     return [...lpcc, ...mfcc];
 }
 
-function getVowelImpl(audioFrame: Float32Array, _samplerate: Nullable<number> = null) {
+function getVowelImpl(audioFrame: Float32Array, _samplerate: Nullable<number> = null): VowelResult[] {
 	const sampleFeatures = extractFeatures(audioFrame);
-	const results = network.run(sampleFeatures);
-	if (!isNaN(results.A)) return results
-	else return {}
+	const results: Record<string, number> = network.run(sampleFeatures);
+	let vowelResults: VowelResult[] = []
+	if (Object.values(results).filter(e => isNaN(e)).length === 0) {
+		vowelResults = [
+			{ vowel: "I", score: results["I"], percentage: "0.00"},
+			{ vowel: "E", score: results["E"], percentage: "0.00"},
+			{ vowel: "A", score: results["A"], percentage: "0.00"},
+			{ vowel: "O", score: results["O"], percentage: "0.00"},
+			{ vowel: "U", score: results["U"], percentage: "0.00"},
+		]
+	} else {
+		vowelResults = [
+			{ vowel: "I", score: 0, percentage: "0.00"},
+			{ vowel: "E", score: 0, percentage: "0.00"},
+			{ vowel: "A", score: 0, percentage: "0.00"},
+			{ vowel: "O", score: 0, percentage: "0.00"},
+			{ vowel: "U", score: 0, percentage: "0.00"},
+		]
+	}
+	const totalScore = vowelResults.reduce((sum, item) => sum + (item.score ?? 1.0), 0) || 0.000001;
+	vowelResults.forEach((item) => {
+		item.percentage = (((item.score ?? 0) / totalScore) * 100).toFixed(1); // FIXME I'm pretty sure we can do without this being a string but hey
+	});
+	return vowelResults
 }
 
 export { getVowelImpl, setAudioComponents, initialize }

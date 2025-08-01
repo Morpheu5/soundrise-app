@@ -20,13 +20,20 @@ export default class Listener {
   buffer_percentage: Array<VowelResult> = [];
   count_sil = 0;
   noteStrings = [ "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B" ];
+  // vowelColorMap: Record<string, string> = {
+  //   "I": "blue",
+  //   "É": "#4CC94C",
+  //   "È": "#4CC94C",
+  //   "A": "red",
+  //   "Ó": "orange",
+  //   "Ò": "orange",
+  //   "U": "#C0C0C0",
+  // }
   vowelColorMap: Record<string, string> = {
     "I": "blue",
-    "É": "#4CC94C",
-    "È": "#4CC94C",
+    "E": "#4CC94C",
     "A": "red",
-    "Ó": "orange",
-    "Ò": "orange",
+    "O": "orange",
     "U": "#C0C0C0",
   }
   previousBuffers: Array<number> = [];
@@ -56,7 +63,7 @@ export default class Listener {
       volume: "...",
       note: "...",
       vowel: "...",
-      vowelScoresString: "I: 0%\nÉ: 0%\nÈ: 0%\nA: 0%\nÒ: 0%\nÓ: 0%\nU: 0%",
+      vowelScoresString: "I: 0%\nE: 0%\nA: 0%\nO: 0%\nU: 0%",
       sunListen: false,
       rad: minRad,
       yCoord: (height - Math.round((height * 30) / 100)) / 2,
@@ -297,7 +304,7 @@ export default class Listener {
   }
 
   getValueVowels = (audioBuffer: Float32Array, sampleRate: number) => {
-    return this.detectors.formant.getVowelImpl(audioBuffer, sampleRate);
+    return this.detectors.ml.getVowelImpl(audioBuffer, sampleRate);
   }
 
   arrayAvg = (array: number[]) => array.reduce((a, b) => a + b) / array.length;
@@ -332,7 +339,6 @@ export default class Listener {
     const volume = this.getStableVolume(this.buf);
     const valueVowels = this.getValueVowels(this.buf, this.audioContext.sampleRate);
     const vowel = this.getVowel(valueVowels);
-    console.log(valueVowels)
     
     const MAX_BUF = 600;
     if (
@@ -346,7 +352,7 @@ export default class Listener {
         volume: "...",
         note: "...",
         vowel: "...",
-        vowelScoresString: "I: 0%\nÉ: 0%\nÈ: 0%\nA: 0%\nÒ: 0%\nÓ: 0%\nU: 0%",
+        vowelScoresString: "I: 0%\nE: 0%\nA: 0%\nO: 0%\nU: 0%",
         sunListen: false,
         rad: minRad,
         yCoord: (height - Math.round((height * 30) / 100)) / 2,
@@ -425,7 +431,7 @@ export default class Listener {
         this.playParams.vowel = resultingVowel;
         const vowelScores = this.computeVowelScores()
         this.playParams.vowelScoresString = this.makeVowelScoresString(vowelScores)
-        console.log(vowelScores)
+        // console.log(vowelScores)
       }
     }
 
@@ -479,7 +485,7 @@ export default class Listener {
     this.playParams.volume = "--";
     this.playParams.note = "--";
     this.playParams.vowel = "--"
-    this.playParams.vowelScoresString = "I: 0%\nÉ: 0%\nÈ: 0%\nA: 0%\nÒ: 0%\nÓ: 0%\nU: 0%";
+    this.playParams.vowelScoresString = "I: 0%\nE: 0%\nA: 0%\nO: 0%\nU: 0%";
 
     dispatchEvent(new CustomEvent("setPlayParams", { detail: this.playParams }));
     

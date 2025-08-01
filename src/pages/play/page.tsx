@@ -98,7 +98,7 @@ export default function Play() {
         <p style={{ whiteSpace: "pre-line" }}>
         {vowelScoresString 
           ? vowelScoresString
-          : "I: 0%\nÉ: 0%\nÈ: 0%\nA: 0%\nÒ: 0%\nÓ: 0%\nU: 0%"
+          : "I: 0%\nE: 0%\nA: 0%\nO: 0%\nU: 0%"
         }
         </p>
       </div>

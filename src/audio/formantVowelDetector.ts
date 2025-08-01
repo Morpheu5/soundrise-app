@@ -190,23 +190,21 @@ function formants(roots: Complex[], fs: number): Formant[] {
     }
   }
   ff.sort((a, b) => a.freq - b.freq);
-  console.log(ff)
   
   const valid: Formant[] = [];
-  const minval = [200, 700];
-  const maxval = [1600, 3000];
+  const minval = [200, 700];   // Bottom limits for [F1, F2]
+  const maxval = [1600, 3000]; // Top limits for [F1, F2]
   let j = 0;
   for (let i = 0; i < ff.length; i++) {
     if (ff[i].freq >= minval[j] && ff[i].freq <= maxval[j]) {
-      valid[j + 1] = ff[i];
-      j++;
+      valid[j++] = ff[i];
     }
     if (j > 2) break;
   }
   return valid;
 }
 
-function getProbabilities(valid: Formant[]): VowelResult[] {
+function getVowelResults(valid: Formant[]): VowelResult[] {
   const probabilities: VowelResult[] = [];
   
   for (let i = 1; i <= 5; i++) {
@@ -236,12 +234,12 @@ function getProbabilities(valid: Formant[]): VowelResult[] {
   return probabilities;
 }
 
-function compare(valid: Formant[]) {
+function compare(valid: Formant[]): VowelResult[] {
   if (valid.length === 0) {
     return vowels.map((v) => ({ vowel: v, score: 0, percentage: "0.0" })); // silence
   }
   
-  const probabilities = getProbabilities(valid);
+  const probabilities = getVowelResults(valid);
   return probabilities;
 }
 
@@ -250,3 +248,4 @@ function setAudioComponents(_c: AudioContext, _a: AnalyserNode) {}
 function initialize() {}
 
 export { getVowelImpl, setAudioComponents, initialize }
+
