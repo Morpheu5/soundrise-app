@@ -28,16 +28,17 @@ function initialize() {
 }
 
 function applyMask(x: Complex[][], mask: Float32Array[]): Complex[][] {
-	const m_x: Complex[][] = [];
-	for(let m = 0 ; m < x.length; m++) {
-		m_x[m] = [];
-		for(let k = 0; k < x[m].length; k++) {
-			m_x[m][k] = {real : 0, imaginary : 0};
-			m_x[m][k].real = x[m][k].real * mask[m][k];
-			m_x[m][k].imaginary = x[m][k].imaginary * mask[m][k];
-		}
-	}
-	return m_x;
+    const m_x: Complex[][] = [];
+    for(let m = 0 ; m < x.length; m++) {
+        m_x[m] = new Array(x[m].length); // Pre-allocate inner array
+        for(let k = 0; k < x[m].length; k++) {
+            m_x[m][k] = {
+                real : x[m][k].real * mask[m][k],
+                imaginary : x[m][k].imaginary * mask[m][k]
+            };
+        }
+    }
+    return m_x;
 }
 
 function createBinMask(y1: Float32Array[], y2: Float32Array[], mode: 'H'|'P'): Float32Array[] {
@@ -71,51 +72,70 @@ function createBinMask(y1: Float32Array[], y2: Float32Array[], mode: 'H'|'P'): F
 }
 
 function median_filter(signal: Float32Array[], L: number, dir: 'H'|'V'): Float32Array[] {
-	let tmp = []
-	const sRet = [];
-	switch(dir) {
-		case 'H':
-			for (let m = 0; m < signal.length; m++) {
-			  	sRet[m] = new Float32Array(signal[m].length);
-				for (let k = 0; k < signal[m].length; k++) {
-				  	tmp = [];
-				  	for (let mAlt = m - ((L - 1) / 2), i = 0; mAlt <= m + ((L - 1) / 2); mAlt++, i++) {
-						tmp[i] = 0;
-					  	if (mAlt >= 0 && mAlt < signal.length)
-							tmp[i] = signal[mAlt][k];
-				  	}
-					tmp.sort((a, b) => a - b);
+	const sRet: Float32Array[] = [];
 
-					if (L % 2 == 0)
-						sRet[m][k] = (tmp[(L / 2) - 1] + tmp[((L / 2) + 1) - 1]) / 2;
-				  	else
-						sRet[m][k] = tmp[((L + 1) / 2) - 1];
-			  }
-		  }
-		  break;
-		case 'V':
-		  	for (let m = 0; m < signal.length; m++) {
-				sRet[m] = new Float32Array(signal[m].length);
-		  		for (let k = 0; k < signal[m].length; k++) {
-					tmp = [];
-					for (let kAlt = k - ((L - 1) / 2), i = 0; kAlt <= k + ((L - 1) / 2); kAlt++, i++) {
-						tmp[i] = 0;
-						if (kAlt >= 0 && kAlt < signal[m].length)
-							tmp[i] = signal[m][kAlt]; 
-					}
-					tmp.sort((a, b) => a - b);
+    const maxTmpSize = L;
+    const tmp = new Float32Array(maxTmpSize); // Pre-allocate 'tmp' once for potential reuse
 
-					if (L % 2 == 0)
-						sRet[m][k] = (tmp[(L / 2) - 1] + tmp[((L / 2) + 1) - 1]) / 2;
-					else
-						sRet[m][k] = tmp[((L + 1) / 2) - 1];
-				}
-			}
-			break;
-		default:
-		  	break;
-	}
-	return sRet;
+    switch(dir) {
+        case 'H':
+            for (let m = 0; m < signal.length; m++) {
+                sRet[m] = new Float32Array(signal[m].length);
+                for (let k = 0; k < signal[m].length; k++) {
+                    let tmpIdx = 0; // Use an index for filling 'tmp'
+                    for (let mAlt = m - ((L - 1) / 2); mAlt <= m + ((L - 1) / 2); mAlt++) {
+                        // Ensure 'tmp' doesn't overflow if L is larger than expected maxTmpSize, though it shouldn't be.
+                        if (tmpIdx < maxTmpSize) {
+                            if (mAlt >= 0 && mAlt < signal.length) {
+                                tmp[tmpIdx] = signal[mAlt][k];
+                            } else {
+                                tmp[tmpIdx] = 0; // Pad with zero if out of bounds
+                            }
+                            tmpIdx++;
+                        }
+                    }
+                    // Sort only the relevant part of 'tmp' if tmpIdx < maxTmpSize (unlikely if L is consistent)
+                    const subArrayToSort = tmp.slice(0, tmpIdx);
+                    subArrayToSort.sort((a, b) => a - b); // Use a-b for numeric sort
+
+                    if (L % 2 === 0) { // Using strict equality
+                        sRet[m][k] = (subArrayToSort[(L / 2) - 1] + subArrayToSort[L / 2]) / 2; // Fixed index for even L
+                    } else {
+                        sRet[m][k] = subArrayToSort[Math.floor(L / 2)]; // Simplified index for odd L
+                    }
+                }
+            }
+            break;
+        case 'V':
+            for (let m = 0; m < signal.length; m++) {
+                sRet[m] = new Float32Array(signal[m].length);
+                for (let k = 0; k < signal[m].length; k++) {
+                    let tmpIdx = 0;
+                    for (let kAlt = k - ((L - 1) / 2); kAlt <= k + ((L - 1) / 2); kAlt++) {
+                        if (tmpIdx < maxTmpSize) {
+                            if (kAlt >= 0 && kAlt < signal[m].length) {
+                                tmp[tmpIdx] = signal[m][kAlt];
+                            } else {
+                                tmp[tmpIdx] = 0; // Pad with zero if out of bounds
+                            }
+                            tmpIdx++;
+                        }
+                    }
+                    const subArrayToSort = tmp.slice(0, tmpIdx);
+                    subArrayToSort.sort((a, b) => a - b);
+
+                    if (L % 2 === 0) {
+                        sRet[m][k] = (subArrayToSort[(L / 2) - 1] + subArrayToSort[L / 2]) / 2;
+                    } else {
+                        sRet[m][k] = subArrayToSort[Math.floor(L / 2)];
+                    }
+                }
+            }
+            break;
+        default:
+            break;
+    }
+    return sRet;
 }
 
 function convert_l_sec_to_frames(L_h_sec: number, Fs: number, _N: number, H: number): number {
