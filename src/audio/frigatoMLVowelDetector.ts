@@ -163,30 +163,101 @@ function computePowerSpec(spec: Complex[][]): Float32Array[] {
 }
 
 function dft(x: Float32Array, N: number, K: number) {
-	const dft: Complex[] = [];
-	for (let k = 0; k < K; k++) { 
-		dft[k] = {real : 0, imaginary : 0};
-		for (let n = 0; n < N; n++) {
-			const angle = -(2 * Math.PI * k * n) / N;
-			dft[k].real += x[n] * Math.cos(angle);
-			dft[k].imaginary += x[n] * Math.sin(angle);
-		}
-	}
-	return dft;
+    if (N !== K) throw new Error("FFT drop-in requires K === N");
+    if ((N & (N - 1)) !== 0) throw new Error("N must be a power of 2");
+
+    const X: Complex[] = Array(N);
+    const input: Complex[] = Array.from({ length: N }, (_, i) => ({
+        real: x[i],
+        imaginary: 0
+    }));
+
+    function fftRecursive(buffer: Complex[]): Complex[] {
+        const n = buffer.length;
+        if (n === 1) return [buffer[0]];
+
+        const even = fftRecursive(buffer.filter((_, i) => i % 2 === 0));
+        const odd = fftRecursive(buffer.filter((_, i) => i % 2 !== 0));
+
+        const results: Complex[] = Array(n);
+        for (let k = 0; k < n / 2; k++) {
+            const angle = -2 * Math.PI * k / n;
+            const cos = Math.cos(angle);
+            const sin = Math.sin(angle);
+            const o = odd[k];
+            const twiddle: Complex = {
+                real: cos * o.real - sin * o.imaginary,
+                imaginary: cos * o.imaginary + sin * o.real
+            };
+            results[k] = {
+                real: even[k].real + twiddle.real,
+                imaginary: even[k].imaginary + twiddle.imaginary
+            };
+            results[k + n / 2] = {
+                real: even[k].real - twiddle.real,
+                imaginary: even[k].imaginary - twiddle.imaginary
+            };
+        }
+        return results;
+    }
+
+    const transformed = fftRecursive(input);
+    for (let i = 0; i < N; i++) {
+        X[i] = transformed[i];
+    }
+
+    return X;
 }
 
 function idft(X: Complex[], N: number, K: number): Float32Array {
+    if (N !== K) throw new Error("iFFT drop-in requires K === N");
+    if ((N & (N - 1)) !== 0) throw new Error("N must be a power of 2");
+
+    // Conjugate the input
+    const conjugated = X.map(({ real, imaginary }) => ({
+        real,
+        imaginary: -imaginary
+    }));
+
+    // Recursive FFT function
+    function fftRecursive(input: Complex[]): Complex[] {
+        const n = input.length;
+        if (n === 1) return [input[0]];
+
+        const even = fftRecursive(input.filter((_, i) => i % 2 === 0));
+        const odd = fftRecursive(input.filter((_, i) => i % 2 !== 0));
+
+        const result: Complex[] = Array(n);
+        for (let k = 0; k < n / 2; k++) {
+            const angle = -2 * Math.PI * k / n;
+            const cos = Math.cos(angle);
+            const sin = Math.sin(angle);
+            const o = odd[k];
+            const twiddle: Complex = {
+                real: cos * o.real - sin * o.imaginary,
+                imaginary: cos * o.imaginary + sin * o.real
+            };
+            result[k] = {
+                real: even[k].real + twiddle.real,
+                imaginary: even[k].imaginary + twiddle.imaginary
+            };
+            result[k + n / 2] = {
+                real: even[k].real - twiddle.real,
+                imaginary: even[k].imaginary - twiddle.imaginary
+            };
+        }
+        return result;
+    }
+
+    // Run FFT on conjugated input
+    const transformed = fftRecursive(conjugated);
+
+    // Conjugate again and divide by N to get the real signal
     const signal = new Float32Array(N);
     for (let n = 0; n < N; n++) {
-        let sumReal = 0;
-        // let sumImag = 0;
-        for (let k = 0; k < K; k++) {
-            const angle = (2 * Math.PI * k * n) / N;
-            sumReal += X[k].real * Math.cos(angle) - X[k].imaginary * Math.sin(angle);
-            // sumImag += X[k].real * Math.sin(angle) + X[k].imaginary * Math.cos(angle);
-        }
-        signal[n] = sumReal / N;
+        signal[n] = transformed[n].real / N;
     }
+
     return signal;
 }
 
@@ -202,8 +273,9 @@ function stft(x: Float32Array, w: Float32Array, H: number, M: number): Complex[]
 	}
 
 	const x_ret = [];
-	for (let m = 0; m < M; m++)
+	for (let m = 0; m < M; m++) {
 		x_ret[m] = dft(x_win[m], N, K);
+	}
 
 	return x_ret;
 }
