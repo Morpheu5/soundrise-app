@@ -162,8 +162,8 @@ function computePowerSpec(spec: Complex[][]): Float32Array[] {
 	return pow;
 }
 
-function dft(x: Float32Array, N: number, K: number) {
-    if (N !== K) throw new Error("FFT drop-in requires K === N");
+function fft(x: Float32Array, N: number, K: number) {
+    if (N !== K) throw new Error("FFT requires K === N");
     if ((N & (N - 1)) !== 0) throw new Error("N must be a power of 2");
 
     const X: Complex[] = Array(N);
@@ -209,8 +209,8 @@ function dft(x: Float32Array, N: number, K: number) {
     return X;
 }
 
-function idft(X: Complex[], N: number, K: number): Float32Array {
-    if (N !== K) throw new Error("iFFT drop-in requires K === N");
+function ifft(X: Complex[], N: number, K: number): Float32Array {
+    if (N !== K) throw new Error("iFFT requires K === N");
     if ((N & (N - 1)) !== 0) throw new Error("N must be a power of 2");
 
     // Conjugate the input
@@ -262,49 +262,52 @@ function idft(X: Complex[], N: number, K: number): Float32Array {
 }
 
 function stft(x: Float32Array, w: Float32Array, H: number, M: number): Complex[][] {
-	const N = w.length;
-	const K = N;
+    const N = w.length;
+    const K = N;
 
-	const x_win = [];
-	for (let m = 0; m < M; m++) {
-		x_win[m] = new Float32Array(N).fill(0);
-		for (let n = 0; n < N; n++)
-			x_win[m][n] = x[n + m * H] * w[n];
-	}
+    const x_ret: Complex[][] = Array(M);
 
-	const x_ret = [];
-	for (let m = 0; m < M; m++) {
-		x_ret[m] = dft(x_win[m], N, K);
-	}
+    for (let m = 0; m < M; m++) {
+        const x_win = new Float32Array(N);
+        const offset = m * H;
 
-	return x_ret;
+        for (let n = 0; n < N; n++) {
+            x_win[n] = (x[offset + n] ?? 0) * w[n]; // Safer access with zero-padding
+        }
+
+        x_ret[m] = fft(x_win, N, K); // Using your drop-in FFT implementation
+    }
+
+    return x_ret;
 }
 
 function istft(X: Complex[][], w: Float32Array, H: number, M: number): Float32Array {
-    const signalLength = (M - 1) * H + w.length;
+    const N = w.length;
+    const K = N;
+    const signalLength = (M - 1) * H + N;
     const signal = new Float32Array(signalLength);
-	const N = w.length;
-	const K = N;
 
-    for (let i = 0; i < M; i++) {
-        const frame = idft(X[i], N, K);
-        for (let j = 0; j < w.length; j++) {
-            signal[i * H + j] += frame[j];
+    // Overlap-add each inverse FFT frame
+    for (let m = 0; m < M; m++) {
+        const frame = ifft(X[m], N, K); // Uses drop-in FFT-based iDFT
+        const offset = m * H;
+
+        for (let n = 0; n < N; n++) {
+            signal[offset + n] += frame[n] * w[n];
         }
     }
 
-	let win;
-	for (let n = 0; n < signalLength; n++) {
-		win = 0;
-		for(let m = 0; m < M; m++) {
-			if (n - H * m >= 0 && n - H * m < N)
-				win += w[n - H * m];
-		}
-		if (win > 0)
-			signal[n] = signal[n] / win;
-		else
-			signal[n] = 0;
-	}
+    // Normalize by accumulated windowing
+    for (let n = 0; n < signalLength; n++) {
+        let winSum = 0;
+        for (let m = 0; m < M; m++) {
+            const idx = n - m * H;
+            if (idx >= 0 && idx < N) {
+                winSum += w[idx] ** 2;
+            }
+        }
+        signal[n] = winSum > 0 ? signal[n] / winSum : 0;
+    }
 
     return signal;
 }
