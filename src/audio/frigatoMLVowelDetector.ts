@@ -72,6 +72,7 @@ function createBinMask(y1: Float32Array[], y2: Float32Array[], mode: 'H'|'P'): F
 }
 
 function median_filter(signal: Float32Array[], L: number, dir: 'H'|'V'): Float32Array[] {
+	console.log(L)
 	const sRet: Float32Array[] = [];
 
     const maxTmpSize = L;
@@ -334,8 +335,8 @@ function harmonicComponentExtraction(audioFrame: Float32Array): Float32Array {
 
 	const L_h = make_integer_odd(convert_l_sec_to_frames((10 / 1000), ctx.sampleRate || 44100, 256, 64));
 	//console.log(L_h);
-	const L_p = make_integer_odd(convert_l_hertz_to_bins(50000, ctx.sampleRate || 44100, 256, 64));
-	//console.log(L_p);
+	const L_p = make_integer_odd(convert_l_hertz_to_bins(6000, ctx.sampleRate || 44100, 256, 64));
+	// console.log(L_p);
 
 	const h_med_filt = median_filter(pow_s, L_h, 'H');
 	//console.log("horizontal median filter:", h_med_filt);
