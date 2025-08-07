@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import * as formantVowelDetector from "../audio/formantVowelDetector";
-import * as frigatoMLVowelDetector from "../audio/frigatoMLVowelDetector";
+import formantVowelDetector from "../audio/formantVowelDetector";
+import frigatoMLVowelDetector from "../audio/frigatoMLVowelDetector";
 import { setRad, setPosPitch, minVol, maxVol, minPitch, maxPitch, minRad, height } from "../audio/setDimsValue";
+import type { VowelDetector } from "../audio/VowelDetector";
 import { isDefined } from "../miscTools";
 import type { Nullable, PlayParams, VowelResult } from "../soundrise-types";
 
@@ -41,9 +42,14 @@ export default class Listener {
 
   private static instance: Nullable<Listener> = null;
 
-  private detectors = {
+  private detectors: Record<string, VowelDetector> = {
     formant: formantVowelDetector,
     ml: frigatoMLVowelDetector,
+  }
+
+  private currentDetector: Nullable<VowelDetector> = null;
+  setCurrentDetector = (id: ("formant"|"ml")) => {
+    this.currentDetector = this.detectors[id]
   }
 
   static getInstance(): Listener {
@@ -70,9 +76,8 @@ export default class Listener {
       svgColor: "yellow",
     };
 
-    (Object.keys(this.detectors) as Array<keyof typeof this.detectors>).forEach(k => {
-      // UGH...
-      this.detectors[k].initialize()
+    Object.entries(this.detectors).forEach(([_k, detector]) => {
+      detector.initialize?.()
     })
 
   }
@@ -140,11 +145,8 @@ export default class Listener {
         this.analyzer = this.audioContext.createAnalyser();
         this.analyzer.fftSize = 1024; // Make the FFT small for performance
 
-        // console.log(this.detectors);
-
-        (Object.keys(this.detectors) as Array<keyof typeof this.detectors>).forEach(k => {
-          // UGH...
-          this.detectors[k].setAudioComponents(this.audioContext!, this.analyzer!)
+        Object.entries(this.detectors).forEach(([_k, detector]) => {
+          detector.setAudioComponents?.(this.audioContext!, this.analyzer!)
         })
   
         // Plug everything up
@@ -304,7 +306,11 @@ export default class Listener {
   }
 
   getValueVowels = (audioBuffer: Float32Array, sampleRate: number) => {
-    return this.detectors.ml.getVowelImpl(audioBuffer, sampleRate);
+    if (isDefined(this.currentDetector)) {
+      return this.currentDetector.getVowelImpl(audioBuffer, sampleRate);
+    } else {
+      throw new Error("No detector currently defined");
+    }
   }
 
   arrayAvg = (array: number[]) => array.reduce((a, b) => a + b) / array.length;
@@ -431,7 +437,7 @@ export default class Listener {
         this.playParams.vowel = resultingVowel;
         const vowelScores = this.computeVowelScores()
         this.playParams.vowelScoresString = this.makeVowelScoresString(vowelScores)
-        // console.log(vowelScores)
+        console.log(vowelScores)
       }
     }
 

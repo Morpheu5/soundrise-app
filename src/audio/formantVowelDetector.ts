@@ -1,4 +1,5 @@
 import type { Complex, Formant, VowelResult } from "../soundrise-types";
+import type { VowelDetector } from "./VowelDetector";
 
 const p = 15;
 const N = 256;
@@ -247,5 +248,8 @@ function setAudioComponents(_c: AudioContext, _a: AnalyserNode) {}
 
 function initialize() {}
 
-export { getVowelImpl, setAudioComponents, initialize }
+const formantVowelDetector: VowelDetector = {
+    getVowelImpl, setAudioComponents, initialize
+}
 
+export default formantVowelDetector;

@@ -20,6 +20,8 @@ export default function Tests() {
     const [audioContext, setAudioContext] = useState<AudioContext>()
     const [listener, setListener] = useState<Listener>()
     const [testItems, setTestItems] = useState<TestItem[]>()
+
+    const [useML, setUseML] = useState<boolean>(false)
     
     useEffect(() => {
         setAudioContext(new AudioContext())
@@ -28,6 +30,18 @@ export default function Tests() {
         const ti = test_files.map(f => f as TestItem)
         setTestItems(ti)
     }, [])
+
+    useEffect(() => {
+        if (useML) {
+            listener?.setCurrentDetector("ml")
+        } else {
+            listener?.setCurrentDetector("formant")
+        }
+    }, [useML, listener])
+
+    function handleDetectorTypeChange() {
+        setUseML(!useML)
+    }
 
     function playTestItem(i: number) {
         if (!isDefined(listener) || !isDefined(audioContext) || !isDefined(testItems)) return
@@ -70,8 +84,15 @@ export default function Tests() {
     }
 
     return (
-        <div>
-            <h1 className="text-white text-2xl text-center p-6">audio tests</h1>
+        <>
+            <div className="flex items-center">
+                <h1 className="text-white text-2xl text-center p-6 flex-1/2">audio tests</h1>
+                <div className="pr-6 text-white">
+                    <p>
+                        Formants <input id="detector_type" name="detector_type" type="checkbox" checked={useML} onChange={handleDetectorTypeChange} className="toggle mb-1 mx-2" /> ML
+                    </p>
+                </div>
+            </div>
 
             <div className="header">
                 <div className="row p-2 bg-white grid grid-cols-12">
@@ -99,6 +120,6 @@ export default function Tests() {
                 </div>)
                 }
             </div>
-        </div>
+        </>
     )
 }

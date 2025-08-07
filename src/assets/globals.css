@@ -3,6 +3,8 @@
 @import "tailwindcss/preflight.css" layer(base);
 @import "tailwindcss/utilities.css" layer(utilities);
 
+@plugin "daisyui";
+
 @layer theme, base, components, utilities;
 
 :root {

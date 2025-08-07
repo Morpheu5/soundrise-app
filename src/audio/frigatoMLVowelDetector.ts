@@ -11,6 +11,7 @@ import Meyda from "meyda";
 import { NeuralNetwork } from "brain.js";
 import model from "../assets/netDataHpssLpccMfcc.json";
 import { isDefined } from "../miscTools";
+import type { VowelDetector } from "./VowelDetector";
 
 let ctx: Nullable<AudioContext>
 let analyser: Nullable<AnalyserNode>
@@ -560,4 +561,8 @@ function getVowelImpl(audioFrame: Float32Array, _samplerate: Nullable<number> = 
     return vowelResults
 }
 
-export { getVowelImpl, setAudioComponents, initialize }
+const mlVowelDetector: VowelDetector = {
+    getVowelImpl, setAudioComponents, initialize
+}
+
+export default mlVowelDetector;
