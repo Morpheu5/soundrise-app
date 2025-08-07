@@ -21,12 +21,25 @@ export default function Play() {
   const [note, setNote] = useState("--");
   const [_vowel, setVowel] = useState("--");
   const [vowelScoresString, setVowelScoresString] = useState<Nullable<string>>(null)
+  const [useML, setUseML] = useState<boolean>(false)
 
   const [listener, setListener] = useState<Listener>();
 
   useEffect(() => {
     setListener(Listener.getInstance())
   }, [])
+
+  useEffect(() => {
+    if (useML) {
+        listener?.setCurrentDetector("ml")
+    } else {
+        listener?.setCurrentDetector("formant")
+    }
+  }, [useML, listener])
+
+  function handleDetectorTypeChange() {
+    setUseML(!useML)
+  }
 
   const handleSetPlayParams: EventListener = useCallback((e: Event) => {
     const data: PlayParams = (e as CustomEvent).detail;
@@ -56,7 +69,7 @@ export default function Play() {
 
     setIsListening(false);
   };
-
+  
   return (
     <main className="flex h-screen flex-col text-neutral-content relative">
       {/* Header */}
@@ -105,7 +118,14 @@ export default function Play() {
 
       <div className="fixed inset-x-0 bg-base-100 bottom-0">
       <footer className="w-full flex justify-center text-white p-3 bg-black z-10">
-          <div className="grid  grid-cols-1 btn-group">
+          <div className="flex items-center btn-group">
+            <div className={`pr-24 ${isListening ? 'text-neutral-500' : 'text-white'}`}>
+                <p>
+                    Formants
+                    <input id="detector_type" name="detector_type" type="checkbox" disabled={isListening} checked={useML} onChange={handleDetectorTypeChange} className="toggle mb-1 mx-4" />
+                    ML
+                </p>
+            </div>
             <button
               className={`btn w-32`}
               onClick={isListening ? handleStopListening : handleStartListening}
