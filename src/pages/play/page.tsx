@@ -4,7 +4,8 @@ import SunSleep from "../../components/SunSleep";
 import SunAwake from "../../components/SunAwake";
 import { minRad, height } from "../../audio/setDimsValue";
 import Listener from "../../classes/Listener";
-import type { Nullable, PlayParams } from "../../soundrise-types";
+import { FormantClass, type Nullable, type PlayParams } from "../../soundrise-types";
+import formantVowelDetector from "../../audio/formantVowelDetector";
 
 export default function Play() {
   const [svgColor, setSvgColor] = useState("yellow");
@@ -22,6 +23,7 @@ export default function Play() {
   const [_vowel, setVowel] = useState("--");
   const [vowelScoresString, setVowelScoresString] = useState<Nullable<string>>(null)
   const [useML, setUseML] = useState<boolean>(false)
+  const [formantClass, setFormantClass] = useState<FormantClass>(FormantClass.Child)
 
   const [listener, setListener] = useState<Listener>();
 
@@ -36,6 +38,12 @@ export default function Play() {
         listener?.setCurrentDetector("formant")
     }
   }, [useML, listener])
+
+  useEffect(() => {
+    formantVowelDetector.setOptions?.({
+      formantClass: formantClass
+    })
+  }, [formantClass])
 
   function handleDetectorTypeChange() {
     setUseML(!useML)
@@ -116,20 +124,10 @@ export default function Play() {
         </p>
       </div>
 
-      <div className="fixed inset-x-0 bg-base-100 bottom-0">
-      <footer className="w-full flex justify-center text-white p-3 bg-black z-10">
-          <div className="flex items-center btn-group">
-            <div className={`pr-24 ${isListening ? 'text-neutral-500' : 'text-white'}`}>
-                <p>
-                    Formants
-                    <input id="detector_type" name="detector_type" type="checkbox" disabled={isListening} checked={useML} onChange={handleDetectorTypeChange} className="toggle mb-1 mx-4" />
-                    ML
-                </p>
-            </div>
-            <button
-              className={`btn w-32`}
-              onClick={isListening ? handleStopListening : handleStartListening}
-            >
+      <footer className="fixed inset-x-0 bg-base-100 bottom-0">
+        <div className="text-white bg-black z-10">
+          <div className="w-full flex justify-center p-3 btn-group">
+            <button className={`btn w-32`} onClick={isListening ? handleStopListening : handleStartListening}>
               { isListening ?
                 <span className="square-icon text-current">Stop</span>
                 :
@@ -137,8 +135,26 @@ export default function Play() {
               }
             </button>
           </div>
-        </footer>
-      </div>
+
+          <div className={`w-full flex gap-7 justify-center bg-purple-950 p-3 btn-group ${isListening ? "text-purple-500" : "text-white"}`}>
+            <div className="py-1">
+              Formants
+              <input id="detector_type" name="detector_type" type="checkbox" disabled={isListening} checked={useML} onChange={handleDetectorTypeChange} className="toggle mb-1 mx-4" />
+              ML
+            </div>
+            <div className=" border-l-2 border-purple-700"></div>
+            <div>
+              <label className={`${useML ? "text-purple-500" : ""}`}>Formants:
+                <div className="flex-row inline ml-3 py-1 border-1 border-purple-700 rounded">
+                  <button className={`rounded px-2 py-1 ${formantClass == FormantClass.Child ? "bg-purple-700" : "bg-transparent"}`} onClick={() => setFormantClass(FormantClass.Child)}>Child</button>
+                  <button className={`rounded px-2 py-1 ${formantClass == FormantClass.AdultFemale ? "bg-purple-700" : "bg-transparent"}`} onClick={() => setFormantClass(FormantClass.AdultFemale)}>Adult (F)</button>
+                  <button className={`rounded px-2 py-1 ${formantClass == FormantClass.AdultMale ? "bg-purple-700" : "bg-transparent"}`} onClick={() => setFormantClass(FormantClass.AdultMale)}>Adult (M)</button>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+      </footer>
     </main>
   );
 }

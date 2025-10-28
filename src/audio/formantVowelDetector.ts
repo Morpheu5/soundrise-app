@@ -1,4 +1,4 @@
-import type { Complex, Formant, VowelResult } from "../soundrise-types";
+import { FormantClass, type Complex, type Formant, type VowelResult } from "../soundrise-types";
 import type { VowelDetector } from "./VowelDetector";
 
 const p = 15;
@@ -18,9 +18,36 @@ const f1 = 22050;
 
 // Formants based on an adult female mezzo/alto voice
 // NOTE: The first and last values do not exist: they are only used to simplify range calculations in the algorithm
-const F1s =    [ 120,  268,  522,  773,  442,  308,  150];
-const F2s =    [2900, 2856, 2400, 1392, 1057,  762,  580];
-const vowels = [       "I",  "E",  "A",  "O",  "U"      ];
+// const F1s =    [ 120,  268,  522,  773,  442,  308,  150];
+// const F2s =    [2900, 2856, 2400, 1392, 1057,  762,  580];
+// const vowels = [       "I",  "E",  "A",  "O",  "U"      ];
+
+// The following values are based/adapted from
+// - https://doi.org/10.1044/1092-4388(2007/104)
+// - Ferrari-Disner, Sandra. "Insights on vowel spacing." Maddieson, I. Patterns of Sounds (1984).
+
+const F1s = {
+  'adult_f':   [ 120,  270,  520,  750,  420,  300,  150 ],
+  'adult_m':   [ 105,  240,  460,  660,  370,  260,  130 ],
+  'child':     [ 150,  340,  650,  950,  520,  360,  180 ],
+}
+
+const F2s = {
+  'adult_f':   [2900, 2600, 1700,  950,  750,  600,  500 ],
+  'adult_m':   [2552, 2513, 2112, 1225,  930,  671,  510 ],
+  'child':     [3700, 3300, 2150, 1150,  910,  700,  550 ],
+}
+
+const vowels = [       "I",  "E",  "A",  "O",  "U"       ];
+
+let formantClass: FormantClass = FormantClass.Child
+
+function setOptions(options: { formantClass: FormantClass }) {
+  console.log("Current: ", formantClass)
+  console.log("Setting options: ", options)
+  formantClass = options.formantClass
+  console.log("New: ", formantClass)
+}
 
 let signal: Float32Array;
 
@@ -213,13 +240,13 @@ function getVowelResults(valid: Formant[]): VowelResult[] {
     
     // Calculate the distance from F1
     if (valid[1] && valid[1].freq) {
-      const diffF1 = Math.abs(valid[1].freq - F1s[i]);
+      const diffF1 = Math.abs(valid[1].freq - F1s[formantClass][i]);
       score += Math.exp(-diffF1 / 200); // Exponential penalty for F1
     }
     
     // Calculate the distance from F2
     if (valid[2] && valid[2].freq) {
-      const diffF2 = Math.abs(valid[2].freq - F2s[i]);
+      const diffF2 = Math.abs(valid[2].freq - F2s[formantClass][i]);
       score += Math.exp(-diffF2 / 400); // Exponential penalty for F2
     }
     
@@ -249,7 +276,7 @@ function setAudioComponents(_c: AudioContext, _a: AnalyserNode) {}
 function initialize() {}
 
 const formantVowelDetector: VowelDetector = {
-    getVowelImpl, setAudioComponents, initialize
+    getVowelImpl, setAudioComponents, initialize, setOptions
 }
 
 export default formantVowelDetector;

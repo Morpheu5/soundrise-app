@@ -36,3 +36,11 @@ export interface VowelResult {
   score?: number;
   percentage?: string;
 }
+
+export const FormantClass = {
+  Child: 'child',
+  AdultFemale: 'adult_f',
+  AdultMale: 'adult_m',
+} as const;
+
+export type FormantClass = typeof FormantClass[keyof typeof FormantClass];
